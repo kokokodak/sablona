@@ -1,0 +1,48 @@
+<issue id="zranitelnost-crlf-injection">
+	<name>
+		<en>CRLF injection vulnerability</en>
+		<cz>Zranitelnost CRLF injection</cz>
+	</name>
+	<category></category>
+	<risk>medium</risk>
+	<likelihood>medium</likelihood>
+	<impact>medium</impact>
+	<whocanexploit></whocanexploit>
+	<references></references>
+	<tfinding>
+		<en>It has been found...</en>
+		<cz>
+Během penetračního testu bylo zjištěno, že na následujícím URL se nachází zranitelnost známá jako CRLF injection, která spočívá ve vložení bílých znaků CR+LF (odřádkování) do aplikace, které se projeví v HTTP odpovědi. Tímto způsobem je možné modifikovat HTTP odpověď včetně hlaviček.
+Následujícím požadavkem například dojde k vložení HTTP hlavičky Location, která způsobí přesměrování na jiný server:
+
+%[img]
+%Figure 19. Požadavek s vloženým CR+LF a vloženou HTTP hlavičkou
+
+Výsledkem tohoto požadavku je odpověď ve které je vidět vloženou HTTP hlavičku:
+
+%[img]
+%Figure 20. Vložená HTTP hlavička
+		</cz>
+	</tfinding>
+	<trisk>
+		<en></en>
+		<cz>
+V případě, že se útočníkovi podaří podstrčit uživateli speciálně připravené URL zneužívající tuto zranitelnost, může být útočník schopen manipulovat s obsahem odpovědí a tím manipulovat s obsahem webové aplikace pro daného uživatele. Tímto způsobem může být schopen provést například útoky založené na zneužití vložení javascriptu, URL redirection a další.
+		</cz>
+	</trisk>
+	<trecommendation>
+		<en></en>
+		<cz>
+Doporučujeme důkladné filtrování uživatelských vstupů. Doporučujeme filtrování provádět na základe tzv. whitelistu, kdy pouze předem schválené položky (znaky, řetězce, URL, ...) jsou povoleným vstupem aplikace a všechny ostatní položky jsou detekovány a daný požadavek je odmítnut.
+		</cz>
+	</trecommendation>
+	<tsteps>
+		<en>
+
+		</en>
+		<cz>
+
+		</cz>
+	</tsteps>
+</issue>
+

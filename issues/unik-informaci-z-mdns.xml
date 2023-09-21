@@ -1,0 +1,53 @@
+<issue id="unik-informaci-z-mdns">
+	<name>
+		<en></en>
+		<cz>Únik informací z mDNS</cz>
+	</name>
+	<category></category>
+	<risk>medium</risk>
+	<likelihood>medium</likelihood>
+	<impact>medium</impact>
+	<whocanexploit></whocanexploit>
+	<references></references>
+	<tfinding>
+		<en>It has been found...</en>
+		<cz>
+Ze systému je možné zjisti potenciálně citlivé informace jako například typ a verze operačního systému, hostname či služby.
+Během vulnerability scanu byly zjištěny následující informace
+
+\footnotesize
+\begin{lstlisting}
+- mDNS hostname : freepbx.local.
+
+- Advertised services :
+o Service name : freepbx [00:00:00:00:00:00]._workstation._tcp.local.
+Port number : 9
+
+- CPU type : X86_64
+- OS : LINUX
+\end{lstlisting}
+\normalsize
+		</cz>
+	</tfinding>
+	<trisk>
+		<en></en>
+		<cz>
+V případě, že útočník získá informace o použitém typu a verzi operačního systému nebo o provozovaných službách, může tyto informace zneužít k přesnějšímu zacílení útoku na daný systém.
+		</cz>
+	</trisk>
+	<trecommendation>
+		<en></en>
+		<cz>
+V případě, že neexistuje důvodný požadavek na dostupnost mDNS z externí sítě, doporučujeme nastavit filtrování daného portu na firewallu tak, aby bylo úniku informací zabráněno.
+		</cz>
+	</trecommendation>
+	<tsteps>
+		<en>
+
+		</en>
+		<cz>
+
+		</cz>
+	</tsteps>
+</issue>
+

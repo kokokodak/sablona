@@ -1,0 +1,39 @@
+<issue id="ftp-podporuje-cleartext-autentizaci">
+	<name>
+		<en></en>
+		<cz>FTP podporuje cleartext autentizaci</cz>
+	</name>
+	<category></category>
+	<risk>high</risk>
+	<likelihood>medium</likelihood>
+	<impact>medium</impact>
+	<whocanexploit></whocanexploit>
+	<references></references>
+	<tfinding>
+		<en>It has been found...</en>
+		<cz>
+Vzdálený ftp server umožňuje přihlášení pomocí jména a hesla přenášeného v nešifrované podobě sítí.
+		</cz>
+	</tfinding>
+	<trisk>
+		<en></en>
+		<cz>
+Toto může vést k odchycení přihlašovacích údajů útočníkem a jejich zneužití.
+		</cz>
+	</trisk>
+	<trecommendation>
+		<en></en>
+		<cz>
+Doporučujeme ftp nepoužívat a místo něho nasadit SFTP (součást SSH) nebo FTPS (FTP přes SSL), které používají šifrované spojení.
+		</cz>
+	</trecommendation>
+	<tsteps>
+		<en>
+
+		</en>
+		<cz>
+
+		</cz>
+	</tsteps>
+</issue>
+

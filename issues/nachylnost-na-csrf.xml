@@ -1,0 +1,90 @@
+<issue id="nachylnost-na-csrf">
+	<name>
+		<en>Cross site request forgery</en>
+		<cz>Náchylnost na CSRF</cz>
+	</name>
+	<category>OTG-SESS-005 - Testing for CSRF</category>
+	<risk>medium</risk>
+	<likelihood>medium</likelihood>
+	<impact>medium</impact>
+	<whocanexploit></whocanexploit>
+	<references></references>
+	<tfinding>
+		<en>
+The web application does not check origin of some requests. A remote attacker can perform CSRF attack against authenticated user and perform the following operations.
+
+\begin{itemize}[noitemsep]
+\item instance
+\end{itemize}
+
+Following is the example html code that upon being opened by authenticated user, will delete mailbox XYZ:
+\footnotesize
+\begin{lstlisting}
+PoC
+\end{lstlisting}
+\normalsize
+		  </en>
+		<cz>
+Během penetračního testu bylo zjištěno, že aplikace je náchylná na CSRF (Cross Site Request Forgery). Jedná se o typ útoku, kdy je útočníkem uživateli podstrčen legitimně se tvářící odkaz, na kterém je kód umožňující provedení akce uživatelovým jménem.
+
+Následující požadavky nejsou proti tomuto útoku chráněny:
+\begin{itemize}
+\item /support/send\_message
+\item /banking/money\_transfer
+\item /banking/set\_email
+\end{itemize}
+
+Následujícím kódem, který uživatel otevře ve svém prohlížeči může útočník odeslat ticket na podporu jménem uživatele:
+\footnotesize
+\begin{lstlisting}
+&lt;form id="myform" name="myform" action="https://example.com/set_email" method="post"&gt;
+&lt;input type='text' name='email' value="hacker@somewhere.com" /&gt;
+&lt;input type="submit" name="mysubmit" value="Click!" /&gt;
+&lt;/form&gt;
+&lt;script type="text/javascript"&gt;
+document.getElementById("myform").submit();
+&lt;/script&gt;
+\end{lstlisting}
+\normalsize
+
+Příklad daného požadavku:
+\footnotesize
+\begin{lstlisting}
+POST /set_email HTTP/1.1
+Host: example.com
+X-Requested-With: XMLHttpRequest
+Referer: https://attacker.com/
+Cookie: PHPSESSID=l38dcjuhpjearcah5fm3f9gts2
+
+email=hacker@somewhere.com
+\end{lstlisting}
+\normalsize
+
+		</cz>
+	</tfinding>
+	<trisk>
+		<en>
+Attacker can craft such web page, which upon opening by user that is authenticated to tested web application, will perform some operating on behalf of the authenticated user. Based on particular functionality that is being abused, attacker can be able to cause losses of data, money or reputation.
+		  </en>
+		<cz>
+Rizikem tohoto útoku je, že útočník je schopen s minimálním přispěním uživatele provádět operace v aplikaci jménem legitimního uživatele. V tomto případě se jedná hlavně o kontaktování podporu a vedení útoku například sociálním inženýrstvím.
+%Rizikem tohoto útoku je, že útočník je schopen s minimálním přispěním uživatele provádět operace v aplikaci jménem legitimního uživatele. V tomto případě se bude pravděpodobně jednat o nějakou formu útoku s pomocí sociálního inženýrství na některého z uživatelů s vyššími právy.
+		</cz>
+	</trisk>
+	<trecommendation>
+		<en>
+We recommend implementing proper CSRF protection for those requests that are sent via GET or POST. We found out that most requests in the web application are using PUT/DELETE without being susceptible to CSRF.
+		  </en>
+		<cz>
+K eliminaci náchylnosti aplikace k útoku CSRF doporučujeme použití tzv. CSRF tokenu. Jedná se o mechanismus, kdy je pro každého uživatele a každý formulář vygenerován unikátní řetězec, který je poté vložen do formuláře a zároveň zapamatován aplikací. Při odeslání formuláře je poté CSRF token zkontrolován a v případě nerovnosti existuje důvodné podezření, že se jedná o útok cross site request forgery a takový požadavek by měl být zamítnut. Vhodným doplňujícím mechanismem je SameSite parametr cookie, jehož cílem je zabránit cross-site information leakage a některým CSRF útokům.
+		</cz>
+	</trecommendation>
+	<tsteps>
+		<en>
+
+		</en>
+		<cz>
+
+		</cz>
+	</tsteps>
+</issue>

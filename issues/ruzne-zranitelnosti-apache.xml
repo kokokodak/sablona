@@ -1,0 +1,58 @@
+<issue id="ruzne-zranitelnosti-apache">
+	<name>
+		<en></en>
+		<cz>Různé zranitelnosti Apache</cz>
+	</name>
+	<category></category>
+	<risk>medium</risk>
+	<likelihood>medium</likelihood>
+	<impact>medium</impact>
+	<whocanexploit></whocanexploit>
+	<references></references>
+	<tfinding>
+		<en>
+
+		</en>
+		<cz>
+Během testu bylo zjištěno, že na daném serveru je použita stará verze Apache serveru, se kterou jsou spojené následující potenciální zranitelnosti:
+\begin{itemize}[noitemsep]
+\item CVE-2013-5704
+\item CVE-2014-0118
+\item CVE-2014-0226
+\item CVE-2014-0231
+\item CVE-2017-3167
+\item CVE-2017-3169
+\item CVE-2017-7659
+\item CVE-2017-7668
+\item CVE-2017-7679
+\item CVE-2017-3169
+\item CVE-2017-9788
+\end{itemize}
+		</cz>
+	</tfinding>
+	<trisk>
+		<en>
+
+		</en>
+		<cz>
+Riziko těchto zranitelností se odvíjí od konkrétní zranitelnosti. Pro více informací doporučujeme konzultovat daná CVE.
+		</cz>
+	</trisk>
+	<trecommendation>
+		<en>
+
+		</en>
+		<cz>
+Doporučujeme aktualizovat Apache server na nejnovější podporovanou verzi.
+		</cz>
+	</trecommendation>
+	<tsteps>
+		<en>
+
+		</en>
+		<cz>
+
+		</cz>
+	</tsteps>
+</issue>
+

@@ -1,0 +1,50 @@
+<issue id="hesla-jsou-ukladana-v-citelne-podobe">
+	<name>
+		<en></en>
+		<cz>Hesla jsou ukládána v čitelné podobě</cz>
+	</name>
+	<category>OTG-CRYPST-004 - Testing for Weak Encryption</category>
+	<risk>critical</risk>
+	<likelihood>high</likelihood>
+	<impact>high</impact>
+	<whocanexploit></whocanexploit>
+	<references></references>
+	<tfinding>
+		<en>It has been found...</en>
+		<cz>
+Během penetračního testu bylo zjištěno, že přihlašovací hesla jsou dostupná v čitelné podobě uživatelům s právy Obchodního ředitele a Správce systému. Toto značí, že hesla jsou v systému ukládána v čitelné podobě, což je velké riziko v případě, že se některý z uživatelů s danými právy rozhodne systém zneužít či dojde-li ke kompromitaci daného účtu.\\
+\\
+V čitelné podobě jsou dostupná jak hesla uživatelů (/link/), tak hesla zákazníků (/link/).
+\\
+% image
+\begin{figure}[H]
+\centering
+\includegraphics[width=480pt]{hesla-v-plaintextu}
+\caption{Hesla uložená v čitelné podobě}
+\end{figure}
+
+		</cz>
+	</tfinding>
+	<trisk>
+		<en></en>
+		<cz>
+Rizikem takovéhoto přístupu je, že dojde-li ke kompromitaci buď některého z uživatelských účtů, které mají k heslům přístup, nebo k password storage (ať se jedná o databázi, xml soubor nebo jiné), dostane útočník k dispozici hesla všech uživatelů. Útočník může použít tato hesla buď ke kompromitaci dalších uživatelských účtů v dané aplikaci nebo je může použít jakožto výchozí body pro kompromitaci dalších účtů daných uživatelů (firemní e-mail, přihlašovací údaje k počítačům atd.).
+		</cz>
+	</trisk>
+	<trecommendation>
+		<en></en>
+		<cz>
+Doporučujeme hesla ukládat pouze jako hash a v žádném případě neukládat hesla v čitelné podobě. K hashování hesel doporučujeme používat některý z bezpečných hashovacích algoritmů, například PBKDF2 či bcrypt. Zároveň doporučujeme hesla tzv. zasolit, aby byla zajištěna jedinečnost hashe i pro stejná uživatelská hesla.
+		
+		</cz>
+	</trecommendation>
+	<tsteps>
+		<en>
+
+		</en>
+		<cz>
+
+		</cz>
+	</tsteps>
+</issue>
+

@@ -1,0 +1,39 @@
+<issue id="moznost-zneuziti-dns-serveru-k-ddos-utokum">
+	<name>
+		<en></en>
+		<cz>Možnost zneužití DNS serveru k DDoS útokům</cz>
+	</name>
+	<category></category>
+	<risk>high</risk>
+	<likelihood>medium</likelihood>
+	<impact>medium</impact>
+	<whocanexploit></whocanexploit>
+	<references></references>
+	<tfinding>
+		<en>It has been found...</en>
+		<cz>
+Vzdálený DNS server odpovídá na jakékoliv požadavky. Je možné vytvořit požadavek na jména jmenných serverů, kdy odpověď od DNS serveru bude výrazně větší než požadavek. Požadavek měl 17 bajtů, odpověď 508.
+		</cz>
+	</tfinding>
+	<trisk>
+		<en></en>
+		<cz>
+Útočník může tohoto zneužít k provedení DDoS útoku se zapojením zranitelného DNS serveru.
+		</cz>
+	</trisk>
+	<trecommendation>
+		<en></en>
+		<cz>
+Doporučujeme omezit odkud je DNS server dostupný.
+		</cz>
+	</trecommendation>
+	<tsteps>
+		<en>
+
+		</en>
+		<cz>
+
+		</cz>
+	</tsteps>
+</issue>
+

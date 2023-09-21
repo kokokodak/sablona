@@ -1,0 +1,37 @@
+
+\newcommand*{\titleOWN}
+{\begingroup % Create the command for including the title page in the document
+	\hbox{ % Horizontal box
+	%\hspace*{0.2\textwidth} % Whitespace to the left of the title page
+	\includegraphics[angle=90, width=160pt]{\logobig}
+
+	\rule{1pt}{\textheight} % Vertical line
+	\hspace*{0.05\textwidth} % Whitespace between the vertical line and title page text
+	\parbox[b]{0.75\textwidth}{ % Paragraph box which restricts text to less than the width of the page
+	
+	{\noindent\Huge\bfseries Report \\}\\[2\baselineskip] % Title
+	{\large \textit{\projectname}}\\[4\baselineskip] % 	Tagline or further description
+	{\large \textsc{\autor}} % Author name
+	\vspace{0.5\textheight} % Whitespace between the title block and the publisher
+	{\noindent  }\\[\baselineskip] % Publisher and logo
+
+\scriptsize {
+Dokument je duševním vlastnictvím společnosti \defendio. Dispoziční právo \\
+k dokumentu náleží společnosti \spolecnost. Bez souhlasu autora je zakázáno dokument \\
+reprodukovat, publikovat nebo jinak používat k libovolným účelům mimo projekt \\
+\projectname. A to ani v částech ani v celku.\\
+Nakládání s dokumentem se řídí zákonem č. 121/2000 Sb., o právu autorském, \\
+o právech souvisejících s právem autorským a o změně některých zákonů, \\
+v aktuálním znění. \\
+}}}
+\endgroup}
+
+
+\renewcommand*\contentsname{Obsah}
+
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{\includegraphics[width=2.5cm]{\logo}}
+\chead{\projectname}
+\rhead{Stránka \thepage}
+

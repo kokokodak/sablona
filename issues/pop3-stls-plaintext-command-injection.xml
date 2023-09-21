@@ -1,0 +1,54 @@
+<issue id="pop3-stls-plaintext-command-injection">
+	<name>
+		<en>POP3 - STLS Plaintext Command Injection</en>
+		<cz>POP3 - STLS Plaintext Command Injection</cz>
+	</name>
+	<category></category>
+	<risk>medium</risk>
+	<likelihood>medium</likelihood>
+	<impact>medium</impact>
+	<whocanexploit></whocanexploit>
+	<references></references>
+	<tfinding>
+		<en>It has been found...</en>
+		<cz>
+ Během testu bylo zjištěno, že pop3 server je náchylný na command injection v průběhu domluvy šifrovaného komunikačního kanálu.
+
+Při poslání následujícího paketu:
+\footnotesize
+\begin{lstlisting}
+STLS\r\nCAPA\r\n
+\end{lstlisting}
+\normalsize
+Došlo k následující odpovědi ze serveru:
+
+\footnotesize
+\begin{lstlisting}
++OK Begin TLS negotiation
++OK Capability list follows
+\end{lstlisting}
+\normalsize
+		</cz>
+	</tfinding>
+	<trisk>
+		<en></en>
+		<cz>
+Zranitelnost umožňuje neautentizovanému útočníkovi injektování příkazů v plaintext fázi tak, aby byly spuštěny v ciphertext fázi.
+		</cz>
+	</trisk>
+	<trecommendation>
+		<en></en>
+		<cz>
+Doporučujeme aktualizovat POP3 server na nejnovější podporovanou verzi.
+		</cz>
+	</trecommendation>
+	<tsteps>
+		<en>
+
+		</en>
+		<cz>
+
+		</cz>
+	</tsteps>
+</issue>
+

@@ -1,0 +1,39 @@
+<issue id="aplikace-nedela-rozdil-mezi-post-a-get">
+	<name>
+		<en>Application doesn't make difference between POST and GET methods</en>
+		<cz>Aplikace nedělá rozdíl mezi POST a GET metodami</cz>
+	</name>
+	<category>N/A</category>
+	<risk>info</risk>
+	<likelihood>medium</likelihood>
+	<impact>low</impact>
+	<whocanexploit></whocanexploit>
+	<references></references>
+	<tfinding>
+		<en>It has been found...</en>
+		<cz>
+Během penetračního testu bylo zjištěno, že aplikace nedělá rozdíl mezi metodami POST a GET. Požadavky vytvořené jako POST mohou být odeslány jako GET a jsou aplikací přijaty tak jakoby byly validní.
+		</cz>
+	</tfinding>
+	<trisk>
+		<en>This is informational finding and isn't direct risk for application.</en>
+		<cz>
+Tento nález je informační povahy a nepředstavuje riziko pro aplikaci.
+		</cz>
+	</trisk>
+	<trecommendation>
+		<en>This is informational finding and isn't direct risk for application.</en>
+		<cz>
+Tento nález je informační povahy a nepředstavuje riziko pro aplikaci.		
+		</cz>
+	</trecommendation>
+	<tsteps>
+		<en>
+
+		</en>
+		<cz>
+
+		</cz>
+	</tsteps>
+</issue>
+

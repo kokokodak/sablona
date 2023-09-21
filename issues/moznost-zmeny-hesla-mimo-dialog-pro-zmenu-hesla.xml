@@ -1,0 +1,57 @@
+<issue id="moznost-zmeny-hesla-mimo-dialog-pro-zmenu-hesla">
+	<name>
+		<en>empty</en>
+		<cz>Možnost změny hesla mimo dialog pro změnu hesla</cz>
+	</name>
+	<category>empty</category>
+
+	<risk>medium</risk>
+	<likelihood>medium</likelihood>
+	<impact>medium</impact>
+	<whocanexploit></whocanexploit>
+
+	<references>empty</references>
+	<tfinding>
+		<en>
+empty
+		</en>
+		<cz>
+Během penetračního testu bylo zjištěno, že je možné změnit heslo uživatele bez znalosti předchozího a to mimo dialog pro změnu hesla. Konkrétně se z nějakého důvodu v dialogu pro modifikaci uživatele (Upravit uživatele) ze serveru posílá hash uživatelského hesla, které se poté opětovně posílá na server, který zde danou hodnotu uloží. Uživatel tam může reálně dosáhnout změny hesla aniž by znal předchozí heslo.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=440pt]{parametry-uprava-uzivatele}
+\caption{Požadavek pro změnu uživatele, který obsahuje i hash hesla}
+\end{figure}
+		</cz>
+	</tfinding>
+	<trisk>
+		<en>
+empty
+		</en>
+		<cz>
+Tohoto může využít útočník, který by se případně dostal k existujícímu uživatelskému sezení. Například když je uživatel vyrušen, opustí svůj pracovní počítač, ale zapomene zamknout obrazovku, může útočník této zranitelnosti využít k tomu, aby mu nepozorovaně změnil heslo a poté daný účet zneužil. Vzhledem k tomu, že se původní heslo posílá z webového serveru do aplikace, může útočník i například jenom použít nějaký MD5 cracker či rainbow tables a dané heslo ani nemusí měnit, případně ho po provedení útoku může změnit zpátky tak, aby napadený uživatel nic nepoznal.
+		</cz>
+	</trisk>
+	<trecommendation>
+		<en>
+empty
+		</en>
+		<cz>
+Doporučujeme neposílat hash do webové aplikace a ani jej nezapisovat zpátky. Jediný dialog pro změnu hesla by měl být dialog pro změnu hesla a ten by měl vyžadovat znalost předchozího hesla k jeho změně.
+		</cz>
+	</trecommendation>
+	<tsteps>
+		<en>
+empty
+		</en>
+		<cz>
+\begin{enumerate}[noitemsep]
+\item přihlašte se do webové aplikace
+\item klikněte na Nastavení Uživatele - Upravit uživatele
+\item odchyťte požadavek v HTTP proxy a upravte hodnotu parametru F\_86376\_Password na 0CC175B9C0F1B6A831C399E269772661 (MD5 hash pro řetězec 'a')
+\item znovu se přihlašte s daným uživatele a heslem 'a'
+\end{enumerate}
+		</cz>
+	</tsteps>
+</issue>

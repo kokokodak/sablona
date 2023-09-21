@@ -1,0 +1,46 @@
+<issue id="nachylnost-na-session-hijacking">
+	<name>
+		<en>Susceptibility to session hijacking</en>
+		<cz>Náchylnost na Session Hijacking</cz>
+	</name>
+	<category></category>
+	<risk>medium</risk>
+	<likelihood>medium</likelihood>
+	<impact>medium</impact>
+	<whocanexploit></whocanexploit>
+	<references></references>
+	<tfinding>
+		<en>
+During penetration test we found out that web application is susceptible to session hijacking attack. We were able to transport session cookie JSESSIONID to different web browser on different IP address and we were logged in in the new web browser. This happens when user session is only tied to session ID in cookie and not to any other information.
+		  </en>
+		<cz>
+Během penetračního testu bylo zjištěno, že aplikace je náchylná na útok známý jako Session Hijacking (Únos uživatelského sezení). Informace, která identifikuje přihlášeného uživatele je v cookie PHPSESSID. Toto cookie když je přeneseno do prohlížeče útočníka, je tento přihlášen k aplikaci jakožto legitimní uživatel od kterého cookie pochází.
+		</cz>
+	</tfinding>
+	<trisk>
+		<en>
+In case attacker gets access to session ID, he can just use it in his web browser and will be logged in as the original user without need to know any credentials. Attacker usually gets access to session ID via Cross Site Scripting attacks, sniffing, guessing or some other kind of attack, e.g. Heartbleed.
+		  </en>
+		<cz>
+V případě, že útočník získá session ID uživatele přihlášeného do aplikace, může dané session ID použít k přihlášení se, jakožto uživatel kterému session ID patří, aniž by potřeboval znát jakékoliv jiné informace (jméno / heslo).
+%Závažnost tohoto nálezu je zvýšena přítomností zranitelnosti XSS v testované webové aplikaci.
+		</cz>
+	</trisk>
+	<trecommendation>
+		<en>
+We recommend that every user session is tied to some other information than just session id. Usual information to use is IP address and some kind of web browser fingerprint. Only IP address or only web browser fingerprint is not sufficient protection.
+		  </en>
+		<cz>
+Identifikace uživatele na základě session ID není dostatečná. Doporučujeme sezení svázat i s dalšími informacemi, například s User-Agent či s IP adresou uživatele.
+		</cz>
+	</trecommendation>
+	<tsteps>
+		<en>
+
+		</en>
+		<cz>
+
+		</cz>
+	</tsteps>
+</issue>
+

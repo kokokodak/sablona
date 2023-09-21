@@ -1,0 +1,54 @@
+<issue id="unik-informaci-z-hlavicky-etag-apache-serveru">
+	<name>
+		<en></en>
+		<cz>Únik informací z hlavičky ETag apache serveru</cz>
+	</name>
+	<category></category>
+	<risk>medium</risk>
+	<likelihood>medium</likelihood>
+	<impact>medium</impact>
+	<whocanexploit></whocanexploit>
+	<references></references>
+	<tfinding>
+		<en>It has been found...</en>
+		<cz>
+V průběhu testu bylo zjištěno, že v hlavičkách http serveru jsou dostupné informace o stahovaných souborech.
+\footnotesize
+\begin{lstlisting}
+Source : ETag: "e66af-ed-4b3f660607c17"
+Inode number : 943791
+File size : 237 bytes
+File modification time : Dec. 13, 2011 at 10:04:27 GMT
+\end{lstlisting}
+\normalsize
+		</cz>
+	</tfinding>
+	<trisk>
+		<en></en>
+		<cz>
+Tyto informace můžou útočníkovi pomoci v zaměření dalších útoků a exploitaci serveru.
+		</cz>
+	</trisk>
+	<trecommendation>
+		<en></en>
+		<cz>
+Doporučujeme nastavování ETag hlavičky vypnout v nastavení webového serveru a to nastavením následujících řádků v konfiguračním souboru:
+\footnotesize
+\begin{lstlisting}
+Header unset ETag
+FileETag None
+\end{lstlisting}
+\normalsize
+
+		</cz>
+	</trecommendation>
+	<tsteps>
+		<en>
+
+		</en>
+		<cz>
+
+		</cz>
+	</tsteps>
+</issue>
+

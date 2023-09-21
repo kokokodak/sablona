@@ -1,0 +1,39 @@
+<issue id="open-mail-relay">
+	<name>
+		<en>Open Mail Relay vulnerability</en>
+		<cz>Open Mail Relay zranitelnost</cz>
+	</name>
+	<category></category>
+	<risk>high</risk>
+	<likelihood>medium</likelihood>
+	<impact>medium</impact>
+	<whocanexploit></whocanexploit>
+	<references></references>
+	<tfinding>
+		<en>It has been found...</en>
+		<cz>
+
+		</cz>
+	</tfinding>
+	<trisk>
+		<en></en>
+		<cz>
+
+		</cz>
+	</trisk>
+	<trecommendation>
+		<en></en>
+		<cz>
+Doporučujeme e-mailový server nastavit tak, aby nebylo možné jej použít jako open relay.
+		</cz>
+	</trecommendation>
+	<tsteps>
+		<en>
+
+		</en>
+		<cz>
+
+		</cz>
+	</tsteps>
+</issue>
+

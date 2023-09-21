@@ -1,0 +1,46 @@
+<issue id="ssl-podporovany-stredne-slabe-sifry">
+	<name>
+		<en></en>
+		<cz>SSL podporovány středně slabé šifry</cz>
+	</name>
+	<category></category>
+	<risk>low</risk>
+	<likelihood>medium</likelihood>
+	<impact>medium</impact>
+	<whocanexploit></whocanexploit>
+	<references></references>
+	<tfinding>
+		<en>It has been found...</en>
+		<cz>
+Během testu bylo zjištěno, že daná služba na dané adrese podporuje středně slabé šifry. Jedná se o následující šifry:
+\footnotesize
+\footnotesize
+\begin{lstlisting}
+XXX
+\end{lstlisting}
+\normalsize
+\normalsize
+		</cz>
+	</tfinding>
+	<trisk>
+		<en></en>
+		<cz>
+Použití slabých šifrovacích algoritmů snižuje bezpečnost celého šifrovaného spojení.
+		</cz>
+	</trisk>
+	<trecommendation>
+		<en></en>
+		<cz>
+Doporučujeme daný server nakonfigurovat tak, aby tyto středně slabé šifry nepodporoval. Konkrétní konfigurace se odvíjí od konkrétního serveru (apache, postfix, ...).
+		</cz>
+	</trecommendation>
+	<tsteps>
+		<en>
+
+		</en>
+		<cz>
+
+		</cz>
+	</tsteps>
+</issue>
+

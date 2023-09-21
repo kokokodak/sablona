@@ -1,0 +1,61 @@
+<issue id="api-token-nedeaktivovan">
+	<name>
+		<en>API token is not deactivated immediately</en>
+		<cz></cz>
+	</name>
+	<category></category>
+	<risk>medium</risk>
+	<likelihood>medium</likelihood>
+	<impact>medium</impact>
+	<whocanexploit></whocanexploit>
+	<references></references>
+	<tfinding>
+		<en>
+During penetration test of API we found out that token that is generated in Application is not deactivated immediately after deactivating it in Application.
+
+Testing procedure was following. First, new token is generated in Application. Then it's used for some time, for some requests. Then it's deactivated in Application, but it keeps being accepted by API server for around next 5 - 10 minutes.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=420pt]{api-inactivated}
+\caption{Deactivated API token}
+\end{figure}
+
+
+Request send to server after API token deactivation
+\footnotesize
+\begin{lstlisting}
+REQUEST
+\end{lstlisting}
+\normalsize
+		</en>
+		<cz>
+
+		</cz>
+	</tfinding>
+	<trisk>
+		<en>
+If attacker gets access to supposedly deactivated API token that has been just recently used, he can still use it to perform authenticated requests.
+		</en>
+		<cz>
+
+		</cz>
+	</trisk>
+	<trecommendation>
+		<en>
+Make sure that all deactivated tokens are immediately deactivated on all systems. We believe there is some kind of cache on API server that makes it possible to use deactivated API tokens this way.
+		</en>
+		<cz>
+
+		</cz>
+	</trecommendation>
+	<tsteps>
+		<en>
+
+		</en>
+		<cz>
+
+		</cz>
+	</tsteps>
+</issue>
+

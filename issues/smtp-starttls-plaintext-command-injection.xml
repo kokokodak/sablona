@@ -1,0 +1,53 @@
+<issue id="smtp-starttls-plaintext-command-injection">
+	<name>
+		<en>SMTP - STARTTLS plaintext command injection vulnerability</en>
+		<cz>SMTP - STARTTLS plaintext command injection zranitelnost</cz>
+	</name>
+	<category></category>
+	<risk>medium</risk>
+	<likelihood>medium</likelihood>
+	<impact>medium</impact>
+	<whocanexploit></whocanexploit>
+	<references></references>
+	<tfinding>
+		<en>It has been found...</en>
+		<cz>
+Během testu bylo zjištěno, že smtp server je náchylný na command injection v průběhu domluvy šifrovaného komunikačního kanálu.
+
+\footnotesize
+\begin{lstlisting}
+Následující příkazy byly poslány zároveň :
+
+  STARTTLS\r\nRSET\r\n
+
+A server odpověděl těmito dvěmi odpověďmi :
+
+  220 ready for tls
+  250 flushed
+\end{lstlisting}
+\normalsize
+		
+		</cz>
+	</tfinding>
+	<trisk>
+		<en></en>
+		<cz>
+Zranitelnost umožňuje neautentizovanému útočníkovi injektování příkazů v plaintext fázi tak, aby byly spuštěny v ciphertext fázi.
+		</cz>
+	</trisk>
+	<trecommendation>
+		<en></en>
+		<cz>
+Doporučujeme aktualizovat SMTP server na nejnovější podporovanou verzi.
+		</cz>
+	</trecommendation>
+	<tsteps>
+		<en>
+
+		</en>
+		<cz>
+
+		</cz>
+	</tsteps>
+</issue>
+

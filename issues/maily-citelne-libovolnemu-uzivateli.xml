@@ -1,0 +1,44 @@
+<issue id="mail-citelne-libovolnemu-uzivateli">
+	<name>
+		<en></en>
+		<cz>Maily čitelné libovolnému uživateli</cz>
+	</name>
+	<category></category>
+	<risk>high</risk>
+	<likelihood>medium</likelihood>
+	<impact>medium</impact>
+	<whocanexploit></whocanexploit>
+	<references></references>
+	<tfinding>
+		<en>It has been found...</en>
+		<cz>
+Bylo zjištěno, libovolný přihlášený uživatel má přístup k libovolným e-mailům. Jednotlivé e-maily je možné enumerovat pomocí parametru parametr v následujícím URL.\\
+http://example.com/index.php?parametr=\\
+Tento nález byl klasifikován jako critical, protože soukromí e-mailových zpráv je jedním ze základních požadavků na poskytovatele mailového řešení a únik citlivých informací z mailových účtů může mít dalekosáhlé následky.
+
+%[img]
+%Figure 1. E-mail odeslaný z test1 na test2 robrazený uživateli test3
+		</cz>
+	</tfinding>
+	<trisk>
+		<en></en>
+		<cz>
+Rizikem tohoto nálezu je, že libovolný útočník si může založit účet na serveru a pomocí něho je schopen číst libovolné e-maily všech ostatních uživatelů. Tím může dojít k úniku citlivých informací z uživatelských schránek a jejich následnému zneužití. V případě takovéhoto úniku je samozřejmostí ztráta reputace společnosti i případné právní důsledky.
+		</cz>
+	</trisk>
+	<trecommendation>
+		<en></en>
+		<cz>
+Důrazně doporučujeme přehodnocení návrhu oddělení uživatelských práv a implementaci daného návrhu tak, aby k e-mailovým zprávám měli přístup pouze legitimní uživatelé.
+		</cz>
+	</trecommendation>
+	<tsteps>
+		<en>
+
+		</en>
+		<cz>
+
+		</cz>
+	</tsteps>
+</issue>
+

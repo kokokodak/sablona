@@ -1,0 +1,45 @@
+<issue id="neosetreny-download">
+	<name>
+		<en></en>
+		<cz>Neošetřený download</cz>
+	</name>
+	<category></category>
+	<risk>high</risk>
+	<likelihood>high</likelihood>
+	<impact>high</impact>
+	<whocanexploit></whocanexploit>
+	<references></references>
+	<tfinding>
+		<en>It has been found...</en>
+		<cz>
+Bylo zjištěno, že na následujícím URL se nachází skript na stahování souborů ze serveru, který ale nemá ošetřený vstup od uživatele a tudíž dovoluje stáhnout i soubory, které tvůrce skriptu pravděpodobně nezamýšlel. Během penetračního testu se podařilo například stáhnout soubor base.php, který obsahuje přístupové údaje k databázi:
+
+%[img]
+%Figure 6. Obsah souboru base.php - přihlašovací údaje k databázi
+
+URL umožňující stahování souborů:
+http://example.com/download.php?file=../index.php
+		</cz>
+	</tfinding>
+	<trisk>
+		<en></en>
+		<cz>
+Útočník může být schopen díky této zranitelnosti stáhnout ze serveru libovolné soubory v původní podobě a získat z nich citlivé informace jako například přístupové údaje do SQL databáze.
+		</cz>
+	</trisk>
+	<trecommendation>
+		<en></en>
+		<cz>
+Doporučujeme omezit dosah skriptu na stahování souborů například pouze na adresář ve kterém se nachází soubory, které jsou pro stažení určeny. Také doporučujeme důkladné filtrování nedůvěryhodných uživatelských vstupů tak, aby došlo k eliminaci nalezené zranitelnosti.
+		</cz>
+	</trecommendation>
+	<tsteps>
+		<en>
+
+		</en>
+		<cz>
+
+		</cz>
+	</tsteps>
+</issue>
+

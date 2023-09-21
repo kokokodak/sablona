@@ -1,0 +1,39 @@
+<issue id="basic-autentizace-bez-https">
+	<name>
+		<en></en>
+		<cz>Basic autentizace bez HTTPS</cz>
+	</name>
+	<category></category>
+	<risk>high</risk>
+	<likelihood>medium</likelihood>
+	<impact>medium</impact>
+	<whocanexploit></whocanexploit>
+	<references></references>
+	<tfinding>
+		<en>It has been found...</en>
+		<cz>
+Na serveru je vyžadována basic autentizace, nicméně není vynucováno použití šifrování (HTTPS).
+		</cz>
+	</tfinding>
+	<trisk>
+		<en></en>
+		<cz>
+V případě, že se útočník dostane k datovému přenosu, může jednoduše zjistit přenášené přihlašovací údaje.
+		</cz>
+	</trisk>
+	<trecommendation>
+		<en></en>
+		<cz>
+Doporučujeme zapnutí a vynucování HTTPS pro veškeré weby, kde dochází k přenášení citlivých dat.
+		</cz>
+	</trecommendation>
+	<tsteps>
+		<en>
+
+		</en>
+		<cz>
+
+		</cz>
+	</tsteps>
+</issue>
+

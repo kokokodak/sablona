@@ -1,0 +1,71 @@
+<issue id="neoverovani-csrf-tokenu">
+	<name>
+		<en></en>
+		<cz>Anti-CSRF token není ověřován, náchylnost na CSRF</cz>
+	</name>
+	<category></category>
+	<risk>medium</risk>
+	<likelihood>medium</likelihood>
+	<impact>medium</impact>
+	<whocanexploit></whocanexploit>
+	<references></references>
+	<tfinding>
+		<en>
+
+		</en>
+		<cz>
+Během testu bylo zjištěno, že ačkoliv je anti-CSRF token (csrftoken) součástí HTTP požadavků, nedochází k jeho ověřování. Při testování jsme byli schopni
+token smazat a odpovídající HTTP požadavek byl bez problémů přijat.
+
+Provedení útoku CSRF spočívá v tom, že útočník vytvoří svoji webovou aplikaci do které přidá kód k provedení konkrétních operací na
+jiné stránce (té na kterou útočí) a poté přiměje legitimního, nic netušícího uživatele kliknout na útočníkovu stránku (obvykle nějakou formou phishingu).
+Webový prohlížeč uživatele provede útočníkem definované operace na napadané stránce jakoby je prováděl daný napadený uživatel
+(z důvodu, že jsou prohlížečem automaticky poslány Cookies).
+
+Následujícím kódem, který uživatel otevře ve svém prohlížeči může útočník odeslat ticket na podporu jménem uživatele:
+\footnotesize
+\begin{lstlisting}
+&lt;form id="myform" name="myform" action="https://example.com/set_email" method="post"&gt;
+&lt;input type='text' name='email' value="hacker@somewhere.com" /&gt;
+&lt;input type="submit" name="mysubmit" value="Click!" /&gt;
+&lt;/form&gt;
+&lt;script type="text/javascript"&gt;
+document.getElementById("myform").submit();
+&lt;/script&gt;
+\end{lstlisting}
+\normalsize
+		</cz>
+	</tfinding>
+	<trisk>
+		<en>
+
+		</en>
+		<cz>
+Rizikem tohoto útoku je, že útočník je schopen s minimálním přispěním uživatele provádět operace v aplikaci jménem legitimního uživatele.
+Jelikož z našeho pozorování se token v aplikaci neověřuje nikde, je možné provádět veškeré operace dostupné v aplikaci.
+
+		</cz>
+	</trisk>
+	<trecommendation>
+		<en>
+
+		</en>
+		<cz>
+K eliminaci náchylnosti aplikace k útoku CSRF doporučujeme použití tzv. CSRF tokenu a jeho důsledné kontrolování. Jedná se o mechanismus,
+kdy je pro každého uživatele a každý formulář vygenerován unikátní řetězec, který je poté vložen do formuláře
+a zároveň zapamatován aplikací. Při odeslání formuláře je poté CSRF token zkontrolován a v případě nerovnosti
+existuje důvodné podezření, že se jedná o útok cross site request forgery a takový požadavek by měl být zamítnut.
+Vhodným doplňujícím mechanismem je SameSite parametr cookie, jehož cílem je zabránit cross-site information leakage a některým CSRF útokům.
+
+		</cz>
+	</trecommendation>
+	<tsteps>
+		<en>
+
+		</en>
+		<cz>
+
+		</cz>
+	</tsteps>
+</issue>
+

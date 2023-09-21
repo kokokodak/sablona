@@ -1,0 +1,51 @@
+<issue id="nepodporovana-verze-weboveho-serveru">
+	<name>
+		<en></en>
+		<cz>Nepodporovaná verze webového serveru</cz>
+	</name>
+	<category></category>
+	<risk>high</risk>
+	<likelihood>medium</likelihood>
+	<impact>medium</impact>
+	<whocanexploit></whocanexploit>
+	<references></references>
+	<tfinding>
+		<en>
+
+		</en>
+		<cz>
+Během testu bylo zjištěno, že je použita nepodporovaná verze webového serveru:
+
+\footnotesize
+\begin{lstlisting}
+Apache/123
+\end{lstlisting}
+\normalsize
+		</cz>
+	</tfinding>
+	<trisk>
+		<en>
+
+		</en>
+		<cz>
+Pro nepodporovanou verzi webového serveru již nejsou vydávány bezpečnostní aktualizace. Pokud tedy byla objevena chyba, která se daného software týká, není tato chyba opravena ve formě bezpečnostní aktualizace. Toto nechává otevřené dveře pro útočníky.
+		</cz>
+	</trisk>
+	<trecommendation>
+		<en>
+
+		</en>
+		<cz>
+Doporučujeme aktualizovat na nejnovější podporovanou verzi.
+		</cz>
+	</trecommendation>
+	<tsteps>
+		<en>
+
+		</en>
+		<cz>
+
+		</cz>
+	</tsteps>
+</issue>
+

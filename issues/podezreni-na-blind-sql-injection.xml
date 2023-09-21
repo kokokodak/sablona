@@ -1,0 +1,57 @@
+<issue id="podezreni-na-blind-sql-injection">
+	<name>
+		<en></en>
+		<cz>Podezření na Blind SQL injection</cz>
+	</name>
+	<category></category>
+	<risk>medium</risk>
+	<likelihood>medium</likelihood>
+	<impact>medium</impact>
+	<whocanexploit></whocanexploit>
+	<references></references>
+	<tfinding>
+		<en>It has been found...</en>
+		<cz>
+Během penetračního testu bylo zjištěno, že na následující adrese se nachází parametr, který se zdá být zranitelný na Blind SQL injection:
+\\
+\\
+/inc/resend.php, parametr adr
+\\
+\\
+Odpověď serveru se liší v případě, že do dotazu je vložen znak ‘ a v případě, že jsou do dotazu vloženy dva tyto znaky (‘‘). Toto může naznačovat existence zranitelnosti známé jako Blind SQL injection.
+
+Odpověď v případě jednoho znaku ‘:
+
+%[img]
+%Figure 17. Jeden znak ' - zobrazení chyby
+
+
+Odpověď v případě dvou znaků ‘ (‘‘):
+
+%[img]
+%Figure 18. Dva znaky ' - žádná chyba
+		</cz>
+	</tfinding>
+	<trisk>
+		<en></en>
+		<cz>
+Provedením útoku za pomoci Blind SQL injection může dojít k úniku citlivých dat, může dojít k jejich poškození či neautorizované změně. Uvedená zranitelnost je přímým ohrožením citlivých dat.
+		</cz>
+	</trisk>
+	<trecommendation>
+		<en></en>
+		<cz>
+Doporučujeme zkontrolovat všechny funkce, které pracují s databází a případně upravit jejich funkcionalitu tak, aby obsahovaly filtrování veškerých nedůvěryhodných vstupů, ať již od uživatele (formuláře, identifikace prohlížeče, cookies, ...) nebo jiného potenciálně nedůvěryhodného subsystému.
+Vstupy doporučujeme filtrovat principem whitelist, kdy jsou přijaty pouze řetězce obsahující pouze povolené znaky. Ty by měly být například a-zA-Z0-9. Dále doporučujeme vždy jasně specifikovat odchozí kódování dat.
+		</cz>
+	</trecommendation>
+	<tsteps>
+		<en>
+
+		</en>
+		<cz>
+
+		</cz>
+	</tsteps>
+</issue>
+

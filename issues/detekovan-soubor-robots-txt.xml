@@ -1,0 +1,47 @@
+<issue id="detekovan-soubor-robots-txt">
+	<name>
+		<en></en>
+		<cz>Detekován soubor robots.txt</cz>
+	</name>
+	<category></category>
+	<risk>low</risk>
+	<likelihood>medium</likelihood>
+	<impact>medium</impact>
+	<whocanexploit></whocanexploit>
+	<references></references>
+	<tfinding>
+		<en>It has been found...</en>
+		<cz>
+Bylo zjištěno, že na webovém serveru se nachází soubor robots.txt. Ten slouží k řízení indexování stránky vyhledávacími roboty. Často tedy obsahuje potenciálně citlivé URL.
+
+\footnotesize
+\begin{lstlisting}
+Contents of robots.txt :
+
+
+\end{lstlisting}
+\normalsize
+		</cz>
+	</tfinding>
+	<trisk>
+		<en></en>
+		<cz>
+Útočník může informace ze souboru robots.txt přečíst a na daná umístění vstoupit, ačkoliv by o nich jinak nevěděl. Může se takto dostat k potenciálně citlivým informacím, přihlašování k administraci atd.
+		</cz>
+	</trisk>
+	<trecommendation>
+		<en></en>
+		<cz>
+Doporučujeme prohlédnout existující robots.txt soubor, jestli neobsahuje informace, které by neměly být útočníkovi takto jednoduše dostupné.
+		</cz>
+	</trecommendation>
+	<tsteps>
+		<en>
+
+		</en>
+		<cz>
+
+		</cz>
+	</tsteps>
+</issue>
+

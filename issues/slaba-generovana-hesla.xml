@@ -1,0 +1,57 @@
+<issue id="slaba-generovana-hesla">
+	<name>
+		<en>Generated passwords are weak</en>
+		<cz>Slabá generovaná hesla</cz>
+	</name>
+	<category>empty</category>
+
+	<risk>medium</risk>
+	<likelihood>medium</likelihood>
+	<impact>medium</impact>
+	<whocanexploit></whocanexploit>
+
+	<references>empty</references>
+	<tfinding>
+		<en>
+empty
+		</en>
+		<cz>
+Během penetračního testu bylo zjištěno, že hesla generovaná pomocí dialogu Reset hesla dostupného v nastavení uživatele, sestávají pouze z osmi číslic. Takového nově vytvořené heslo nelze považovat za bezpečné, je to totiž jen zhruba milion kombinací, které je možné během pár dní bez problému vyzkoušet.
+
+Po resetu hesla a jeho použití k přihlášení do aplikace nebyl uživatel přinucen si dané nedostatečné heslo změnit na nějaké bezpečnější.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=440pt]{slaba-generovana-hesla}
+\caption{Slabé vygenerované heslo}
+\end{figure}
+		</cz>
+	</tfinding>
+	<trisk>
+		<en>
+empty
+		</en>
+		<cz>
+Rizikem nastavení slabého hesla a nevynucení jeho změny je, že v případě, že si uživatel z vlastní iniciativy nezmění takto resetované heslo, je toto heslo jednoduše zjistitelné útočníkem. Vzhledem k nálezům Chybějící ochrana proti CSRF a Možnost vygenerovat heslo jinému uživateli, z ne-admin role může také útočník nechat vygenerovat toto dočasné heslo bez uživatelova vědomí a poté ho pomocí brute force útoku zjistit.
+		</cz>
+	</trisk>
+	<trecommendation>
+		<en>
+empty
+		</en>
+		<cz>
+Doporučujeme především definovat bezpečnou politiku hesel a poté vyžadovat, aby všechna hesla, včetně těchto vygenerovaných, odpovídala dané politice hesel.
+		</cz>
+	</trecommendation>
+	<tsteps>
+		<en>
+empty
+		</en>
+		<cz>
+\begin{enumerate}[noitemsep]
+\item přihlašte se do webové aplikace
+\item po kliknutí na Nastavení Uživatele, Reset hesla si všimněte, že vygenerované heslo je slabé, sestávající jen z 8 číslic
+\end{enumerate}
+		</cz>
+	</tsteps>
+</issue>

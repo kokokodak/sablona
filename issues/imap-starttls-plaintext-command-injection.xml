@@ -1,0 +1,53 @@
+<issue id="imap-starttls-plaintext-command-injection">
+	<name>
+		<en></en>
+		<cz>IMAP - STARTTLS Plaintext Command Injection</cz>
+	</name>
+	<category></category>
+	<risk>medium</risk>
+	<likelihood>medium</likelihood>
+	<impact>medium</impact>
+	<whocanexploit></whocanexploit>
+	<references></references>
+	<tfinding>
+		<en>It has been found...</en>
+		<cz>
+Během penetračního testu bylo zjištěno, že imap server je náchylný na command injection v průběhu domluvy šifrovaného komunikačního kanálu.
+
+Při poslání následujícího paketu:
+\footnotesize
+\begin{lstlisting}
+nessus1 STARTTLS\r\nnessus2 CAPABILITY\r\n
+\end{lstlisting}
+\normalsize
+Došlo k následující odpovědi ze serveru:
+\footnotesize
+\begin{lstlisting}
+nessus1 OK begin TLS negotiation now
+nessus2 OK CAPABILITY completed
+\end{lstlisting}
+\normalsize
+		</cz>
+	</tfinding>
+	<trisk>
+		<en></en>
+		<cz>
+Zranitelnost umožňuje neautentizovanému útočníkovi injektování příkazů v plaintext fázi tak, aby byly spuštěny v ciphertext fázi.
+		</cz>
+	</trisk>
+	<trecommendation>
+		<en></en>
+		<cz>
+Doporučujeme aktualizovat IMAP server na nejnovější podporovanou verzi.
+		</cz>
+	</trecommendation>
+	<tsteps>
+		<en>
+
+		</en>
+		<cz>
+
+		</cz>
+	</tsteps>
+</issue>
+

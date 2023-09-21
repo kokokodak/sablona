@@ -1,0 +1,45 @@
+<issue id="smb-podepisovani-nevynucovano">
+	<name>
+		<en></en>
+		<cz>SMB - podepisování nevynucováno</cz>
+	</name>
+	<category></category>
+	<risk>medium</risk>
+	<likelihood>medium</likelihood>
+	<impact>medium</impact>
+	<whocanexploit></whocanexploit>
+	<references></references>
+	<tfinding>
+		<en>
+
+		</en>
+		<cz>
+Bylo zjištěno, že na serveru není vynucováno SMB podepisování.
+		</cz>
+	</tfinding>
+	<trisk>
+		<en>
+
+		</en>
+		<cz>
+Vzdálený, neautentizovaný útočník může využít této zranitelnosti k provedení man in the middle útoku.
+		</cz>
+	</trisk>
+	<trecommendation>
+		<en>
+
+		</en>
+		<cz>
+Doporučujeme zapnout vynucování SMB podepisování nastavením konfigurační volby 'Microsoft network server: Digitally sign communications (always)' nebo 'server signing' v případě Samba serveru.
+		</cz>
+	</trecommendation>
+	<tsteps>
+		<en>
+
+		</en>
+		<cz>
+
+		</cz>
+	</tsteps>
+</issue>
+

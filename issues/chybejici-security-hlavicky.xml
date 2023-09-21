@@ -1,0 +1,47 @@
+<issue id="chybejici-security-hlavicky">
+	<name>
+		<en>Missing security related HTTP headers</en>
+		<cz>Chybějící security hlavičky</cz>
+	</name>
+	<category>N/A</category>
+	<risk>low</risk>
+	<likelihood>low</likelihood>
+	<impact>medium</impact>
+	<whocanexploit></whocanexploit>
+	<references></references>
+	<tfinding>
+		<en>It has been found...</en>
+		<cz>
+Během penetračního testu bylo zjištěno, že v odpovědích webového serveru se nenacházejí doporučované hlavičky související s bezpečností webových aplikací. Jedná se o následující hlavičky.
+
+\begin{itemize}[noitemsep]
+\item x-frame-options - ochrana přes clickjacking útoky
+\item x-content-type-options - zabraňuje hádání typu souboru, což může v některých prohlížečích vést k XSS a dalším zranitelnostem
+\item strict-transport-security - dává prohlížeči informaci, že stránka má být kontaktována pouze přes HTTPS, nikoliv přes HTTP
+\item content-security-policy - jedná se o komplexní hlavičku, která zabraňuje útokům typu XSS a data injection.
+\end{itemize}
+		</cz>
+	</tfinding>
+	<trisk>
+		<en></en>
+		<cz>
+Rizikem chybějících hlaviček webového serveru, které související s bezpečností webové aplikace, je, že v případě nálezu některé ze zranitelností proti kterým hlavičky chrání, není k dispozici žádná další vrstva ochrany před zneužitím daných zranitelností.
+
+		</cz>
+	</trisk>
+	<trecommendation>
+		<en></en>
+		<cz>
+Doporučujeme dané bezpečnostní hlavičky v odpovědích z webového serveru odesílat, jedná se o jednoduchý a relativně účinný způsob jak zvýšit bezpečnost webové aplikace.
+		</cz>
+	</trecommendation>
+	<tsteps>
+		<en>
+
+		</en>
+		<cz>
+
+		</cz>
+	</tsteps>
+</issue>
+

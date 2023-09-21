@@ -1,0 +1,45 @@
+<issue id="url-redirection">
+	<name>
+		<en>URL Redirection</en>
+		<cz>URL Redirection</cz>
+	</name>
+	<category></category>
+	<risk>medium</risk>
+	<likelihood>medium</likelihood>
+	<impact>medium</impact>
+	<whocanexploit></whocanexploit>
+	<references></references>
+	<tfinding>
+		<en>It has been found...</en>
+		<cz>
+Během penetračního testu bylo zjištěno, že následujícím požadavkem dojde k přesměrování na jiný server, v tomto případě na http://example.cz:
+\\
+\begin{itemize}
+\item http://example.com/lang\_submit.php?referer=http://attacker.com
+\end{itemize}
+		</cz>
+	</tfinding>
+	<trisk>
+		<en></en>
+		<cz>
+Rizikem je především zjednodušení potenciálního útoku. Uživatel bude mít pocit, že útočníkem podstrčený odkaz vede na důvěryhodné umístění (ale ve skutečnosti bude hned poté přesměrován na útočníkem ovládaný server) a bude méně ostražitý k věcem jako phishing, distribuce malware a další potenciálně škodlivé jednání ze strany útočníka.
+
+V případě, že útočník do zranitelného parametru napíše adresu své škodlivé aplikace, je uživatel například v rámci phishing útoku přesměrován z legitimní stránky na útočníkovu, nelegitimní, aniž by si toho musel všimnout. V případě, že je útočníkův web připraven tak, že vypadá stejně jako například přihlašovací obrazovka legitimní aplikace, může uživatel nabýt dojmu, že se nachází na přihlašovacím formuláři legitimní aplikace a zadat svoje přihlašovací údaje, které tím padnou do útočníkových rukou.
+		</cz>
+	</trisk>
+	<trecommendation>
+		<en></en>
+		<cz>
+Doporučujeme úpravu inkriminovaných skriptů tak, aby nemohlo dojít k přesměrování na nedůvěryhodné umístění. V případě, že není potřeba, aby parametr přesměrování byl dynamický, doporučujeme jej vůbec nepředávat jako parametr. V případě, že je potřeba, aby parametr byl dynamický, doporučujeme vždy důkladnou kontrolu, zda se jedná o existující umístění v rámci webové aplikace.
+		</cz>
+	</trecommendation>
+	<tsteps>
+		<en>
+
+		</en>
+		<cz>
+
+		</cz>
+	</tsteps>
+</issue>
+

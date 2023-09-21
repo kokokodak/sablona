@@ -1,0 +1,39 @@
+<issue id="podpora-ssl-verze-2-a-3">
+	<name>
+		<en></en>
+		<cz>Podpora SSL verze 2 a 3</cz>
+	</name>
+	<category></category>
+	<risk>medium</risk>
+	<likelihood>medium</likelihood>
+	<impact>medium</impact>
+	<whocanexploit></whocanexploit>
+	<references></references>
+	<tfinding>
+		<en>It has been found...</en>
+		<cz>
+Během testu bylo zjištěno, že daná služba podporuje SSL verze 2 a/nebo 3. Ani jeden z těchto protokolů by již neměl být používán z důvodu vyskytujících se zranitelností a nedostatků.
+		</cz>
+	</tfinding>
+	<trisk>
+		<en></en>
+		<cz>
+Protokoly SSL 2 a 3 již nejsou doporučeny pro zabezpečenou komunikaci, jelikož obsahují závažné nedostatky, které může případný útočník být schopen zneužít a získat tak přenášená data.
+		</cz>
+	</trisk>
+	<trecommendation>
+		<en></en>
+		<cz>
+Doporučujeme ve všech aplikacích na všech serverech kde byla nalezena tato zranitelnost zakázat používání SSL 2 a 3, a používat výhradně TLS 1.1 či novější.
+		</cz>
+	</trecommendation>
+	<tsteps>
+		<en>
+
+		</en>
+		<cz>
+
+		</cz>
+	</tsteps>
+</issue>
+

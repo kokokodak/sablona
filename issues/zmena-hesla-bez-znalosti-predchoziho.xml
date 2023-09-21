@@ -1,0 +1,42 @@
+<issue id="zmena-hesla-bez-znalosti-predchoziho">
+	<name>
+		<en></en>
+		<cz>Změna hesla bez znalosti předchozího</cz>
+	</name>
+	<category></category>
+	<risk>medium</risk>
+	<likelihood>medium</likelihood>
+	<impact>medium</impact>
+	<whocanexploit></whocanexploit>
+	<references></references>
+	<tfinding>
+		<en>It has been found...</en>
+		<cz>
+Bylo zjištěno, že v aplikaci je uživateli umožněno změnit si heslo bez znalosti původního.
+
+%[img]
+%Figure 15. Změna hesla bez znalosti původního
+		</cz>
+	</tfinding>
+	<trisk>
+		<en></en>
+		<cz>
+Toto je riziko ze dvou důvodů. Prvním je možnost provedení CSRF útoku na legitimního uživatele a změnění jeho hesla bez jeho vědomí. Tímto útočník získá přístup k uživatelovu účtu a zároveň uživatele od jeho účtu odstaví. Druhým důvodem je, že v případě, že útočník provede útok Session Hijacking a získá časově omezený přístup k uživatelskému účtu, může si změnou hesla zajistit přístup trvalý.
+		</cz>
+	</trisk>
+	<trecommendation>
+		<en></en>
+		<cz>
+Doporučujeme přidat do formuláře pro změnu hesla další položku a to aktuální heslo, které je potřeba při každé změně hesla kontrolovat. V případě, že zadané heslo nesouhlasí s aktuálním heslem, tak je potřeba změnu odmítnout.
+		</cz>
+	</trecommendation>
+	<tsteps>
+		<en>
+
+		</en>
+		<cz>
+
+		</cz>
+	</tsteps>
+</issue>
+

@@ -1,0 +1,234 @@
+% Sablona penetracniho testu infrastruktury
+% (c) DEFENDIO s.r.o. 2018
+
+\documentclass[a4paper,12pt]{article}
+\usepackage[czech]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[margin=1in,bottom=1in,headheight=110pt]{geometry}
+%\usepackage{hyperref}
+\usepackage{fancyhdr}
+\usepackage{enumitem}
+\usepackage[table,xcdraw]{xcolor}
+\usepackage{color, colortbl}
+\usepackage{float}
+\usepackage{tabulary}
+\usepackage{graphicx}
+\usepackage{array,booktabs}
+\usepackage{listings}
+\usepackage{xcolor}
+
+\lstset{%
+  language=[LaTeX]TeX,
+  backgroundcolor=\color{white},
+  basicstyle=\ttfamily,
+  breaklines=true,
+  columns=fullflexible
+}
+
+
+\graphicspath{ {img/} }
+
+
+\newcommand{\projectname}{Externí penetrační test infrastruktury}
+\newcommand{\spolecnost}{Example Company}
+\newcommand{\milan}{Milan Bartoš <milan@defendio.net>}
+\newcommand{\defendio}{DEFENDIO s.r.o.}
+
+
+\definecolor{row1}{HTML}{F0EAFF}
+\definecolor{row2}{HTML}{F7F7F7}
+\definecolor{headerblue}{HTML}{B0C4DE}
+
+
+\makeatletter
+\let\old@rule\@rule
+\def\@rule[#1]#2#3{\textcolor{rulecolor}{\old@rule[#1]{#2}{#3}}}
+\makeatother
+
+\definecolor{rulecolor}{named}{headerblue}
+
+
+\input{inc/hlavicka}
+
+
+
+%%% zacatek dokument
+\begin{document}
+
+\newgeometry{left=0cm,bottom=2cm}
+%%% zobrazeni uvodni stranky bez headeru/footeru
+\titleOWN\thispagestyle{empty}
+\restoregeometry
+
+%%% zobrazeni a odradkovani obsahu
+\tableofcontents
+\newpage
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% SECTION
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\section{Úvod}
+
+\input{inc/disclaimer}
+
+\input{inc/nastroje}
+
+
+\subsection{Postup testování}
+Testy probíhaly na základě zkušeností a schopností testerů, podílejících se na penetračním testu, v souladu se standardem PTES.
+
+Jednotlivé fáze penetračního testování byly 1. identifikace cíle, 2. identifikace aktivních služeb, 3. identifikace možných zranitelností, 4. ověření nalezených zranitelností. V průběhu testu byly využívány nástroje, schopnosti a informace tak, aby bylo co nejvěrněji dosaženo simulace útoku takovým způsobem jakým by ho prováděl případný skutečný útočník.
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% SECTION
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\section{Manažerské shrnutí}
+Předmětem testování bylo provedení komplexního penetračního testu webové aplikace
+nacházející se na dané adrese. Testování probíhalo v souladu se znalostmi a zkušenostmi penetračních testerů, kteří se na testování podíleli.
+
+
+\subsection{Cíle testu}
+Cílem tohoto penetračního testu bylo detekovat bezpečnostní nedostatky v ABC.
+
+Cílem testů byla webová aplikace dostupná na adrese XYZ.
+Předmětem testování bylo provedení komplexního penetračního testu webové aplikace
+nacházející se na dané adrese.
+
+
+\subsection{Identifikované zranitelnosti}
+Během penetračního testu bylo na testovaném webu odhaleno množství zranitelností,
+včetně kritických, které mohou vést k bezprostřední kompromitaci testovaného systému.
+
+Mezi nejzávažnější nalezené chyby patří do kategorie špatného filtrování vstupů (SQL
+injection, XSS zranitelnosti, Možnost spouštění libovolného příkazu operačního systému,
+neošetřený download a upload, ...) a špatného přístupu k autorizaci (Maily, přílohy mailů
+adresáře kontaktů čitelné pro kohokoliv). V testované aplikaci nicméně byly nalezeny
+zranitelnosti z celého spektra OWASP.
+
+\subsection{Závěr}
+Během penetračního testu byly odhaleny zranitelnosti, které mohou být použity k přímé
+kompromitaci testovaného systému. Z tohoto důvodu doporučujeme věnovat zvýšenou
+pozornost nejen jejich opravě, ale i důkladnému prozkoumání systému pro zjištění, zda
+Nálezy jsou řazeny sekvenčně podle jejich závažnosti od nejvyšší (kritická) po nejnižší
+(nízká). Doporučujeme opravit všechny zranitelnosti se závažností kritickou, vysokou a
+střední. Doporučujeme opravit také nálezy s nízkou závažností, nicméně ty nepředstavují
+přímou hrozbu pro aplikaci. Po realizaci náprav identifikovaných nedostatků doporučujeme
+provést retest aplikace, aby bylo ověřeno, že nálezy byly skutečně opraveny.
+Doporučujeme provádět testování aplikace minimálně jednou ročně, aby bylo
+minimalizováno riziko výskytu případných nových zranitelností, které mohly být objeveny
+nebo zaneseny do aplikace od posledního testování.
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% SECTION
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+
+\input{inc/klasifikace}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% SECTION
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\section{Výsledky penetračního testu}
+V této kapitole uvádíme technické informace k provedenému penetračnímu testu.
+
+
+\subsection{Identifikované servery a služby}
+Během penetračního testu byla identifikována následující zařízení a služby, které na nich běží.
+
+
+\rowcolors{1}{row1}{row2}
+
+\begin{table}[H]
+\setlength{\tabcolsep}{15pt}
+\renewcommand{\arraystretch}{1.2}
+\centering
+\label{id-servery-a-sluzby}
+\begin{tabular}{ l l }
+\rowcolor{headerblue}
+\textbf{IP adresa zařízení} & \textbf{Detekované služby} \\
+
+127.0.2.1 & \parbox[c][][c]{8cm}{
+\begin{itemize}[noitemsep]
+\item 445/tcp - Apache 2.4.12
+\item 1823/tcp - Nessus web interface 0.99
+\end{itemize}} \\
+
+192.168.1.23 & \parbox[c][][c]{8cm}{
+\begin{itemize}[noitemsep]
+\item 80/tcp - Apache 2.4.24
+\end{itemize}} \\
+
+10.23.4.23 & \parbox[c][][c]{8cm}{
+\begin{itemize}[noitemsep]
+\item 21/tcp - vsftpd blíže nezjištěné verze
+\item 80/tcp - Nginx 4.3
+\end{itemize}} \\
+
+10.1.1.27 & \parbox[c][][c]{8cm}{
+\begin{itemize}[noitemsep]
+\item 21/tcp - vsftp 2.12
+\item 80/tcp - Apache 2.6.3
+\item 94/tcp - SSH 4.2
+\end{itemize}} \\
+
+\end{tabular}
+\end{table}
+
+
+\subsection{Identifikované zranitelnosti}
+V této kapitole jsou uvedeny jednotlivé zranitelnosti a nálezy seřazené podle závažnosti od nejzávažnějších po nejméně závažné. Jedná se o nálezy, které byly identifikovány během penetračního testování. Jsou zde uvedeny společně s případnými dopady a doporučením na eliminaci rizika. Vzhledem k povaze penetračního testu nemusí být jejich seznam kompletní.
+
+
+%%%P%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% SECTION
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\section{Slovníček pojmů}
+
+\begin{itemize}[noitemsep]
+\item CBC - cipher block chaining
+\item CTR - counter (cipher mode)
+\item DDoS - distributed denial of service
+\item DNS - doman name system
+\item DoS - denial of service
+\item FTP - file transfer protocol
+\item GCM - galois / counter mode
+\item HSTS - HTTP strict transport security
+\item HTTP - hypertext transfer protocol
+\item HTTPS - hypertext transfer protocol secure
+\item IP - internet protocol
+\item ISMS - information security management system
+\item IT - information technologies
+\item MAC - message authentication code
+\item MDx - message digest
+\item MITM - man in the middle
+\item OSINT - open source intelligence
+\item PGP - pretty good privacy
+\item PoC - proof of concept
+\item POP - post office protocol
+\item SFTP - secure file transfer protocol
+\item SHAx - secure hash algorithm
+\item SMTP - simple mail transfer protocol
+\item SSH - secure shell
+\item SSL - secure socket layer
+\item TLS - transport layer security
+\item XSS - cross site scripting
+\end{itemize}
+
+\end{document}
+
+

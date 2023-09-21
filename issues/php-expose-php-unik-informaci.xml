@@ -1,0 +1,51 @@
+<issue id="php-expose-php-unik-informaci">
+	<name>
+		<en></en>
+		<cz>Únik informací z expose PHP</cz>
+	</name>
+	<category></category>
+	<risk>medium</risk>
+	<likelihood>medium</likelihood>
+	<impact>medium</impact>
+	<whocanexploit></whocanexploit>
+	<references></references>
+	<tfinding>
+		<en>
+
+		</en>
+		<cz>
+Bylo zjištěno, že pomocí následujících URL je možné zjistit informace o běžícím software, konkrétně PHP. Jedná se o známý easter egg.
+
+\footnotesize
+\begin{lstlisting}
+url
+\end{lstlisting}
+\normalsize
+		</cz>
+	</tfinding>
+	<trisk>
+		<en>
+
+		</en>
+		<cz>
+Rizikem je, že útočník může pomocí takovýchto easter eggů zjistit, že na serveru běží PHP, a může být schopen i zjistit přesně použitou verzi.
+		</cz>
+	</trisk>
+	<trecommendation>
+		<en>
+
+		</en>
+		<cz>
+Doporučujeme nastavení direktivy 'expose\_php' na 'Off' v souboru php.ini.
+		</cz>
+	</trecommendation>
+	<tsteps>
+		<en>
+
+		</en>
+		<cz>
+
+		</cz>
+	</tsteps>
+</issue>
+

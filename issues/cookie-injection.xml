@@ -1,0 +1,46 @@
+<issue id="cookie-injection">
+	<name>
+		<en></en>
+		<cz>Cookie injection</cz>
+	</name>
+	<category></category>
+	<risk>medium</risk>
+	<likelihood>medium</likelihood>
+	<impact>medium</impact>
+	<whocanexploit></whocanexploit>
+	<references></references>
+	<tfinding>
+		<en>
+
+		</en>
+		<cz>
+Bylo zjištěno, že v aplikaci se nachází zranitelnost typu cookie injection.
+		</cz>
+	</tfinding>
+	<trisk>
+		<en>
+
+		</en>
+		<cz>
+Útočník může být schopen pomocí této zranitelnosti provést tzv. session fixation útok.
+		</cz>
+	</trisk>
+	<trecommendation>
+		<en>
+
+		</en>
+		<cz>
+Doporučujeme zkontrolovat všechny funkce, které pracují s jakýmikoliv uživateli ovlivnitelnými vstupy a případně upravit jejich funkcionalitu tak, aby obsahovaly filtrování veškerých nedůvěryhodných vstupů, ať již od uživatele (formuláře, identifikace prohlížeče, cookies, ...) nebo jiného potenciálně nedůvěryhodného subsystému.
+Vstupy doporučujeme filtrovat principem whitelist, kdy jsou přijaty pouze řetězce obsahující pouze povolené znaky. Ty by měly být například a-zA-Z0-9. Dále doporučujeme vždy jasně specifikovat odchozí kódování dat.
+		</cz>
+	</trecommendation>
+	<tsteps>
+		<en>
+
+		</en>
+		<cz>
+
+		</cz>
+	</tsteps>
+</issue>
+

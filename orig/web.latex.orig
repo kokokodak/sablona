@@ -1,0 +1,417 @@
+% Sablona penetracniho testu webove aplikace
+% (c) DEFENDIO s.r.o. 2018
+
+\documentclass[a4paper,12pt]{article}
+\usepackage[czech]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[margin=1in,bottom=1in,headheight=110pt]{geometry}
+
+% pokud je zajem o hyperlinky v souboru, odkomentovat nasledujici radek
+%\usepackage{hyperref}
+
+\usepackage{fancyhdr}
+\usepackage{enumitem}
+\usepackage[table,xcdraw]{xcolor}
+\usepackage{color, colortbl}
+\usepackage{float}
+\usepackage{graphicx}
+\usepackage{array,booktabs}
+\usepackage{listings}
+\usepackage{xcolor}
+
+\lstset{%
+  language=[LaTeX]TeX,
+  backgroundcolor=\color{white},
+  basicstyle=\ttfamily,
+  breaklines=true,
+  columns=fullflexible
+}
+
+
+\graphicspath{ {img/} }
+
+
+% konfigurace daneho reportu, dynamicky se vytvari pri vytvareni reportu
+\input{inc/config}
+
+\definecolor{row1}{HTML}{F0EAFF}
+\definecolor{row2}{HTML}{F7F7F7}
+\definecolor{headerblue}{HTML}{B0C4DE}
+
+\makeatletter
+\let\old@rule\@rule
+\def\@rule[#1]#2#3{\textcolor{rulecolor}{\old@rule[#1]{#2}{#3}}}
+\makeatother
+
+\definecolor{rulecolor}{named}{headerblue}
+
+
+\input{inc/hlavicka}
+
+
+%%% zacatek dokumentu
+\begin{document}
+
+\newgeometry{left=0cm,bottom=2cm}
+%%% zobrazeni uvodni stranky bez headeru/footeru
+\titleOWN\thispagestyle{empty}
+\restoregeometry
+
+%%% zobrazeni a odradkovani obsahu
+\tableofcontents
+\newpage
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% SECTION
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\section{Úvod}
+
+\input{inc/disclaimer}
+
+\input{inc/nastroje}
+
+
+\subsection{Postup testování}
+Testy probíhaly na základě zkušeností a schopností testerů, podílejících se na penetračním testu, v souladu s OWASP Testing Guide a standardu PTES.
+
+Jednotlivé fáze penetračního testování byly 1. identifikace cíle, 2. identifikace aktivních služeb, 3. identifikace možných zranitelností, 4. ověření nalezených zranitelností. V průběhu testu byly využívány nástroje, schopnosti a informace tak, aby bylo co nejvěrněji dosaženo simulace útoku takovým způsobem jakým by ho prováděl případný skutečný útočník.
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% SECTION
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\section{Manažerské shrnutí}
+Předmětem testování bylo provedení komplexního penetračního testu webové aplikace
+nacházející se na adrese \ip. Testování probíhalo v souladu s OWASP testovací příručkou a v souladu se znalostmi a zkušenostmi penetračních testerů, kteří se na testování podíleli.
+
+Během penetračního testu byly testovány ty oblasti bezpečnosti webových aplikací, které jsou označeny v kapitole Testované oblasti podle OWASP.
+
+\subsection{Cíle testu}
+
+
+
+\subsection{Identifikované zranitelnosti}
+
+\subsection{Závěr}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% SECTION
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+
+\input{inc/klasifikace}
+
+
+\subsection{Podle OWASP}
+Pro testování webových aplikací vycházíme z celosvětově uznávaného projektu OWASP a jeho OWASP Testing Guide verze 4. Jednotlivé nálezy jsou proto kategorizovány a přiřazeny do dané konkrétní sekce OWASP Testing Guide.
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% SECTION
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\section{Výsledky penetračního testu}
+V této kapitole uvádíme technické informace k provedenému penetračnímu testu. Jsou zde uvedeny jednotlivé oblasti OWASP a informace zda byla daná oblast testována nebo ne.
+
+
+\subsection{Testované oblasti podle OWASP}
+Následující kapitola je rozdělena do několika tabulek, které obsahují jednotlivé sekce OWASP, které byly během penetračního testu testovány.
+
+
+
+\paragraph{Information Gathering} \
+
+V této fázi dochází ke sběru a získávání dat o testované webové aplikaci a systému. s využitím různých nástrojů získáváme informace nejen ze samotné aplikace, ale i například z webových vyhledávačů. Information Gathering je prvním krokem penetračního testu.
+
+\rowcolors{1}{row1}{row2}
+\begin{table}[H]
+\renewcommand{\arraystretch}{1.4}
+\begin{tabular}{m{0.8\textwidth}c}
+\rowcolor{headerblue}
+\textbf{Information Gathering} & \textbf{Testováno} \\
+\small{\textbf{OTG-INFO-001} - Conduct Search Engine Discovery and Reconnaissance for Information Leakage} & \includegraphics[width=10pt]{yes} \\
+\small{\textbf{OTG-INFO-002} - Fingerprint Web Server} & \includegraphics[width=10pt]{yes} \\
+\small{\textbf{OTG-INFO-003} - Review Webserver Metafiles for Information Leakage} & \includegraphics[width=10pt]{yes} \\
+\small{\textbf{OTG-INFO-004} - Enumerate Applications on Webserver} & \includegraphics[width=10pt]{yes} \\
+\small{\textbf{OTG-INFO-005} - Review Webpage Comments and Metadata for Information Leakage} & \includegraphics[width=10pt]{yes} \\
+\small{\textbf{OTG-INFO-006} - Identify application entry points} & \includegraphics[width=10pt]{yes} \\
+\small{\textbf{OTG-INFO-007} - Map execution paths through application} & \includegraphics[width=10pt]{yes} \\
+\small{\textbf{OTG-INFO-008} - Fingerprint Web Application Framework} & \includegraphics[width=10pt]{yes} \\
+\small{\textbf{OTG-INFO-009} - Fingerprint Web Application} & \includegraphics[width=10pt]{yes} \\
+\small{\textbf{OTG-INFO-010} - Map Application Architecture} & \includegraphics[width=10pt]{yes} \\
+\end{tabular}
+\end{table}
+
+
+\paragraph{Configuration and Deploy Management Testing} \
+
+Při testování konfigurace systému často dochází k zjištění dalších informací o testované aplikaci. Jedná se například o citlivé soubory, administrační rozhraní, konkrétní nastavení infrastruktury či povolené HTTP metody.
+
+\rowcolors{1}{row1}{row2}
+\begin{table}[H]
+\renewcommand{\arraystretch}{1.4}
+\begin{tabular}{m{0.8\textwidth}c}
+\rowcolor{headerblue}
+\textbf{Configuration and Deploy Management Testing} & \textbf{Testováno} \\
+\small{\textbf{OTG-CONFIG-001} - Test Network/Infrastructure Configuration} & \includegraphics[width=10pt]{yes} \\
+\small{\textbf{OTG-CONFIG-002} - Test Application Platform Configuration} & \includegraphics[width=10pt]{yes} \\
+\small{\textbf{OTG-CONFIG-003} - Test File Extensions Handling for Sensitive Information} & \includegraphics[width=10pt]{yes} \\
+\small{\textbf{OTG-CONFIG-004} - Review Old, Backup and Unreferenced Files for Sensitive Information} & \includegraphics[width=10pt]{yes} \\
+\small{\textbf{OTG-CONFIG-005} - Enumerate Infrastructure and Application Admin Interfaces} & \includegraphics[width=10pt]{yes} \\
+\small{\textbf{OTG-CONFIG-006} - Test HTTP Methods} & \includegraphics[width=10pt]{yes} \\
+\small{\textbf{OTG-CONFIG-007} - Test HTTP Strict Transport Security} & \includegraphics[width=10pt]{yes} \\
+\small{\textbf{OTG-CONFIG-008} - Test RIA cross domain policy} & \includegraphics[width=10pt]{yes} \\
+\end{tabular}
+\end{table}
+
+
+\paragraph{Identity Management Testing} \
+
+V rámci testování správy identit je testován samotný mechanismus pro správu identit. Například zakládání uživatelskách účtů, jejich identifikace, správa rolí či rušení uživatelských účtů.
+
+\rowcolors{1}{row1}{row2}
+\begin{table}[H]
+\renewcommand{\arraystretch}{1.4}
+\begin{tabular}{m{0.8\textwidth}c}
+\rowcolor{headerblue}
+\textbf{Identity Management Testing} & \textbf{Testováno} \\
+\small{\textbf{OTG-IDENT-001} - Test Role Definitions} & \includegraphics[width=10pt]{yes} \\
+\small{\textbf{OTG-IDENT-002} - Test User Registration Process} & \includegraphics[width=10pt]{yes} \\
+\small{\textbf{OTG-IDENT-003} - Test Account Provisioning Process} & \includegraphics[width=10pt]{yes} \\
+\small{\textbf{OTG-IDENT-004} - Testing for Account Enumeration and Guessable User Account} & \includegraphics[width=10pt]{yes} \\
+\small{\textbf{OTG-IDENT-005} - Testing for Weak or unenforced username policy} & \includegraphics[width=10pt]{yes} \\
+\end{tabular}
+\end{table}
+
+
+\paragraph{Authentication Testing} \
+
+V rámci aplikace slouží autentizace k identifikaci uživatele, ať již osoby nebo jiného systému. V této části jsou testovány například možnosti obejití autentizace, nedostatky v práci s hesly či nedostatky při používání kontrolních otázek.
+
+\rowcolors{1}{row1}{row2}
+\begin{table}[H]
+\renewcommand{\arraystretch}{1.4}
+\begin{tabular}{m{0.8\textwidth}c}
+\rowcolor{headerblue}
+\textbf{Authentication Testing} & \textbf{Testováno} \\
+\small{\textbf{OTG-AUTHN-001} - Testing for Credentials Transported over an Encrypted Channel} & \includegraphics[width=10pt]{yes} \\
+\small{\textbf{OTG-AUTHN-002} - Testing for default credentials} & \includegraphics[width=10pt]{yes} \\
+\small{\textbf{OTG-AUTHN-003} - Testing for Weak lock out mechanism} & \includegraphics[width=10pt]{yes} \\
+\small{\textbf{OTG-AUTHN-004} - Testing for bypassing authentication schema} & \includegraphics[width=10pt]{yes} \\
+\small{\textbf{OTG-AUTHN-005} - Test remember password functionality} & \includegraphics[width=10pt]{yes} \\
+\small{\textbf{OTG-AUTHN-006} - Testing for Browser cache weakness} & \includegraphics[width=10pt]{yes} \\
+\small{\textbf{OTG-AUTHN-007} - Testing for Weak password policy} & \includegraphics[width=10pt]{yes} \\
+\small{\textbf{OTG-AUTHN-008} - Testing for Weak security question/answer} & \includegraphics[width=10pt]{yes} \\
+\small{\textbf{OTG-AUTHN-009} - Testing for weak password change or reset functionalities} & \includegraphics[width=10pt]{yes} \\
+\small{\textbf{OTG-AUTHN-010} - Testing for Weaker authentication in alternative channel} & \includegraphics[width=10pt]{yes} \\
+\end{tabular}
+\end{table}
+
+
+
+\paragraph{Authorization Testing} \
+
+Autorizace znamená povolení přístupu k určitým zdrojům pouze pro oprávněné uživatele. V této části testu jsou zjišťovány například následujicí nedostatky - možnost obejití autorizace, nepoužití autorizace pro některé zdroje či možnost neoprávněného získání autorizace k určitým zdrojům.
+
+\rowcolors{1}{row1}{row2}
+\begin{table}[H]
+\renewcommand{\arraystretch}{1.4}
+\begin{tabular}{m{0.8\textwidth}c}
+\rowcolor{headerblue}
+\textbf{Authorization Testing} & \textbf{Testováno} \\
+\small{\textbf{OTG-AUTHZ-001} - Testing Directory traversal/file include} & \includegraphics[width=10pt]{yes} \\
+\small{\textbf{OTG-AUTHZ-002} - Testing for bypassing authorization schema} & \includegraphics[width=10pt]{yes} \\
+\small{\textbf{OTG-AUTHZ-003} - Testing for Privilege Escalation} & \includegraphics[width=10pt]{yes} \\
+\small{\textbf{OTG-AUTHZ-004} - Testing for Insecure Direct Object References} & \includegraphics[width=10pt]{yes} \\
+\end{tabular}
+\end{table}
+
+
+\paragraph{Session Management Testing} \
+
+Session management se zabývá stavem komunikace mezi webovou aplikací a uživatelem. V V této části textu jsou testovány například útoky vedoucí k ukradení uživatelského sezení, náchylnost aplikace na man-in-the-middle útoky a podobně.
+
+\rowcolors{1}{row1}{row2}
+\begin{table}[H]
+\renewcommand{\arraystretch}{1.4}
+\begin{tabular}{m{0.8\textwidth}c}
+\rowcolor{headerblue}
+\textbf{Session Management Testing} & \textbf{Testováno} \\
+\small{\textbf{OTG-SESS-001} - Testing for Bypassing Session Management Schema} & \includegraphics[width=10pt]{yes} \\
+\small{\textbf{OTG-SESS-002} - Testing for Cookies attributes} & \includegraphics[width=10pt]{yes} \\
+\small{\textbf{OTG-SESS-003} - Testing for Session Fixation} & \includegraphics[width=10pt]{yes} \\
+\small{\textbf{OTG-SESS-004} - Testing for Exposed Session Variables} & \includegraphics[width=10pt]{yes} \\
+\small{\textbf{OTG-SESS-005} - Testing for Cross Site Request Forgery} & \includegraphics[width=10pt]{yes} \\
+\small{\textbf{OTG-SESS-006} - Testing for logout functionality} & \includegraphics[width=10pt]{yes} \\
+\small{\textbf{OTG-SESS-007} - Test Session Timeout} & \includegraphics[width=10pt]{yes} \\
+\small{\textbf{OTG-SESS-008} - Testing for Session puzzling} & \includegraphics[width=10pt]{yes} \\
+\end{tabular}
+\end{table}
+
+
+\paragraph{Data Validation Testing} \
+
+Častým problémem webových aplikací je nedostatečná kontrola uživatelského vstupu. Aplikace očekává zadání pouze validních vstupů, což otevírá prostor k manipulaci se vstupy a provedení některého z injection útoků. V této části testů jsou testovány například SQL injection, cross site scripting či možnost spuštění příkazu operačního systému.
+
+\rowcolors{1}{row1}{row2}
+\begin{table}[H]
+\renewcommand{\arraystretch}{1.4}
+\begin{tabular}{m{0.8\textwidth}c}
+\rowcolor{headerblue}
+\textbf{Data Validation Testing} & \textbf{Testováno} \\
+\small{\textbf{OTG-INPVAL-001} - Testing for Reflected Cross Site Scripting} & \includegraphics[width=10pt]{yes} \\
+\small{\textbf{OTG-INPVAL-002} - Testing for Stored Cross Site Scripting} & \includegraphics[width=10pt]{yes} \\
+\small{\textbf{OTG-INPVAL-003} - Testing for HTTP Verb Tampering} & \includegraphics[width=10pt]{yes} \\
+\small{\textbf{OTG-INPVAL-004} - Testing for HTTP Parameter pollution} & \includegraphics[width=10pt]{yes} \\
+\small{\textbf{OTG-INPVAL-005} - Testing for SQL Injection} & \includegraphics[width=10pt]{yes} \\
+\small{\textbf{OTG-INPVAL-006} - Testing for LDAP Injection} & \includegraphics[width=10pt]{yes} \\
+\small{\textbf{OTG-INPVAL-007} - Testing for ORM Injection} & \includegraphics[width=10pt]{yes} \\
+\small{\textbf{OTG-INPVAL-008} - Testing for XML Injection} & \includegraphics[width=10pt]{yes} \\
+\small{\textbf{OTG-INPVAL-009} - Testing for SSI Injection} & \includegraphics[width=10pt]{yes} \\
+\small{\textbf{OTG-INPVAL-010} - Testing for XPath Injection} & \includegraphics[width=10pt]{yes} \\
+\small{\textbf{OTG-INPVAL-011} - IMAP/SMTP Injection} & \includegraphics[width=10pt]{yes} \\
+\small{\textbf{OTG-INPVAL-012} - Testing for Code Injection} & \includegraphics[width=10pt]{yes} \\
+\small{\textbf{OTG-INPVAL-013} - Testing for Command Injection} & \includegraphics[width=10pt]{yes} \\
+\small{\textbf{OTG-INPVAL-014} - Testing for Buffer overflow} & \includegraphics[width=10pt]{yes} \\
+\small{\textbf{OTG-INPVAL-015} - Testing for incubated vulnerabilities} & \includegraphics[width=10pt]{yes} \\
+\small{\textbf{OTG-INPVAL-016} - Testing for HTTP Splitting/Smuggling} & \includegraphics[width=10pt]{yes} \\
+\end{tabular}
+\end{table}
+
+
+\paragraph{Error Handling Testing} \
+
+K úniku citlivých informací často dochází kvůli nesprávné práci s chybovými stavy. Tato část testů slouží k otestování právě těchto problémů.
+
+\rowcolors{1}{row1}{row2}
+\begin{table}[H]
+\renewcommand{\arraystretch}{1.4}
+\begin{tabular}{m{0.8\textwidth}c}
+\rowcolor{headerblue}
+\textbf{Error Handling Testing} & \textbf{Testováno} \\
+\small{\textbf{OTG-ERR-001} - Analysis of Error Codes} & \includegraphics[width=10pt]{yes} \\
+\small{\textbf{OTG-ERR-002} - Analysis of Stack Traces} & \includegraphics[width=10pt]{yes} \\
+\end{tabular}
+\end{table}
+
+
+
+\paragraph{Cryptography Testing} \
+
+Vzhledem k určité složitosti kryptografických schémat často dochází k jejich nesprávnému použití v rámci webových aplikací. V této části testů jsou ověřovány nedostatky související s SSL/TLS či obecně nedostatky v kryptografii použité pro zabezpečení webové aplikaci.
+
+\rowcolors{1}{row1}{row2}
+\begin{table}[H]
+\renewcommand{\arraystretch}{1.4}
+\begin{tabular}{m{0.8\textwidth}c}
+\rowcolor{headerblue}
+\textbf{Cryptography Testing} & \textbf{Testováno} \\
+\small{\textbf{OTG-CRYPST-001} - Testing for Weak SSL/TLS Ciphers, Insufficient Transport Layer Protection} & \includegraphics[width=10pt]{yes} \\
+\small{\textbf{OTG-CRYPST-002} - Testing for Padding Oracle} & \includegraphics[width=10pt]{yes} \\
+\small{\textbf{OTG-CRYPST-003} - Testing for Sensitive information sent via unencrypted channels} & \includegraphics[width=10pt]{yes} \\
+\end{tabular}
+\end{table}
+
+
+\paragraph{Business Logic Testing} \
+
+Vedle technických nedostatků aplikace často obsahují i nedostatky, které nejsou čistě technické povahy, ale vznikly například v důsledku špatného pochopení fungování aplikace či nějakého použitého schématu. V této části testů je potřeba, aby se penetrační tester seznámil s aplikací, pochopil ji a mohl poté odhalit nedostatky v principu práce s ní.
+
+\rowcolors{1}{row1}{row2}
+\begin{table}[H]
+\renewcommand{\arraystretch}{1.4}
+\begin{tabular}{m{0.8\textwidth}c}
+\rowcolor{headerblue}
+\textbf{Business Logic Testing} & \textbf{Testováno} \\
+\small{\textbf{OTG-BUSLOGIC-001} - Test Business Logic Data Validation} & \includegraphics[width=10pt]{yes} \\
+\small{\textbf{OTG-BUSLOGIC-002} - Test Ability to Forge Requests} & \includegraphics[width=10pt]{yes} \\
+\small{\textbf{OTG-BUSLOGIC-003} - Test Integrity Checks} & \includegraphics[width=10pt]{yes} \\
+\small{\textbf{OTG-BUSLOGIC-004} - Test for Process Timing} & \includegraphics[width=10pt]{yes} \\
+\small{\textbf{OTG-BUSLOGIC-005} - Test Number of Times a Function Can be Used Limits} & \includegraphics[width=10pt]{yes} \\
+\small{\textbf{OTG-BUSLOGIC-006} - Testing for the Circumvention of Work Flows} & \includegraphics[width=10pt]{yes} \\
+\small{\textbf{OTG-BUSLOGIC-007} - Test Defenses Against Application Mis-use} & \includegraphics[width=10pt]{yes} \\
+\small{\textbf{OTG-BUSLOGIC-008} - Test Upload of Unexpected File Types} & \includegraphics[width=10pt]{yes} \\
+\small{\textbf{OTG-BUSLOGIC-009} - Test Upload of Malicious Files} & \includegraphics[width=10pt]{yes} \\
+\end{tabular}
+\end{table}
+
+
+\paragraph{Client Side Testing} \
+
+V této kategorii jsou testovány mechanismy, které aplikace používá pro ochranu uživatelů před útoky směřujícími přímo na uživatele a jeho webový prohlížeč. Testovány jsou různé injekční útoky pomocí klientských skriptovacích jazyků či modifikace různých parametrů spravovaných prohlížečem.
+
+\rowcolors{1}{row1}{row2}
+\begin{table}[H]
+\renewcommand{\arraystretch}{1.4}
+\begin{tabular}{m{0.8\textwidth}c}
+\rowcolor{headerblue}
+\textbf{Client Side Testing} & \textbf{Testováno} \\
+\small{\textbf{OTG-CLIENT-001} - Testing for DOM based Cross Site Scripting} & \includegraphics[width=10pt]{yes} \\
+\small{\textbf{OTG-CLIENT-002} - Testing for JavaScript Execution} & \includegraphics[width=10pt]{yes} \\
+\small{\textbf{OTG-CLIENT-003} - Testing for HTML Injection} & \includegraphics[width=10pt]{yes} \\
+\small{\textbf{OTG-CLIENT-004} - Testing for Client Side URL Redirect} & \includegraphics[width=10pt]{yes} \\
+\small{\textbf{OTG-CLIENT-005} - Testing for CSS Injection} & \includegraphics[width=10pt]{yes} \\
+\small{\textbf{OTG-CLIENT-006} - Testing for Client Side Resource Manipulation} & \includegraphics[width=10pt]{yes} \\
+\small{\textbf{OTG-CLIENT-007} - Test Cross Origin Resource Sharing} & \includegraphics[width=10pt]{yes} \\
+\small{\textbf{OTG-CLIENT-008} - Testing for Cross Site Flashing} & \includegraphics[width=10pt]{yes} \\
+\small{\textbf{OTG-CLIENT-009} - Testing for Clickjacking} & \includegraphics[width=10pt]{yes} \\
+\small{\textbf{OTG-CLIENT-010} - Testing WebSockets} & \includegraphics[width=10pt]{yes} \\
+\small{\textbf{OTG-CLIENT-011} - Test Web Messaging} & \includegraphics[width=10pt]{yes} \\
+\small{\textbf{OTG-CLIENT-012} - Test Local Storage} & \includegraphics[width=10pt]{yes} \\
+\end{tabular}
+\end{table}
+
+
+
+\input{inc/identifikovane-zranitelnosti}
+
+%%%P%%%
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% SECTION
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\section{Slovníček pojmů}
+
+\begin{itemize}[noitemsep]
+\item CBC - cipher block chaining
+\item CTR - counter (cipher mode)
+\item DDoS - distributed denial of service
+\item DNS - doman name system
+\item DoS - denial of service
+\item FTP - file transfer protocol
+\item GCM - galois / counter mode
+\item HSTS - HTTP strict transport security
+\item HTTP - hypertext transfer protocol
+\item HTTPS - hypertext transfer protocol secure
+\item IP - internet protocol
+\item ISMS - information security management system
+\item IT - information technologies
+\item MAC - message authentication code
+\item MDx - message digest
+\item MITM - man in the middle
+\item OSINT - open source intelligence
+\item PGP - pretty good privacy
+\item PoC - proof of concept
+\item POP - post office protocol
+\item SFTP - secure file transfer protocol
+\item SHAx - secure hash algorithm
+\item SMTP - simple mail transfer protocol
+\item SSH - secure shell
+\item SSL - secure socket layer
+\item TLS - transport layer security
+\item XSS - cross site scripting
+\end{itemize}
+
+\end{document}
+
+

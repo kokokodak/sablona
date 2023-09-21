@@ -1,0 +1,43 @@
+<issue id="session-fixation">
+	<name>
+		<en>Session Fixation</en>
+		<cz>Session Fixation</cz>
+	</name>
+	<category>OTG-SESS-003 - Testing for Session Fixation</category>
+	<risk>medium</risk>
+	<likelihood>medium</likelihood>
+	<impact>medium</impact>
+	<whocanexploit></whocanexploit>
+	<references></references>
+	<tfinding>
+		<en>It has been found...</en>
+		<cz>
+Bylo zjištěno, že aplikace je náchylná na tzv. Session Fixation. Jedná se o zranitelnost, kvůli které může být legitimnímu uživateli útočníkem podstrčeno URL obsahující útočníkem připravené session id, které je poté aplikací použito jako identifikace uživatelova sezení. Útočník ale zná dané session id a ve chvíli kdy se legitimní uživatel přihlásí, dojde i k přihlášení útočníka k účtu legitimního uživatele.
+URL pro poslání uživateli může vypadat například následovně:
+http://example.cz/?box=./login.php\&amp;PHPSESSID=b5a60lru1sfqrhkhoeb7jdqeb5
+		</cz>
+	</tfinding>
+	<trisk>
+		<en></en>
+		<cz>
+Rizikem této náchylnosti je, že ve chvíli kdy útočník provede daný útok, může být schopen získat přístup do účtu legitimního uživatele, a to i uživatele s vyššími právy než má útočník, vůči kterému útok provedl. Tímto může dojít například k úniku citlivých informací, ke kterým má uživatel v rámci aplikace přístup.
+
+%Rizikem této náchylnosti je, že ve chvíli kdy útočník provede daný útok, může být schopen získat přístup do e-mailové schránky legitimního uživatele vůči kterému útok provedl. Tímto může dojít například k úniku citlivých informací, které má uživatel ve své e-mailové schránce.
+		</cz>
+	</trisk>
+	<trecommendation>
+		<en></en>
+		<cz>
+Doporučujeme zamezit použití session id zadané v URL. Dále doporučujeme bezprostředně po uživatelově autentizaci přegenerování jeho session id.
+		</cz>
+	</trecommendation>
+	<tsteps>
+		<en>
+
+		</en>
+		<cz>
+
+		</cz>
+	</tsteps>
+</issue>
+

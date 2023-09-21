@@ -1,0 +1,46 @@
+<issue id="apache-mod-status-server">
+	<name>
+		<en>Information leak from server-status page</en>
+		<cz>Únik informací ze stránky server-status</cz>
+	</name>
+	<category></category>
+	<risk>medium</risk>
+	<likelihood>high</likelihood>
+	<impact>medium</impact>
+	<whocanexploit></whocanexploit>
+	<references></references>
+	<tfinding>
+		<en>
+
+		</en>
+		<cz>
+Během testu bylo zjištěno, že na vzdáleném webovém serveru se nachází stránka server-status.
+// screenshot
+		</cz>
+	</tfinding>
+	<trisk>
+		<en>
+
+		</en>
+		<cz>
+Útočník může využít informací zobrazovaných na této stránce k exfiltraci potenciálně citlivých dat.
+		</cz>
+	</trisk>
+	<trecommendation>
+		<en>
+
+		</en>
+		<cz>
+Doporučujeme v nastavení webového serveru apache vypnout modul mod\_status.
+		</cz>
+	</trecommendation>
+	<tsteps>
+		<en>
+
+		</en>
+		<cz>
+
+		</cz>
+	</tsteps>
+</issue>
+

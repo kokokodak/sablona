@@ -1,0 +1,39 @@
+<issue id="smtp-nesifrovana-hesla-pri-prenosu">
+	<name>
+		<en></en>
+		<cz>SMTP nešifrovaná hesla při přenosu</cz>
+	</name>
+	<category></category>
+	<risk>high</risk>
+	<likelihood>medium</likelihood>
+	<impact>medium</impact>
+	<whocanexploit></whocanexploit>
+	<references></references>
+	<tfinding>
+		<en>It has been found...</en>
+		<cz>
+Bylo zjištěno, že SMTP server umožňuje přihlášení jménem a heslem, které po síti putuje v nešifrované podobě. Takto přenášené přihlašovací údaje nelze považovat za dostatečně chráněné před útočníky. V případě, že útočník získá přístup na kteroukoliv část sítě mezi klientem a serverem, může přenášená data odchytit.
+		</cz>
+	</tfinding>
+	<trisk>
+		<en></en>
+		<cz>
+Útočník může být schopen odchytit požadavek směřující na danou službu po nešifrovaném kanále. V případě, že je použit některý z méně bezpečných autentizačních mechanismů (například LOGIN nebo PLAIN), může se dostat k citlivých údajům jako je přihlašovací jméno a heslo uživatele.
+		</cz>
+	</trisk>
+	<trecommendation>
+		<en></en>
+		<cz>
+Doporučujeme nasazení a používání výhradně TLS šifrovaného kanálu na SMTP server. Toho lze docílit například vynucováním šifrovaného spojení pro přihlašování.
+		</cz>
+	</trecommendation>
+	<tsteps>
+		<en>
+
+		</en>
+		<cz>
+
+		</cz>
+	</tsteps>
+</issue>
+

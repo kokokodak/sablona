@@ -1,0 +1,47 @@
+<issue id="ssl-podporovany-rc4-sifry">
+	<name>
+		<en></en>
+		<cz>Podporovány RC4 šifry</cz>
+	</name>
+	<category></category>
+	<risk>low</risk>
+	<likelihood>medium</likelihood>
+	<impact>medium</impact>
+	<whocanexploit></whocanexploit>
+	<references></references>
+	<tfinding>
+		<en>It has been found...</en>
+		<cz>
+Během penetračního testu bylo zjištěno, že webový server, na kterém běží testovaná aplikace podporuje cipher suites, které používají RC4 šifry.
+Jedná se o následující cipher suites:
+\footnotesize
+\footnotesize
+\begin{lstlisting}
+XXX
+\end{lstlisting}
+\normalsize
+\normalsize
+		</cz>
+	</tfinding>
+	<trisk>
+		<en></en>
+		<cz>
+Algoritmus RC4 nekorektně pracuje se stavovými daty a klíčem během inicializační fáze. Toto může umožnit útočníkovi provést útok, který může vést k získání potenciálně citlivých informací.
+		</cz>
+	</trisk>
+	<trecommendation>
+		<en></en>
+		<cz>
+Doporučujeme v konfiguraci webového serveru vypnout podporu pro dané cipher suites.
+		</cz>
+	</trecommendation>
+	<tsteps>
+		<en>
+
+		</en>
+		<cz>
+
+		</cz>
+	</tsteps>
+</issue>
+

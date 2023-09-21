@@ -1,0 +1,65 @@
+<issue id="chybejici-ochrana-proti-csrf">
+	<name>
+		<en>empty</en>
+		<cz>Chybějící ochrana proti CSRF</cz>
+	</name>
+	<category>empty</category>
+
+	<risk>high</risk>
+	<likelihood>high</likelihood>
+	<impact>high</impact>
+	<whocanexploit></whocanexploit>
+
+	<references>empty</references>
+	<tfinding>
+		<en>
+empty
+		</en>
+		<cz>
+Během penetračního testu bylo zjištěno, že aplikace je náchylná na CSRF (Cross Site Request Forgery). Jedná se o typ útoku, kdy je útočníkem uživateli podstrčen legitimně se tvářící odkaz, na kterém je kód umožňující provedení akce uživatelovým jménem.
+
+Pro demonstraci útoku byl vytvořen následující PoC, který pro ukázku změní jméno uživatele na 'UZIVATEL' a nastaví mu heslo na 'a' jak je patrné na přiloženém snímku obrazovky.
+
+\footnotesize
+\begin{verbatim}
+CSRF PoC
+\end{verbatim}
+\normalsize
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=440pt]{csrf-zmenene-jmeno}
+\caption{Uživatelské jméno změněné CSRF útokem}
+\end{figure}
+		</cz>
+	</tfinding>
+	<trisk>
+		<en>
+empty
+		</en>
+		<cz>
+Rizikem tohoto útoku je, že útočník je schopen s minimálním přispěním uživatele provádět operace v aplikaci jménem legitimního uživatele. V tomto případě se jedná například o změnu uživatelských údajů, změnu hesla uživatele, či jinou práci s webovou aplikací.
+		</cz>
+	</trisk>
+	<trecommendation>
+		<en>
+empty
+		</en>
+		<cz>
+K eliminaci náchylnosti aplikace k útoku CSRF doporučujeme použití tzv. CSRF tokenu. Jedná se o mechanismus, kdy je pro každého uživatele a každý formulář vygenerován unikátní řetězec, který je poté vložen do formuláře a zároveň zapamatován aplikací. Při odeslání formuláře je poté CSRF token zkontrolován a v případě nerovnosti existuje důvodné podezření, že se jedná o útok cross site request forgery a takový požadavek by měl být zamítnut. Vhodným doplňujícím mechanismem je SameSite parametr cookie, jehož cílem je zabránit cross-site information leakage a některým CSRF útokům.
+		</cz>
+	</trecommendation>
+	<tsteps>
+		<en>
+empty
+		</en>
+		<cz>
+\begin{enumerate}[noitemsep]
+\item uložte výše uvedený PoC do souboru csrf-poc.html
+\item ve webové aplikaci se přihlašte s vaším uživatelem
+\item otevřete soubor csrf-poc.html ve stejné instanci webového prohlížeče
+\item zkontrolujte, že došlo ke změně Celého jména uživatele
+\end{enumerate}
+		</cz>
+	</tsteps>
+</issue>

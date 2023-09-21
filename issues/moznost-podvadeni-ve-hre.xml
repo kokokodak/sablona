@@ -1,0 +1,57 @@
+<issue id="moznost-podvadeni-ve-hre">
+	<name>
+		<en></en>
+		<cz>Možnost podvádění ve hře</cz>
+	</name>
+	<category></category>
+	<risk>medium</risk>
+	<likelihood>medium</likelihood>
+	<impact>medium</impact>
+	<whocanexploit></whocanexploit>
+	<references></references>
+	<tfinding>
+		<en>It has been found...</en>
+		<cz>
+			Během testu bylo zjištěno, že způsob zaznamenávání dosaženého skóre ve hře dostupné na umístění /projects/index.php je náchylný na podvodnou modifikaci dosaženého skóre. Dosažené skóre je odesíláno následujícím požadavkem ve kterém je možné modifikovat parametr score a takto modifikované skóre je poté zaznamenáno jako skóre.
+
+
+\footnotesize
+\begin{lstlisting}
+POST /projects/index.php HTTP/1.1
+Host: example.com
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; Trident/7.0; rv:11.0) like Gecko
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Cookie: PHPSESSID=6vj3g5f3jkh0nte6q0f3enqm74
+Authorization: Basic YWVjOnNlY3VyaXR5
+Connection: close
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 27
+
+score=99999999&amp;nick=user
+\end{lstlisting}
+\normalsize
+		</cz>
+	</tfinding>
+	<trisk>
+		<en></en>
+		<cz>
+V případě, že se útočník rozhodne zneužít následující zranitelnost, může si vytvořit tři uživatelské účty a s každým z nich se zúčastnit soutěže o hodnotné ceny. Podvodem se poté dostane na první tři příčky žebříčku a podvodem dané ceny získá.
+		</cz>
+	</trisk>
+	<trecommendation>
+		<en></en>
+		<cz>
+Doporučujeme napoužívat uživatelem čitelný a tedy jednoduše modifikovatelný způsob zaznamenávání skóre. Možností, která se nabízí k použití je například při každém načtení hry vygenerovat šifrovací klíč ukrytý v kódu hry, který se poté použije k šifrování požadavků. V takovém případě musí případný útočník daný šifrovací klíč zjistit, což mu může výrazně zkomplikovat podvádění.
+		</cz>
+	</trecommendation>
+	<tsteps>
+		<en>
+
+		</en>
+		<cz>
+
+		</cz>
+	</tsteps>
+</issue>

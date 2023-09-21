@@ -1,0 +1,91 @@
+<issue id="moznost-spusteni-libovolneho-prikazu-operacniho-systemu">
+	<name>
+		<en></en>
+		<cz>Možnost spuštění libovolného příkazu operačního systému</cz>
+	</name>
+	<category>OTG-INPVAL-013 - Testing for Command Injection</category>
+	<risk>critical</risk>
+	<likelihood>high</likelihood>
+	<impact>high</impact>
+	<whocanexploit></whocanexploit>
+	<references></references>
+	<tfinding>
+		<en>It has been found...</en>
+		<cz>
+Bylo zjištěno, že v případě vložení speciálně připraveného řetězce do následujícího URL do parametru host je možné vyvolat spuštění libovolného příkazu operačního systému běžícího pod právy uživatele pod kterým běží webová prezentace.
+Zranitelné URL je /something?host=example.com\%3Bid a speciálně připravený řetězec začíná středníkem (resp. \%3B) a pokračuje libovolným příkazem operačního systému, který má být spuštěn. V ukázkovém případě byl spuštěn příkaz id pro zobrazení identifikace uživatele pod kterým jsou příkazy spouštěny.
+
+
+%Během penetračního testu bylo zjištěno, že aplikace je náchylná na zranitelnost command injection. Jedná se o typ %zranitelnosti, kde je pomocí vložení řídících znaků do vstupu aplikace
+%dosaženo spuštění libovolného příkazu operačního systému. Tento příkaz je poté spuštěn s právy uživatele pod kterým běží %webová aplikace.
+%
+%Konkrétně se jedná o funkcionalitu exportu do různých formátů, kdy se v rámci aplikace pro export používají aplikace / %utility operačního systému. Jeden z možných formátů exportu je pdf,
+%který používá aplikaci wkhtmltopdf a předává její parametr, určující velikost stránky výsledného pdf souboru, v HTTP %požadavku (parametr pdf\_grid\_convert\_type). Obsah tohoto parametru
+%je nicméně nefiltrován, takže jeho úpravou je možno docílit spuštění libovolného příkazu operačního systému jak je možno %vidět v následující ukázce.
+%
+%\footnotesize
+%\begin{verbatim}
+%POST /index.php?action=a&amp;presenter=b HTTP/1.1
+%Host: example.com
+%User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:67.0) Gecko/20100101 Firefox/67.0
+%Accept: */*
+%Accept-Language: en-US,en;q=0.5
+%Accept-Encoding: gzip, deflate
+%Content-Type: application/x-www-form-urlencoded; charset=UTF-8
+%X-Requested-With: XMLHttpRequest
+%Content-Length: 120
+%Connection: close
+%Cookie: AAA=tf7uroid3cg7qqja0g1n792n00
+%
+%format=pdf&amp;password=12345&amp;pdf_grid_convert_type=A4"%26help %26 "%26&amp;processKeys= \
+%  &amp;_do=pageListFirmaGrid-exportForm-submit
+%\end{verbatim}
+%\normalsize
+%
+%V této ukázce je spuštěn příkaz "help" operačního systému Windows. Výsledek, tedy výpis příkazu help, je možno vidět na %následujícím snímku obrazovky.
+%
+%\begin{figure}[H]
+%\centering
+%\includegraphics[width=450pt]{command-execution-output}
+%\caption{Výstup příkazu help, vrácený webovou aplikací.}
+%\end{figure}
+%
+%V případě některých příkazů aplikace odmítla zobrazení jejich výstupů z důvodu neočekávaných znaků. Toto jsme byli %schopni obejít zakódováním výstupu příkazu pomocí base64
+%a následné vypsání tohoto base64 zakódovaného řetězce.
+		</cz>
+	</tfinding>
+	<trisk>
+		<en></en>
+		<cz>
+V případě zneužití této zranitelnosti může být útočník schopen nejen manipulovat prakticky s libovolnou součástí dané aplikace, ale i s ostatními službami na serveru. Také může server použít k zapojení do botnetu, případným dalším útokům, ale i k dlouhodobému narušování funkcionality webové aplikace či serveru.
+
+%V případě zneužití této zranitelnosti může být útočník schopen nejen manipulovat prakticky s libovolnou součástí dané
+%aplikace, ale i s ostatními službami na serveru.
+%Také může server použít k zapojení do botnetu, případným dalším útokům, ale i k dlouhodobému narušování funkcionality
+%webové aplikace či serveru. Pravděpodobně by také útok směřoval
+%vůči zdrojovému kódu aplikace, především jejích konfiguračních souborů, které často obsahují různá hesla či přístupové
+%tokeny k dalším systémům.
+		</cz>
+	</trisk>
+	<trecommendation>
+		<en></en>
+		<cz>
+Doporučujeme zvážení nutnosti mít danou funkcionalitu, v rámci které se zranitelnost nachází, na serveru veřejně přístupnou. V každém případě ale doporučujeme filtrování vstupních dat tak, aby danému útoku bylo zabráněno. Dále nedoporučujeme použití funkce system(), ale například nějaké php knihovny, která funkcionalitu ping poskytuje a zároveň řeší potenciální problémy s filtrováním vstupu.
+
+%Doporučujeme filtrování vstupních dat tak, aby danému útoku bylo zabráněno. Dále nedoporučujeme použití funkce system() a
+%podobných, ale například nějaké php knihovny, která funkcionalitu pro konverzi do pdf poskytuje a zároveň řeší
+%potenciální problémy s filtrováním vstupu.
+%V tomto konkrétním případě se nabízí otázka, zda je parametr pdf\_grid\_convert\_type nutné předávat v HTTP požadavku
+%místo použití velikosti
+%A4 napevno.
+		</cz>
+	</trecommendation>
+	<tsteps>
+		<en>
+
+		</en>
+		<cz>
+
+		</cz>
+	</tsteps>
+</issue>

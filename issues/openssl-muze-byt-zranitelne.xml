@@ -1,0 +1,49 @@
+<issue id="openssl-muze-byt-zranitelne">
+	<name>
+		<en></en>
+		<cz>OpenSSL může být zranitelné</cz>
+	</name>
+	<category></category>
+	<risk>medium</risk>
+	<likelihood>medium</likelihood>
+	<impact>medium</impact>
+	<whocanexploit></whocanexploit>
+	<references></references>
+	<tfinding>
+		<en>It has been found...</en>
+		<cz>
+Vulnerability scan detekoval, že použitá verze OpenSSL může být náchylná na následující bezpečnostní zranitelnosti:
+
+\begin{itemize}[noitemsep]
+\item CVE-2017-3735
+\item CVE-2017-3736
+\item CVE-2018-0739
+\item CVE-2018-0732
+\item CVE-2018-0737
+\item CVE-2017-3737
+\item CVE-2017-3738
+\end{itemize}
+		</cz>
+	</tfinding>
+	<trisk>
+		<en></en>
+		<cz>
+V případě, že se jedná o známou zranitelnost nebo zranitelnost na kterou existují dostupné exploity, může útočník daný systém napadnout.
+		</cz>
+	</trisk>
+	<trecommendation>
+		<en></en>
+		<cz>
+Doporučujeme aktualizovat OpenSSL na nejnovější podporovanou verzi.
+		</cz>
+	</trecommendation>
+	<tsteps>
+		<en>
+
+		</en>
+		<cz>
+
+		</cz>
+	</tsteps>
+</issue>
+

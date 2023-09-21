@@ -1,0 +1,62 @@
+<issue id="moznost-zmenit-heslo-jineho-uzivatele">
+	<name>
+		<en>empty</en>
+		<cz>Možnost změnit heslo jiného uživatele</cz>
+	</name>
+	<category>empty</category>
+
+	<risk>high</risk>
+	<likelihood>medium</likelihood>
+	<impact>medium</impact>
+	<whocanexploit></whocanexploit>
+
+	<references>empty</references>
+	<tfinding>
+		<en>
+empty
+		</en>
+		<cz>
+Během penetračního testu bylo zjištěno, že v dialogu pro změnu hesla se předává ID uživatele, kterému je heslo měněno a zároveň není kontrolováno původní heslo.
+
+Útočník toho může dosáhnout například následujícím požadavkem, kde parametr ID určuje ID uživatele kterému je heslo měněno a parametry F\_86696\_PasswordOldDisplay a F\_86696\_PasswordOld oproti původnímu požadavku chybějí úplně.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=440pt]{zmena-hesla}
+\caption{Parametry posíláné při změně hesla jiného uživatele}
+\end{figure}
+
+		</cz>
+	</tfinding>
+	<trisk>
+		<en>
+empty
+		</en>
+		<cz>
+Rizikem je, že útočník, pokud se dostane k uživatelskému účtu v aplikaci (ať se již jedná o legitimního uživatele aplikace nebo účet získal nějakým předchozím útokem), může změnit heslo jiného uživatele a tím získat přístup k jeho uživatelskému účtu. Může tímto například buď získat přistup k datům jiného uživatele nebo tím může eskalovat svoje privilegia v rámci aplikace.
+		</cz>
+	</trisk>
+	<trecommendation>
+		<en>
+empty
+		</en>
+		<cz>
+Doporučujeme neposílat ID uživatele pro kterého je heslo měněno a místo toho zjišťovat aktuálně přihlášeného uživatele přímo z uživatelského sezení. Poté doporučujeme ověřovat původní heslo tak, aby nemohlo být heslo změněno bez znalosti předchozího.
+		</cz>
+	</trecommendation>
+	<tsteps>
+		<en>
+empty
+		</en>
+		<cz>
+\begin{enumerate}[noitemsep]
+\item přihlašte se do webové aplikace
+\item otevřete dialog pro změnu hesla (Nastavení Uživatele - Změnit heslo)
+\item vyplňte a odešlete data
+\item zachyťte požadavek pomocí HTTP proxy
+\item upravte jej způsobem popsaným výše (úprava ID a odstranění parametrů se starým heslem) a odešlete
+\item přihlaste se na upraveného uživatele s vaším vybraným heslem
+\end{enumerate}
+		</cz>
+	</tsteps>
+</issue>

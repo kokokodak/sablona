@@ -1,0 +1,52 @@
+<issue id="nedostatecna-politika-hesel">
+	<name>
+		<en></en>
+		<cz>Nedostatečná politika hesel</cz>
+	</name>
+	<category></category>
+	<risk>medium</risk>
+	<likelihood>medium</likelihood>
+	<impact>medium</impact>
+	<whocanexploit></whocanexploit>
+	<references></references>
+	<tfinding>
+		<en>It has been found...</en>
+		<cz>
+Bylo zjištěno, že v aplikaci není vynucována rozumná politika hesel. Heslo je při nastavování kontrolováno na délku minimálně 5 (nedostatečné), nicméně žádná další pravidla nejsou vynucována. Bylo tedy umožněno nastavit velmi slabá hesla jako například "heslo" či "12345".
+		</cz>
+	</tfinding>
+	<trisk>
+		<en></en>
+		<cz>
+Takového počínání umožňuje uživatelům nastavení jednoduchých hesel. Toto může vést až ke kompromitaci uživatelského účtu.
+
+Jelikož se jedná o freemail službu, je pravděpodobné, že účty si budou zakládat uživatelé, kteří nemají rozhled v problematice počítačové bezpečnosti.
+		</cz>
+	</trisk>
+	<trecommendation>
+		<en></en>
+		<cz>
+Doporučujeme vytvořit a vynucovat politiku hesel (password policy), tedy definování a vynucování určitých pravidel pro uživatelská hesla, která odpovídá současným potřebám IT bezpečnosti.
+
+Jedná se o následující pravidla:
+\begin{itemize}[noitemsep]
+\item - alespoň 8 znaků
+\item - alespoň jeden znak z následujících skupin:
+	\begin{itemize}[noitemsep]
+	\item - malé písmeno
+	\item - velké písmeno
+	\item - číslice
+	\item - speciální znak ( , . - / \# @ * \% ( ) [ ] )
+	\end{itemize}
+\end{itemize}
+		</cz>
+	</trecommendation>
+	<tsteps>
+		<en>
+
+		</en>
+		<cz>
+
+		</cz>
+	</tsteps>
+</issue>

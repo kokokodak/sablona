@@ -1,0 +1,39 @@
+<issue id="dostupna-informace-o-autorovi-aplikace">
+	<name>
+		<en></en>
+		<cz>Dostupná informace o autorovi aplikace</cz>
+	</name>
+	<category>N/A</category>
+	<risk>info</risk>
+	<likelihood>medium</likelihood>
+	<impact>low</impact>
+	<whocanexploit></whocanexploit>
+	<references></references>
+	<tfinding>
+		<en>It has been found...</en>
+		<cz>
+Testovaná aplikace v patičce a ve zdrojovém kódu odhaluje svého autora. Toto samo o sobě není bezpečnostním nedostatkem, nicméně útočník může na základě této informace usuzovat na autorův přístup k bezpečnosti (je-li znám). Útočník také může na základě toho usuzovat na použité technologie při tvorbě aplikace.
+		</cz>
+	</tfinding>
+	<trisk>
+		<en></en>
+		<cz>
+Tento nález je informační povahy a nepředstavuje riziko pro aplikaci.
+		</cz>
+	</trisk>
+	<trecommendation>
+		<en></en>
+		<cz>
+Tento nález je informační povahy a nepředstavuje riziko pro aplikaci.		
+		</cz>
+	</trecommendation>
+	<tsteps>
+		<en>
+
+		</en>
+		<cz>
+
+		</cz>
+	</tsteps>
+</issue>
+

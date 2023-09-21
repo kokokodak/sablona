@@ -1,0 +1,39 @@
+<issue id="prihlasovaci-formular-s-autocomplete">
+	<name>
+		<en></en>
+		<cz>Přihlašovací formulář s Autocomplete</cz>
+	</name>
+	<category></category>
+	<risk>low</risk>
+	<likelihood>low</likelihood>
+	<impact>low</impact>
+	<whocanexploit></whocanexploit>
+	<references></references>
+	<tfinding>
+		<en>It has been found...</en>
+		<cz>
+Během penetračního testu bylo zjištěno, že na přihlašovacím formuláři není zakázán autocomplete. Moderní webové prohlížeče umožňují uživatelům ukládání přihlašovacích údajů. Tyto uložené přihlašovací údaje mohou být získány útočníkem buď v případě, že útočník získá přístup k danému webovému prohlížeči nebo například pomocí cross site scripting útoku vůči aplikaci, kdy pomocí xss payloadu útočník přečte heslo z políček pro přihlašovací údaje a odešle na server útočníka.
+		</cz>
+	</tfinding>
+	<trisk>
+		<en></en>
+		<cz>
+Je-li v prohlížeči uživatele povoleno automatické ukládání hesel a zároveň není tato funkcionalita zakázána v kódu webové stránky, je zde riziko, že citlivá data budou uložena v počítači a můžou být zpřístupněna útočníkovi, který má k počítači přístup.
+		</cz>
+	</trisk>
+	<trecommendation>
+		<en></en>
+		<cz>
+Doporučujeme přidání autocomplete="off" k danému poli pro heslo pro zakázání výše popsané funkcionality. Ačkoliv některé webové prohlížeče tuto direktivu ignorují a ukládání hesla i přesto podporují, je dobrou praktikou tuto funkcionalitu zakázat.
+		</cz>
+	</trecommendation>
+	<tsteps>
+		<en>
+
+		</en>
+		<cz>
+
+		</cz>
+	</tsteps>
+</issue>
+

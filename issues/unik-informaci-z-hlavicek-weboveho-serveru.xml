@@ -1,0 +1,100 @@
+<issue id="unik-informaci-z-hlavicek-weboveho-serveru">
+	<name>
+		<en>Information leak from HTTP headers</en>
+		<cz>Únik informací z hlaviček webového serveru</cz>
+	</name>
+	<category></category>
+	<risk>low</risk>
+	<likelihood>low</likelihood>
+	<impact>low</impact>
+	<whocanexploit></whocanexploit>
+	<references></references>
+	<tfinding>
+		<en>
+During penetration test we found, that webserver contains information about it's type and version in headers of every HTTP response.
+
+In particular it's the following information from which the web server provider, version and operating system type and version can be deduced.
+
+\begin{itemize}[noitemsep]
+\item "Apache/2.4.25 (Debian)"
+\end{itemize}
+
+Information deduced are that Apache webserver is running in version 2.4.25 on Debian operating system of version 9 (stretch) as that is the version of Debian that has this version of Apache server bundled.
+		  </en>
+		<cz>
+Během penetračního testu bylo zjištěno, že webový server odesílá ve svých hlavičkách informace o použité verzi jazyka PHP.
+
+\footnotesize
+\begin{lstlisting}
+GET / HTTP/1.1
+Host: example.com
+
+HTTP/1.1 200 OK
+Server: nginx
+Date: Sun, 23 Oct 2017 19:27:33 GMT
+Content-Type: text/html; charset=UTF-8
+Content-Length: 2911
+Connection: close
+X-Powered-By: PHP/5.4.42
+Expires: Thu, 19 Nov 1981 08:52:00 GMT
+Cache-Control: no-store, no-cache, must-revalidate, post-check=0, pre-check=0
+Pragma: no-cache
+\end{lstlisting}
+\normalsize
+		</cz>
+	</tfinding>
+	<trisk>
+		<en>
+Any kind of information about software and its version running on system need to be seen as sensitive information. Based on these information attacker can be able to target his following attacks much more precisely.  
+		  </en>
+		<cz>
+Rizikem takovéhoto počínání je, že případný útočník má k dispozici informaci o verzi použitého software, který je na serveru nasazen. Tato informace mu může posloužit například ke zjednodušení hledání zranitelností a zpřesnění dalších útoků.
+		</cz>
+	</trisk>
+	<trecommendation>
+		<en>
+We recommend removing this information from HTTP headers completely as there is no need for such information to be available. This can be done with following Apache configuration directive:
+\footnotesize
+\begin{lstlisting}
+ServerTokens Prod
+ServerSignature Off
+\end{lstlisting}
+\normalsize
+
+%In case of Nginx web server:
+%\footnotesize
+\begin{lstlisting}
+%server\_tokens off;
+%\end{lstlisting}
+\normalsize
+		  </en>
+		<cz>
+Doporučujeme ve webovém serveru zakázat odesílání těchto potenciálně citlivých informací. Lze toho dosáhnout například přidáním následujících řádků do konfiguračního souboru.
+
+Pro server Apache je to následující nastavení:
+\footnotesize
+\begin{lstlisting}
+ServerTokens ProductOnly
+ServerSignature Off
+\end{lstlisting}
+\normalsize
+
+%Pro server Nginx je to následující nastavení:
+
+%\footnotesize
+\begin{lstlisting}
+%server\_tokens off;
+%\end{lstlisting}
+\normalsize
+		</cz>
+	</trecommendation>
+	<tsteps>
+		<en>
+
+		</en>
+		<cz>
+
+		</cz>
+	</tsteps>
+</issue>
+

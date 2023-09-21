@@ -1,0 +1,55 @@
+<issue id="povolene-metody-trace-track">
+	<name>
+		<en></en>
+		<cz>Povolené HTTP metody TRACE - TRACK</cz>
+	</name>
+	<category></category>
+	<risk>medium</risk>
+	<likelihood>medium</likelihood>
+	<impact>medium</impact>
+	<whocanexploit></whocanexploit>
+	<references></references>
+	<tfinding>
+		<en>It has been found...</en>
+		<cz>
+Na webovém serveru jsou povolené debugovací metody TRACE a TRACK.
+		</cz>
+	</tfinding>
+	<trisk>
+		<en></en>
+		<cz>
+Rizikem této zranitelnosti je náchylnost na útok zvaný Cross Site Tracing.\\
+http://www.cgisecurity.com/whitehat-mirror/WhitePaper\_screen.pdf
+		</cz>
+	</trisk>
+	<trecommendation>
+		<en></en>
+		<cz>
+Doporučujeme vypnutí debugovacích metod v konfiguračním souboru webového serveru. Pro server Apache je to následující obsah:
+
+\footnotesize
+\begin{lstlisting}
+RewriteEngine on
+RewriteCond %{REQUEST\_METHOD} ^(TRACE|TRACK)
+RewriteRule .* - [F]
+\end{lstlisting}
+\normalsize
+
+V případě novějších verzí Apache serveru lze použít direktivu
+\footnotesize
+\begin{lstlisting}
+TraceEnable off
+\end{lstlisting}
+\normalsize
+		</cz>
+	</trecommendation>
+	<tsteps>
+		<en>
+
+		</en>
+		<cz>
+
+		</cz>
+	</tsteps>
+</issue>
+

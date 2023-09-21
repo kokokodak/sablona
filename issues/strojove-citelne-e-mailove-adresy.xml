@@ -1,0 +1,39 @@
+<issue id="strojove-citelne-e-mailove-adresy">
+	<name>
+		<en></en>
+		<cz>Strojově čitelné e-mailové adresy</cz>
+	</name>
+	<category></category>
+	<risk>medium</risk>
+	<likelihood>medium</likelihood>
+	<impact>medium</impact>
+	<whocanexploit></whocanexploit>
+	<references></references>
+	<tfinding>
+		<en>It has been found...</en>
+		<cz>
+Během penetračního testu bylo zjištěno, že následující e-mailové adresy jsou na webu dostupné ve strojově čitelné podobě.
+		</cz>
+	</tfinding>
+	<trisk>
+		<en></en>
+		<cz>
+E-mailové adresy mohou být nalezeny automatizovanými webovými scannery a zneužity pro rozesílání spamu.
+		</cz>
+	</trisk>
+	<trecommendation>
+		<en></en>
+		<cz>
+Doporučujeme zvážit, zda je nutné mít e-mailové adresy ve strojově čitelné podobě.
+		</cz>
+	</trecommendation>
+	<tsteps>
+		<en>
+
+		</en>
+		<cz>
+
+		</cz>
+	</tsteps>
+</issue>
+

@@ -1,0 +1,39 @@
+<issue id="slow-http-dos-utok">
+	<name>
+		<en></en>
+		<cz>Slow HTTP DoS útok</cz>
+	</name>
+	<category></category>
+	<risk>medium</risk>
+	<likelihood>medium</likelihood>
+	<impact>medium</impact>
+	<whocanexploit></whocanexploit>
+	<references></references>
+	<tfinding>
+		<en>It has been found...</en>
+		<cz>
+Během penetračního testu bylo zjištěno, že daný server je náchylný na útok známý jako Slow HTTP DoS. Tento útok spočívá v otevření mnoha spojení na server a pomalém postupném odesílání dat. Toto může vést k vyčerpání všech možných spojení čímž dojde k odepření služby.
+		</cz>
+	</tfinding>
+	<trisk>
+		<en></en>
+		<cz>
+Rizikem této zranitelnosti je, že útočník provede DoS útok na webový server a tím jej znepřístupní. Toto může vést k omezení až zastavení práce, ztrátě reputace společnosti či finančním ztrátám.
+		</cz>
+	</trisk>
+	<trecommendation>
+		<en></en>
+		<cz>
+Doporučujeme konzultovat některý z návodů pro ochranu serveru Apache před útokem Slow HTTP DoS. Může se jednat například o tento návod: http://blog.secaserver.com/2011/08/protect-apache-slowloris-attack/
+		</cz>
+	</trecommendation>
+	<tsteps>
+		<en>
+
+		</en>
+		<cz>
+
+		</cz>
+	</tsteps>
+</issue>
+

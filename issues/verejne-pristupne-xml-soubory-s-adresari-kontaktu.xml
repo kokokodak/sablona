@@ -1,0 +1,42 @@
+<issue id="verejne-pristupne-xml-soubory-s-adresari-kontaktu">
+	<name>
+		<en></en>
+		<cz>Veřejně přístupné .xml soubory s adresáři kontaktů</cz>
+	</name>
+	<category></category>
+	<risk>high</risk>
+	<likelihood>high</likelihood>
+	<impact>high</impact>
+	<whocanexploit></whocanexploit>
+	<references></references>
+	<tfinding>
+		<en>It has been found...</en>
+		<cz>
+Bylo zjištěno, libovolný i nepřihlášený uživatel má přístup ke všem souborům s adresáři kontaktů všech uživatelů. Tohoto je možné docílit pomocí přístupu na následující URL: http://example.com/contacts a výběrem libovolného xml souboru.
+
+%[img]
+%Figure 23. Obsah xml souboru s adresářem kontaktů
+		</cz>
+	</tfinding>
+	<trisk>
+		<en></en>
+		<cz>
+Rizikem tohoto nálezu je, že libovolný útočník má přístup ke všem kontaktům všech ostatních uživatelů. Tím může dojít k úniku citlivých informací o jednotlivých uživatelích a jejich následnému zneužití. V případě takovéhoto úniku je samozřejmostí ztráta reputace společnosti i případné právní důsledky.
+		</cz>
+	</trisk>
+	<trecommendation>
+		<en></en>
+		<cz>
+Důrazně doporučujeme přehodnocení návrhu oddělení uživatelských práv a implementaci daného návrhu tak, aby k adresářům kontaktů měli přístup pouze legitimní uživatelé.
+		</cz>
+	</trecommendation>
+	<tsteps>
+		<en>
+
+		</en>
+		<cz>
+
+		</cz>
+	</tsteps>
+</issue>
+

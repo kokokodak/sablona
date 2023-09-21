@@ -1,0 +1,51 @@
+<issue id="ssl-chain-obsahuje-slabe-certifikaty">
+	<name>
+		<en></en>
+		<cz>SSL chain obsahuje certifikáty se slabým klíčem</cz>
+	</name>
+	<category></category>
+	<risk>medium</risk>
+	<likelihood>medium</likelihood>
+	<impact>medium</impact>
+	<whocanexploit></whocanexploit>
+	<references></references>
+	<tfinding>
+		<en>
+
+		</en>
+		<cz>
+Během testu bylo zjištěno, že některé certifikáty v SSL řetězci poslaném vzdáleným serverem obsahují slabý klíč, tedy klíč kratší než 2048 bitů. Všechny certifikáty vydané po 1. ledna 2014 musí mít klíč delší než 2048 bitů.
+
+\footnotesize
+\begin{lstlisting}
+XXX
+\end{lstlisting}
+\normalsize
+		</cz>
+	</tfinding>
+	<trisk>
+		<en>
+
+		</en>
+		<cz>
+Slabé klíče představují potenciální riziko pro bezpečnost certifikátu a tudíž i šifrovaného spojení.
+		</cz>
+	</trisk>
+	<trecommendation>
+		<en>
+
+		</en>
+		<cz>
+Doporučujeme přegenerovat všechny certifikáty, které jsou podepsané certifikátem se slabým klíčem.
+		</cz>
+	</trecommendation>
+	<tsteps>
+		<en>
+
+		</en>
+		<cz>
+
+		</cz>
+	</tsteps>
+</issue>
+

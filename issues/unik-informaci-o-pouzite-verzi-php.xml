@@ -1,0 +1,45 @@
+<issue id="unik-informaci-o-pouzite-verzi-php">
+	<name>
+		<en></en>
+		<cz>Únik informací o použité verzi PHP</cz>
+	</name>
+	<category></category>
+	<risk>low</risk>
+	<likelihood>medium</likelihood>
+	<impact>medium</impact>
+	<whocanexploit></whocanexploit>
+	<references></references>
+	<tfinding>
+		<en>It has been found...</en>
+		<cz>
+Z hlaviček webového serveru je možno určit použitou verzi PHP.
+
+\footnotesize
+\begin{lstlisting}
+X-Powered-By: PHP/5.6.33
+\end{lstlisting}
+\normalsize
+		</cz>
+	</tfinding>
+	<trisk>
+		<en></en>
+		<cz>
+V případě, že útočník získá informace o použitém typu a verzi software, může tyto informace zneužít k přesnějšímu zacílení útoku na daný systém.
+		</cz>
+	</trisk>
+	<trecommendation>
+		<en></en>
+		<cz>
+V případě, že neexistuje důvodný požadavek na dostupnost této hlavičky, doporučujeme webový server nastavit tak, aby se neposílala.
+		</cz>
+	</trecommendation>
+	<tsteps>
+		<en>
+
+		</en>
+		<cz>
+
+		</cz>
+	</tsteps>
+</issue>
+

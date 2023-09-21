@@ -1,0 +1,51 @@
+<issue id="reset-token-neinvaliduje-predchozi">
+	<name>
+		<en>New password reset token doesn't invalidate previous ones</en>
+		<cz></cz>
+	</name>
+	<category></category>
+	<risk>medium</risk>
+	<likelihood>medium</likelihood>
+	<impact>medium</impact>
+	<whocanexploit></whocanexploit>
+	<references></references>
+	<tfinding>
+		<en>
+During penetration test we found that previously generated password reset tokens are not invalidated after using one of the later ones to change user password.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=420pt]{password-token}
+\caption{Password reset token sent to e-mail}
+\end{figure}
+		</en>
+		<cz>
+
+		</cz>
+	</tfinding>
+	<trisk>
+		<en>
+If attacker gets access to user's e-mail address, he can generate on password reset token just before user detects him, changes password to e-mail account and web application. Then attacker can still use his previously generated password reset token to gain access to user's web application once more. This issue has low severity because there is time limit two hours for password reset token validity, so time span for this kind of attack is relatively short.
+		</en>
+		<cz>
+
+		</cz>
+	</trisk>
+	<trecommendation>
+		<en>
+We recommend that after password reset token has been used, all previously generated are invalidated. This will prevent attacker from possibility to generate password reset token and use it after user has secured his e-mail account and changed his web application password.
+		</en>
+		<cz>
+
+		</cz>
+	</trecommendation>
+	<tsteps>
+		<en>
+
+		</en>
+		<cz>
+
+		</cz>
+	</tsteps>
+</issue>
+

@@ -1,0 +1,39 @@
+<issue id="moznost-replay-utoku">
+	<name>
+		<en></en>
+		<cz>Možnost replay útoku</cz>
+	</name>
+	<category></category>
+	<risk>medium</risk>
+	<likelihood>medium</likelihood>
+	<impact>medium</impact>
+	<whocanexploit></whocanexploit>
+	<references></references>
+	<tfinding>
+		<en>It has been found...</en>
+		<cz>
+
+		</cz>
+	</tfinding>
+	<trisk>
+		<en></en>
+		<cz>
+
+		</cz>
+	</trisk>
+	<trecommendation>
+		<en></en>
+		<cz>
+
+		</cz>
+	</trecommendation>
+	<tsteps>
+		<en>
+
+		</en>
+		<cz>
+
+		</cz>
+	</tsteps>
+</issue>
+

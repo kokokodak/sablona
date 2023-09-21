@@ -1,0 +1,41 @@
+<issue id="moznost-ignorovani-politiky-hesel">
+	<name>
+		<en></en>
+		<cz>Možnost ignorování politiky hesel</cz>
+	</name>
+	<category></category>
+	<risk>medium</risk>
+	<likelihood>medium</likelihood>
+	<impact>medium</impact>
+	<whocanexploit></whocanexploit>
+	<references></references>
+	<tfinding>
+		<en>It has been found...</en>
+		<cz>
+Během penetračního testu bylo zjištěno, že administrátorské rozhraní na adrese /admin při nastavení slabého hesla umožňuje uživateli ignorovat nastavenou politiku hesel.
+
+%[img]
+		</cz>
+	</tfinding>
+	<trisk>
+		<en></en>
+		<cz>
+Takového počínání umožňuje uživatelům nastavení jednoduchých hesel. Toto může vést až ke kompromitaci uživatelského účtu.
+		</cz>
+	</trisk>
+	<trecommendation>
+		<en></en>
+		<cz>
+Doporučujeme dané tlačítko odstranit a obejití politiky hesel vůbec neumožňovat.
+		</cz>
+	</trecommendation>
+	<tsteps>
+		<en>
+
+		</en>
+		<cz>
+
+		</cz>
+	</tsteps>
+</issue>
+

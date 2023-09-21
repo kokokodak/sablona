@@ -1,0 +1,55 @@
+<issue id="nachylnost-na-clickjacking">
+	<name>
+		<en></en>
+		<cz>Náchylnost na clickjacking</cz>
+	</name>
+	<category>OTG-CLIENT-009 - Testing for Clickjacking</category>
+	<risk>low</risk>
+	<likelihood>medium</likelihood>
+	<impact>low</impact>
+	<whocanexploit></whocanexploit>
+	<references></references>
+	<tfinding>
+		<en>It has been found...</en>
+		<cz>
+Během testů bylo zjištěno, že aplikaci je možno načíst v rámci a provést tzv. clickjacking. Jedná se o útok, kdy útočník načte webovou aplikaci v rámu (iframe) a překryje ji svým obsahem takovým způsobem, že uživatel při interakci s překrývajícími prvky nevědomky interaguje se samotnou webovou aplikací.
+
+Následující PoC otevře úvodní stránku aplikace v rámci.
+
+\footnotesize
+\begin{verbatim}
+iframe src="https://example.com"
+/iframe
+\end{verbatim}
+\normalsize
+		</cz>
+	</tfinding>
+	<trisk>
+		<en></en>
+		<cz>
+Riziko spočívá v tom, že útočník může načíst danou aplikaci v rámu, a překryje ji svým obsahem. Když pak uživatel interaguje s útočníkovým obsahem (nějaký atraktivní obsah, například jednoduchá webová hra), nevědomky také interaguje s danou webovou aplikací, která je načtená v rámci. Tímto může útočník uživatele přimět k nevědomé akci s danou aplikací (vytvoření uživatelského účtu, smazání uživatele, atd.).
+
+%Riziko spočívá v tom, že útočník může načíst danou aplikaci v rámu, a překryje ji svým obsahem. Když pak uživatel interaguje s útočníkovým obsahem (nějaký atraktivní obsah, například jednoduchá webová hra), nevědomky také interaguje s danou webovou aplikací, která je načtená v rámci. Tímto může útočník uživatele přimět k nevědomé akci s danou aplikací (změna hesla, zadání požadavku, atd.).
+		</cz>
+	</trisk>
+	<trecommendation>
+		<en></en>
+		<cz>
+Doporučujeme použití HTTP hlavičky X-Frame-Options a nastavení její hodnoty na Deny. Další možností je implementovat obranu proti clickjacking v JavaScriptu.
+		</cz>
+	</trecommendation>
+	<tsteps>
+		<en>
+
+		</en>
+		<cz>
+\begin{enumerate}[noitemsep]
+\item přihlašte se do webové aplikace
+\item uložte výše uvedený PoC do souboru clickjacking-poc.html
+\item otevřete soubor clickjacking-poc.html ve stejné instanci webového prohlížeče
+\item zkontrolujte, že došlo k otevření webové aplikace v rámci
+\end{enumerate}
+		</cz>
+	</tsteps>
+</issue>
+

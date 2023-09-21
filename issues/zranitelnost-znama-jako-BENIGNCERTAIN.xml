@@ -1,0 +1,45 @@
+<issue id="zranitelnost-znama-jako-BENIGNCERTAIN">
+	<name>
+		<en></en>
+		<cz>Zranitelnost známá jako BENIGNCERTAIN</cz>
+	</name>
+	<category></category>
+	<risk>medium</risk>
+	<likelihood>medium</likelihood>
+	<impact>medium</impact>
+	<whocanexploit></whocanexploit>
+	<references></references>
+	<tfinding>
+		<en>
+
+		</en>
+		<cz>
+Bylo zjištěno, že vzdálený systém je náchylný na zranitelnost známou jako BENIGNCERTAIN. Jedná se o zranitelnost typu information disclosure v implementaci IKEv1 v Cisco IOS.
+		</cz>
+	</tfinding>
+	<trisk>
+		<en>
+
+		</en>
+		<cz>
+Neautentizovaný útočník může být schopen zneužít této zranitelnosti k zjištění obsahu pamětí zranitelného systému.
+		</cz>
+	</trisk>
+	<trecommendation>
+		<en>
+
+		</en>
+		<cz>
+Doporučujeme kontaktovat dodavatele systému ohledně dostupné opravy. Jedná se o chybu dohledatelnou pod označením Cisco bug ID CSCvb29204.
+		</cz>
+	</trecommendation>
+	<tsteps>
+		<en>
+
+		</en>
+		<cz>
+
+		</cz>
+	</tsteps>
+</issue>
+

@@ -1,0 +1,45 @@
+<issue id="ms-rdp-mitm">
+	<name>
+		<en></en>
+		<cz>Náchylnost Microsoft RDP na Man-in-the-middle</cz>
+	</name>
+	<category></category>
+	<risk>medium</risk>
+	<likelihood>low</likelihood>
+	<impact>medium</impact>
+	<whocanexploit></whocanexploit>
+	<references></references>
+	<tfinding>
+		<en>
+
+		</en>
+		<cz>
+Bylo zjištěno, že použítá verze serveru Microsoft Remote Desktop Protocol (RDP) je náchylná na útok man-in-the-middle, konkrétně CVE-2005-1794.
+		</cz>
+	</tfinding>
+	<trisk>
+		<en>
+
+		</en>
+		<cz>
+V případě úspěšného Man-in-the-middle útoku může útočník odchytávat veškeré informace, které jsou po daném kanálu přenášeny, včetně dat citlivých.
+		</cz>
+	</trisk>
+	<trecommendation>
+		<en>
+
+		</en>
+		<cz>
+Doporučujeme vynucování SSL/TLS na transportní vrstvě a/nebo nastavení 'Allow connections only from computers running Remote Desktop with Network Level Authentication'.
+		</cz>
+	</trecommendation>
+	<tsteps>
+		<en>
+
+		</en>
+		<cz>
+
+		</cz>
+	</tsteps>
+</issue>
+

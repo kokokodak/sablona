@@ -1,0 +1,78 @@
+<issue id="spatne-access-controls">
+	<name>
+		<en>Defective access controls</en>
+		<cz>Špatně nastavená práva na jednotlivé stránky</cz>
+	</name>
+	<category>N/A</category>
+	<risk>high</risk>
+	<likelihood>medium</likelihood>
+	<impact>high</impact>
+	<whocanexploit></whocanexploit>
+	<references></references>
+	<tfinding>
+		<en>
+The web application allows unrestricted access to personal information of all contacts, stored in the database. A remote logged-in user (registration is open) can obtain real name, address and attribution to company by manipulating with "defParam" HTTP GET parameter.
+
+\footnotesize
+\begin{lstlisting}
+XYZ0
+\end{lstlisting}
+\normalsize
+
+Another instance of defective access controls is viewing status of domain names of other users
+
+\footnotesize
+\begin{lstlisting}
+ABC
+\end{lstlisting}
+\normalsize
+
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=200pt]{def-ac-1}
+\caption{Retrieved information}
+\end{figure}
+
+		  </en>
+		<cz>
+Během penetračního testu bylo zjištěno, že přístupová práva pro jednotlivé stránky jsou špatně nastavena. Bylo zjištěno, že zákaznický účet (plus účty role1 a role2) má přístup k následujícím stránkám kam by dle našeho uvážení mít přístup neměl:
+\begin{itemize}[noitemsep]
+\item url1
+\item url2
+\item url3
+\end{itemize}
+
+Dále pak bylo zjištěno, že ačkoliv účet typu role1 či role2 nevidí žádné položky na stránce \uv{stranka}, může použít následující URL pro jejich enumeraci a může se dostat k jednotlivým konkrétním výsledkům.
+\begin{itemize}[noitemsep]
+\item url4
+\end{itemize}
+		</cz>
+	</tfinding>
+	<trisk>
+		<en>
+Attacker can register his own account on the web application and by incrementing contactId parameter, he can gather information about all contacts available in the web application.
+		  </en>
+		<cz>
+V případě přístupu ke stránce /url1/ jsou k dispozici údaje o uživatelských jménech a použité IP adrese. V případě stránky /url2/ a /url3/*/edit jsou to pak mimo jiné přihlašovací údaje daných účtů. Toto může vést ke kompromitaci citlivých údajů a případným následkům z toho vyplývajícím.
+
+		</cz>
+	</trisk>
+	<trecommendation>
+		<en>
+We recommend reviewing access control matrix and in case any inappropriate access controls are found, they should be fixed so it's not allowed to view personal information of other contacts.
+		  </en>
+		<cz>
+Doporučujeme prověření aktuálního nastavení přístupových práv na jednotlivé stránky, důkladnou analýzu které stránky existují a které uživatelské role by měly mít přístup ke kterým stránkách a poté přístupová práva správně a v souladu s analýzou implementovat.
+		</cz>
+	</trecommendation>
+	<tsteps>
+		<en>
+
+		</en>
+		<cz>
+
+		</cz>
+	</tsteps>
+</issue>
+

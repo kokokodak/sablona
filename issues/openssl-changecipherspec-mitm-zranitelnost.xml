@@ -1,0 +1,39 @@
+<issue id="openssl-changecipherspec-mitm-zranitelnost">
+	<name>
+		<en></en>
+		<cz>OpenSSL 'ChangeCipherSpec' MiTM zranitelnost</cz>
+	</name>
+	<category></category>
+	<risk>medium</risk>
+	<likelihood>medium</likelihood>
+	<impact>medium</impact>
+	<whocanexploit></whocanexploit>
+	<references></references>
+	<tfinding>
+		<en>It has been found...</en>
+		<cz>
+Během testu bylo zjištěno, že použitá verze OpenSSL obsahuje zranitelnost man-in-the-middle známou jako ChangeCipherSpec. Jedná se o zranitelnost způsobenou reakcí na speciálně provedený handshake.
+		</cz>
+	</tfinding>
+	<trisk>
+		<en></en>
+		<cz>
+Tato zranitelnost může útočníkovi umožnit dešifrovat nebo podvrhnout SSL zprávu tím způsobem, že je serveru řečeno aby zašifroval komunikaci ještě před výměnou klíče, čímž dochází k použití predikovatelných klíčů což umožňuje útočníkovi dešifrování potenciálně citlivých informací.
+		</cz>
+	</trisk>
+	<trecommendation>
+		<en></en>
+		<cz>
+Doporučujeme aktualizovat OpenSSL na verzi 1.0.0m / 1.0.1h nebo novější.
+		</cz>
+	</trecommendation>
+	<tsteps>
+		<en>
+
+		</en>
+		<cz>
+
+		</cz>
+	</tsteps>
+</issue>
+

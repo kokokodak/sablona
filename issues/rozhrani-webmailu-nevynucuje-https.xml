@@ -1,0 +1,39 @@
+<issue id="rozhrani-webmailu-nevynucuje-https">
+	<name>
+		<en></en>
+		<cz>Rozhraní webmailu nevynucuje HTTPS</cz>
+	</name>
+	<category></category>
+	<risk>high</risk>
+	<likelihood>medium</likelihood>
+	<impact>medium</impact>
+	<whocanexploit></whocanexploit>
+	<references></references>
+	<tfinding>
+		<en>It has been found...</en>
+		<cz>
+Bylo zjištěno, že webové rozhraní e-mailu nevynucuje HTTPS. Veškerá data, včetně přihlašovacích jmen, hesel a obsahu e-mailů putují po síti v nezašifrované podobě v případě, že uživatel použije ne-HTTPS verzi, ať již z důvodu omylu, neznalosti či nějakého aktivního útoku ze strany útočníka.
+		</cz>
+	</tfinding>
+	<trisk>
+		<en></en>
+		<cz>
+Toto umožňuje útočníkovi zachytit a zneužít takové informace jako například přihlašovací údaje či citlivé e-maily.
+		</cz>
+	</trisk>
+	<trecommendation>
+		<en></en>
+		<cz>
+Doporučujeme vynucování HTTPS na webmailu, aby bylo zabráněno odposlechnutí přihlašovacích údajů či přenášených e-mailů v případě, že uživatel omyl či nevědomky použije ne-HTTPS verzi nebo je přinucen ji použít nějakým aktivním útokem ze strany útočníka.
+		</cz>
+	</trecommendation>
+	<tsteps>
+		<en>
+
+		</en>
+		<cz>
+
+		</cz>
+	</tsteps>
+</issue>
+

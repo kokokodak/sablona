@@ -1,0 +1,54 @@
+<issue id="neduveryhodny-ssl-certifikat">
+	<name>
+		<en></en>
+		<cz>Nedůvěryhodný SSL certifikát</cz>
+	</name>
+	<category></category>
+	<risk>medium</risk>
+	<likelihood>medium</likelihood>
+	<impact>medium</impact>
+	<whocanexploit></whocanexploit>
+	<references></references>
+	<tfinding>
+		<en>It has been found...</en>
+		<cz>
+Bylo zjištěno, že na serveru je buď použit certifikát platný pro jinou doménu, je self-signed či podepsaný nedůvěryhodnou / neznámou certifikační autoritou.
+
+%Během penetračního testu bylo zjištěno, že na serveru je použit certifikát platný pro jinou doménu a je self-signed. Jedná se o následující certifikát:
+
+\footnotesize
+\begin{lstlisting}
+certifikat info
+\end{lstlisting}
+\normalsize
+		</cz>
+	</tfinding>
+	<trisk>
+		<en></en>
+		<cz>
+Používání certifikátu pro jinou doménu, self-signed certifikátu nebo certifikátu podepsaného neznámou certifikační autoritou snižuje důvěryhodnost a tím i bezpečnost šifrovaného spojení.
+
+%Používání certifikátu pro jinou doménu, self-signed certifikátu nebo certifikátu podepsaného neznámou certifikační autoritou snižuje důvěryhodnost a tím i bezpečnost šifrovaného spojení. V případě, že si uživatelé zvyknout při každém pokusu o přihlášení "kliknout na OK, protože jinak to nebude fungovat", stávají se náchylní na "odkliknutí" i nedůvěryhodného, podstrčeného certifikátu.
+		</cz>
+	</trisk>
+	<trecommendation>
+		<en></en>
+		<cz>
+Doporučujeme vygenerování a používání certifikátu určeného pro danou doménu. Certifikát by měl být podepsán důvěryhodnou certifikační autoritou.
+
+%Doporučujeme vygenerování a používání certifikátu určeného pro danou doménu. Certifikát by měl být podepsán důvěryhodnou certifikační autoritou. V případě nemožnosti použití certifikátu pro správnou doménu a podepsaného důvěryhodnou certifikační autoritou doporučujeme nastavení klientského software tak, aby přijímal pouze použitý certifikát a při použití jiného uživatele důkladně varoval.
+		</cz>
+	</trecommendation>
+	<tsteps>
+		<en>
+
+		</en>
+		<cz>
+\begin{enumerate}[noitemsep]
+\item otevřete webovou aplikaci ve webovém prohlížeči
+\item webový prohlížeč nahlásí problém s důvěryhodností certifikátu
+\end{enumerate}
+		</cz>
+	</tsteps>
+</issue>
+

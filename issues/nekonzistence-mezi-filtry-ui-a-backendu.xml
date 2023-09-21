@@ -1,0 +1,39 @@
+<issue id="nekonzistence-mezi-firmy-ui-a-backendu">
+	<name>
+		<en></en>
+		<cz>Nekonzistence mezi filtry UI a backendu</cz>
+	</name>
+	<category></category>
+	<risk>medium</risk>
+	<likelihood>medium</likelihood>
+	<impact>medium</impact>
+	<whocanexploit></whocanexploit>
+	<references></references>
+	<tfinding>
+		<en>It has been found...</en>
+		<cz>
+Během penetračního testu bylo zjištěno, že filtry v uživatelském rozhraní a v backendu aplikace nefiltrují data podle stejných pravidel. V nastavení uživatelského účtu je pro parametr mail na uživatelské úrovni použit filtr, který znemožňuje zadat nelegitimní e-mailovou adresu – pokusili jsme se zadat nelegitimní adresu obsahující XSS payload - „b”><script>alert(1);</script>bb@example.com“. Uživatelským rozhraním byla e-mailová adresa odmítnuta, nicméně při obejití uživatelského filtru, byla e-mailová adresa přijata.
+		</cz>
+	</tfinding>
+	<trisk>
+		<en></en>
+		<cz>
+Pokud nejsou filtry v uživatelském rozhraní a backendu webové aplikace konzistentní, může se stát, že do backendu projdou některá data, která by projít neměla, což může mít neočekávané následky.
+		</cz>
+	</trisk>
+	<trecommendation>
+		<en></en>
+		<cz>
+Doporučujeme sjednocení filtrů pro uživatelské rozhraní a backend a jejich důsledné aplikování v obou případech.
+		</cz>
+	</trecommendation>
+	<tsteps>
+		<en>
+
+		</en>
+		<cz>
+
+		</cz>
+	</tsteps>
+</issue>
+

@@ -1,0 +1,55 @@
+<issue id="moznost-manipulace-s-cenou">
+	<name>
+		<en></en>
+		<cz>Možnost manipulace s cenou</cz>
+	</name>
+	<category>OTG-BUSLOGIC-002 - Test Ability to forge requests</category>
+	<risk>high</risk>
+	<likelihood>high</likelihood>
+	<impact>medium</impact>
+	<whocanexploit></whocanexploit>
+	<references></references>
+	<tfinding>
+		<en>It has been found...</en>
+		<cz>
+Bylo zjištěno, že v e-shopu na umístění /e-shop při aktualizaci licence a na umístění /e-shop/aktualizace při koupi nové licence je možné manipulovat s cenou. Lze toho docílit nastavením počtu objednávaných kusů licencí na zápornou hodnotu. Tím sice dojde ke snížení celkového počtu objednaných / aktualizovaných licencí, nicméně vhodnou manipulací je možné v konečném důsledku dosáhnout snížení ceny až k ceně blízké nule.
+
+%\begin{figure}[H]
+%\centering
+%\includegraphics[width=160mm]{"img-instance1/modifikace-poctu"}
+%\caption{Požadavek s modifikovaným počtem licencí}
+%\end{figure}
+
+Celý proces probíhá automatizovaně a výsledná cena se poté promítne i do faktury.
+
+%\begin{figure}[H]
+%\centering
+%\includegraphics[width=160mm]{"img-instance1/vysledek"}
+%\caption{Modifikovaná cena v generované faktuře (faktura je přiložena)}
+%\end{figure}
+		</cz>
+	</tfinding>
+	<trisk>
+		<en></en>
+		<cz>
+Rizikem tohoto počínání je možnost, že uživatelé můžou být schopni přidáním záporného počtu licencí (na produkt, který nepotřebují) snížit cenu, kterou v konečném důsledku zaplatí.
+
+Rizikem tohoto počínání je, že uživatelé budou modifikovat cenu jednotlivých produktů čímž mohou způsobit finanční škodu provozovateli e-shopu. Riziko zneužití vzrůstá v případě, kdyby zpracování požadavků probíhalo automatizovaně. V případě masového zneužití může mít tato zranitelnost dalekosáhlé finanční následky.
+		</cz>
+	</trisk>
+	<trecommendation>
+		<en></en>
+		<cz>
+Doporučujeme důkladné filtrování nedůvěryhodných uživatelských vstupů. Je důležité kontrolovat počet licencí, zda se jedná o nezáporné celé číslo, aby nemohla být výsledná cena tímto způsobem modifikována.
+		</cz>
+	</trecommendation>
+	<tsteps>
+		<en>
+
+		</en>
+		<cz>
+
+		</cz>
+	</tsteps>
+</issue>
+

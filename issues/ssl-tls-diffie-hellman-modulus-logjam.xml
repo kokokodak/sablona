@@ -1,0 +1,48 @@
+<issue id="ssl-tls-diffie-hellman-modulus-logjam">
+	<name>
+		<en>SSL-TLS Diffie-Hellman Modulus less or equal 1024 Bits</en>
+		<cz>SSL-TLS Diffie-Hellman Modulus menší nebo roven 1024 bitům</cz>
+	</name>
+	<category></category>
+	<risk>medium</risk>
+	<likelihood>medium</likelihood>
+	<impact>medium</impact>
+	<whocanexploit></whocanexploit>
+	<references></references>
+	<tfinding>
+		<en>It has been found...</en>
+		<cz>
+Bylo zjištěno, že daná služba na daném serveru umožňuje spojení s DH moduli o velikosti menší než 1024 bitů.
+
+
+Jedná se o následující cipher suites používající známé moduli ze skupiny Oakley Group2 a mající délku 1024 bitů:
+
+\footnotesize
+\begin{lstlisting}
+XXX
+\end{lstlisting}
+\normalsize
+		</cz>
+	</tfinding>
+	<trisk>
+		<en></en>
+		<cz>
+Útočník může být pomocí kryptoanalýzy schopen zjistit použité sdílené tajemství přenosu. Na základě délky moduli a útočníkových zdrojů může dojít k zjištění sdíleného tajemství v krátkém čase. Toto mu může útočníkovi pomoci v získat přenášená data v čitelné podobě nebo narušit integritu spojení.
+		</cz>
+	</trisk>
+	<trecommendation>
+		<en></en>
+		<cz>
+Doporučujeme nakonfigurovat danou službu s DH moduli velikost 2048 bitů nebo větší. Pro více informací o nastavení doporučujeme kontaktovat vašeho dodavatele daného software.
+		</cz>
+	</trecommendation>
+	<tsteps>
+		<en>
+
+		</en>
+		<cz>
+
+		</cz>
+	</tsteps>
+</issue>
+

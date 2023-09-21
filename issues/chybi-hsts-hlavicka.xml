@@ -1,0 +1,39 @@
+<issue id="chybi-hsts">
+	<name>
+		<en>HSTS header is missing</en>
+		<cz>Chybí HSTS hlavička</cz>
+	</name>
+	<category>OTG-CONFIG-007 - Test HTTP Strict Transport Security</category>
+	<risk>medium</risk>
+	<likelihood>medium</likelihood>
+	<impact>medium</impact>
+	<whocanexploit></whocanexploit>
+	<references></references>
+	<tfinding>
+		<en>It has been found...</en>
+		<cz>
+Během testů bylo zjištěno, že webový server nevynucuje HTTP Strict Transport Security (HSTS). Jedná se o mechanismus chránící komunikaci před downgrade útoky a únosem spojení.
+		</cz>
+	</tfinding>
+	<trisk>
+		<en></en>
+		<cz>
+V případě chybějící HSTS hlavičky může být útočník schopen provést downgrade útoky na šifrované spojení, SSL stripping útok, man in the middle útoky a další.
+		</cz>
+	</trisk>
+	<trecommendation>
+		<en></en>
+		<cz>
+Doporučujeme nastavení HSTS hlaviček Strict-Transport-Security na webovém serveru.
+		</cz>
+	</trecommendation>
+	<tsteps>
+		<en>
+
+		</en>
+		<cz>
+
+		</cz>
+	</tsteps>
+</issue>
+

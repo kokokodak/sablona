@@ -1,0 +1,47 @@
+<issue id="nevhodne-nastaveni-crossdomain-xml">
+	<name>
+		<en></en>
+		<cz>Nevhodné nastavení crossdomain.xml</cz>
+	</name>
+	<category></category>
+	<risk>medium</risk>
+	<likelihood>medium</likelihood>
+	<impact>medium</impact>
+	<whocanexploit></whocanexploit>
+	<references></references>
+	<tfinding>
+		<en>It has been found...</en>
+		<cz>
+Během penetračního testu bylo zjištěno, že ve webové aplikaci se nachází soubor crossdomain.xml s nevhodným nastavením:
+\footnotesize
+\begin{lstlisting}
+&lt;cross-domain-policy&gt;
+&lt;allow-access-from domain="*"/&gt;
+&lt;/cross-domain-policy&gt;
+\end{lstlisting}
+\normalsize
+
+Soubor crossdomain.xml obsahuje definici serverů, které mohou na tento server / webovou aplikaci provádět tzv. cross-domain požadavky. Aktuální nastavení na testované webové aplikace je takové, že cross-domain požadavky jsou povoleny ze všech domén.
+		</cz>
+	</tfinding>
+	<trisk>
+		<en></en>
+		<cz>
+Rizikem této zranitelnosti je, že útočník může uživateli podstrčit speciálně připravenou stránku s útočným kódem díky kterému může být schopen provádět požadavky na testovanou aplikaci bez uživatelova vědomí a zároveň číst odpovědi od serveru. Tímto může být schopen získat přístup k potenciálně citlivým údajům jako jsou například e-maily.
+		</cz>
+	</trisk>
+	<trecommendation>
+		<en></en>
+		<cz>
+Doporučujeme zvážit, které servery potřebují provádět požadavky a na základě toho provést potřebné změny v crossdomain.xml, aby pouze tyto servery byly povoleny a všechny ostatní zakázány.
+		</cz>
+	</trecommendation>
+	<tsteps>
+		<en>
+
+		</en>
+		<cz>
+
+		</cz>
+	</tsteps>
+</issue>

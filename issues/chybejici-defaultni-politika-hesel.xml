@@ -1,0 +1,62 @@
+<issue id="chybejici-defaultni-politika-hesel">
+	<name>
+		<en></en>
+		<cz>Chybějící defaultní politika hesel</cz>
+	</name>
+	<category></category>
+	<risk>medium</risk>
+	<likelihood>medium</likelihood>
+	<impact>medium</impact>
+	<whocanexploit></whocanexploit>
+	<references></references>
+	<tfinding>
+		<en>
+
+		</en>
+		<cz>
+Během testu bylo zjištěno, že ačkoliv je možné nastavit politiku hesel, vypadá to, že v defaultní konfiguraci
+žádná rozumná politika hesel není. Toto umožňuje uživatelům nastavení jednoduchých až triviálních hesel typu
+"123", "a" či "heslo".
+		</cz>
+	</tfinding>
+	<trisk>
+		<en>
+
+		</en>
+		<cz>
+Z naší zkušenosti vyplývá, že ani administrátoři systémů často nemění defaultní nastavení systémů, ať již z důvodu lenosti či z důvodu nedostatečných informací či znalostí.
+Takového počínání umožňuje uživatelům nastavení jednoduchých hesel. Toto může vést až ke kompromitaci uživatelského účtu.
+
+		</cz>
+	</trisk>
+	<trecommendation>
+		<en>
+
+		</en>
+		<cz>
+Doporučujeme definovat defaultní politiku hesel (password policy), která bude sloužit jako defaultní politika hesel v případe, že
+administrátor systému nenastaví svoji.
+
+Jedná se o následující pravidla:
+\begin{itemize}[noitemsep]
+\item - alespoň 8 znaků
+\item - alespoň jeden znak z následujících skupin:
+	\begin{itemize}[noitemsep]
+	\item - malé písmeno
+	\item - velké písmeno
+	\item - číslice
+	\item - speciální znak ( , . - / \# @ * \% ( ) [ ] )
+	\end{itemize}
+\end{itemize}
+		</cz>
+	</trecommendation>
+	<tsteps>
+		<en>
+
+		</en>
+		<cz>
+
+		</cz>
+	</tsteps>
+</issue>
+

@@ -1,0 +1,50 @@
+<issue id="chybejici-rate-limiting-na-obnoveni-hesla">
+	<name>
+		<en></en>
+		<cz></cz>
+	</name>
+	<category></category>
+	<risk>medium</risk>
+	<likelihood>medium</likelihood>
+	<impact>medium</impact>
+	<whocanexploit></whocanexploit>
+	<references></references>
+	<tfinding>
+		<en>
+			During penetration test we found, that there is no rate limiting on password recovery page (http://example.com). There is no captcha mechanism implemented or rate limiting that would lower the possible number of tries in any way (over 40 requests were sent withing short span of time).
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=420pt]{password-recovery}
+\caption{Password recovery page}
+\end{figure}
+		</en>
+		<cz>
+
+		</cz>
+	</tfinding>
+	<trisk>
+		<en>
+Attacker can use this behaviour in his customers e-mail enumeration efforts and he can without any problems perform many requests within short span of time to learn as many valid e-mail addresses as possible.
+		</en>
+		<cz>
+
+		</cz>
+	</trisk>
+	<trecommendation>
+		<en>
+We recommend limiting number of password recovery requests to necessary minimum per IP address / client session to lower the risk of successful automated valid e-mail enumeration efforts.
+		</en>
+		<cz>
+
+		</cz>
+	</trecommendation>
+	<tsteps>
+		<en>
+
+		</en>
+		<cz>
+
+		</cz>
+	</tsteps>
+</issue>

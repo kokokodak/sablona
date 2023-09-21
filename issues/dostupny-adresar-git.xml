@@ -1,0 +1,44 @@
+<issue id="dostupny-adresar-git">
+	<name>
+		<en></en>
+		<cz>Dostupný adresář .git</cz>
+	</name>
+	<category></category>
+	<risk>medium</risk>
+	<likelihood>medium</likelihood>
+	<impact>medium</impact>
+	<whocanexploit></whocanexploit>
+	<references></references>
+	<tfinding>
+		<en>It has been found...</en>
+		<cz>
+
+Bylo zjištěno, že na následujícím umístění je přístupný Git repozitář.
+
+\begin{itemize}[noitemsep]
+\item url
+\end{itemize}
+		</cz>
+	</tfinding>
+	<trisk>
+		<en></en>
+		<cz>
+Útočník může být schopen adresář .git a celý jeho obsah stáhnout, čímž se může dostat k obsahu git adresáře. V případě, že jsou či někdy byly v gitu verzovány soubory s citlivými údaji, může se k nim útočník dostat a tyto údaje zneužít buď přímo nebo k dalším útokům.
+		</cz>
+	</trisk>
+	<trecommendation>
+		<en></en>
+		<cz>
+Doporučujeme adresář znepřístupnit, buď jeho smazáním nebo nastavením webového serveru tak, aby se k adresáři a žádnému jeho obsahu nebylo možno dostat.
+		</cz>
+	</trecommendation>
+	<tsteps>
+		<en>
+
+		</en>
+		<cz>
+
+		</cz>
+	</tsteps>
+</issue>
+

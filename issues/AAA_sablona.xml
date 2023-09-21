@@ -1,0 +1,46 @@
+<issue id="AAA_sablona">
+	<name>
+		<en>empty</en>
+		<cz>empty</cz>
+	</name>
+	<category>empty</category>
+
+	<risk>medium</risk>
+	<likelihood>medium</likelihood>
+	<impact>medium</impact>
+	<whocanexploit></whocanexploit>
+
+	<references>empty</references>
+	<tfinding>
+		<en>
+empty
+		</en>
+		<cz>
+empty
+		</cz>
+	</tfinding>
+	<trisk>
+		<en>
+empty
+		</en>
+		<cz>
+empty
+		</cz>
+	</trisk>
+	<trecommendation>
+		<en>
+empty
+		</en>
+		<cz>
+empty
+		</cz>
+	</trecommendation>
+	<tsteps>
+		<en>
+empty
+		</en>
+		<cz>
+empty
+		</cz>
+	</tsteps>
+</issue>

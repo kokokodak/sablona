@@ -1,0 +1,63 @@
+<issue id="pouziti-md5-a-spatna-prace-s-hashi-hesel">
+	<name>
+		<en>empty</en>
+		<cz>Použití MD5 a špatná práce s hashi hesel</cz>
+	</name>
+	<category>empty</category>
+
+	<risk>medium</risk>
+	<likelihood>medium</likelihood>
+	<impact>medium</impact>
+	<whocanexploit></whocanexploit>
+
+	<references>empty</references>
+	<tfinding>
+		<en>
+empty
+		</en>
+		<cz>
+Během testů bylo zjištěno, že aplikace pravděpodobně používá algoritmus MD5 pro hashování hesel. Algoritmus MD5 již nelze považovat za dostatečný a nedoporučuje se jeho používání. K podezření jsme došli z toho důvodu, že při přihlášení je MD5 hash aktuálního hesla vrácen v cookie Login. Dalším důvodem podezření je, že MD5 hash hesla je vracen do aplikace i v případě modifikace uživatele (Upravit uživatele).
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=440pt]{heslo-vraceno-v-cookie}
+\caption{MD5 hash aktuálního hesla je vrácen v cookie}
+\end{figure}
+
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=440pt]{hash-vracen-uprava-uzivatele}
+\caption{Hash vrácen do aplikace v případě úpravy uživatele}
+\end{figure}
+		</cz>
+	</tfinding>
+	<trisk>
+		<en>
+empty
+		</en>
+		<cz>
+V případě, že by došlo k úniku dat z webové aplikace, a mezi daty by byly i hashe hesel uživatelských účtů, může útočník použít tyto hashe k získání hesel uživatelských účtů a tím k nim získat přístup.
+		</cz>
+	</trisk>
+	<trecommendation>
+		<en>
+empty
+		</en>
+		<cz>
+Doporučujeme použití některého z bezpečnějších hashovacích algoritmů, například SHA-2 či SHA-3. Zároveň doporučujeme zkontrolovat proč je MD5 hash aktuálního hesla nastavován v cookie Login a zda je to nutné.
+		</cz>
+	</trecommendation>
+	<tsteps>
+		<en>
+empty
+		</en>
+		<cz>
+\begin{enumerate}[noitemsep]
+\item otevřete webovou aplikaci
+\item přihlašte se do webové aplikace
+\item v historii HTTP proxy lze v odpovědi (response) na přihlašovací požadavek (request) vidět Set-Cookie s danou cookie, která vedle ID uživatele obsahuje i hash jeho hesla
+\end{enumerate}
+		</cz>
+	</tsteps>
+</issue>

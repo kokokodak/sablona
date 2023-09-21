@@ -1,0 +1,54 @@
+<issue id="unik-informaci-z-chybovych-hlasek">
+	<name>
+		<en></en>
+		<cz>Únik informací z chybových hlášek</cz>
+	</name>
+	<category></category>
+	<risk>medium</risk>
+	<likelihood>medium</likelihood>
+	<impact>medium</impact>
+	<whocanexploit></whocanexploit>
+	<references></references>
+	<tfinding>
+		<en>It has been found...</en>
+		<cz>
+Během penetračního testu bylo zjištěno, že daný webový server na chybových stránkách (404, 500 atd.) zobrazuje více informací než je potřeba, například typ a verzi webového serveru:
+
+\begin{itemize}
+\item Server Type : NGINX
+\item Server Version : 1.1.19
+\end{itemize}
+
+%[img]
+		</cz>
+	</tfinding>
+	<trisk>
+		<en></en>
+		<cz>
+Útočník může být díky získaným informacím schopen lépe zacílit svoje další útoky. Informace může také použít k zvýšení své důvěryhodnosti například v případě útoku sociálním inženýrstvím.
+		</cz>
+	</trisk>
+	<trecommendation>
+		<en></en>
+		<cz>
+Doporučujeme nastavení webového serveru, aby případné problémy zaznamenával a upozorňoval na ně administrátory, ale zároveň aby nedával případným útočníkům k dispozici údaje, které mohou být považovány za citlivé.
+
+Lze toho dosáhnout například přidáním následujících řádků do konfiguračního souboru.
+
+\footnotesize
+\begin{lstlisting}
+server_tokens off;
+\end{lstlisting}
+\normalsize
+		</cz>
+	</trecommendation>
+	<tsteps>
+		<en>
+
+		</en>
+		<cz>
+
+		</cz>
+	</tsteps>
+</issue>
+

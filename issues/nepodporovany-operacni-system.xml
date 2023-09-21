@@ -1,0 +1,44 @@
+<issue id="nepodporovany-operacni-system">
+	<name>
+		<en></en>
+		<cz>Nepodporovaný operační systém</cz>
+	</name>
+	<category></category>
+	<risk>critical</risk>
+	<likelihood>medium</likelihood>
+	<impact>medium</impact>
+	<whocanexploit></whocanexploit>
+	<references></references>
+	<tfinding>
+		<en>It has been found...</en>
+		<cz>
+V průběhu penetračních testů bylo zjištěno, že na daném systému se nachází stará a nepodporovaná verze operačního systému.
+\footnotesize
+\begin{lstlisting}
+Windows Server 2003
+\end{lstlisting}
+\normalsize
+		</cz>
+	</tfinding>
+	<trisk>
+		<en></en>
+		<cz>
+Pro nepodporovaný operační systém již nejsou vydávány bezpečnostní aktualizace. Pokud tedy byla objevena chyba, která se daného systému týká, není tato chyba opravena ve formě bezpečnostní aktualizace. Toto nechává otevřené dveře pro útočníky.
+		</cz>
+	</trisk>
+	<trecommendation>
+		<en></en>
+		<cz>
+Důrazně doporučujeme nasadit nejnovější podporovaný operační systém s aktuálními aktualizacemi. Zároveň doporučujeme provádět pravidelné aktualizace.
+		</cz>
+	</trecommendation>
+	<tsteps>
+		<en>
+
+		</en>
+		<cz>
+
+		</cz>
+	</tsteps>
+</issue>
+

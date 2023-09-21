@@ -1,0 +1,46 @@
+<issue id="zranitelnost-heartbleed">
+	<name>
+		<en></en>
+		<cz>Zranitelnost Heartbleed</cz>
+	</name>
+	<category></category>
+	<risk>high</risk>
+	<likelihood>medium</likelihood>
+	<impact>medium</impact>
+	<whocanexploit></whocanexploit>
+	<references></references>
+	<tfinding>
+		<en>It has been found...</en>
+		<cz>
+Během penetračního testu bylo zjištěno, že server je náchylný na zranitelnost známou jako Heartbleed. Jedná se o information disclosure zranitelnost způsobenou programátorskou chybou čtení mimo hranice. V době testování této zranitelnosti byly v paměti k dispozici například tato data:
+
+\footnotesize
+\begin{lstlisting}
+XXX
+[...]
+\end{lstlisting}
+\normalsize
+		</cz>
+	</tfinding>
+	<trisk>
+		<en></en>
+		<cz>
+Posláním speciálně připraveného paketu je útočník schopen ze serveru získat až 64 KB paměti daného procesu. Tato paměť může obsahovat citlivé informace jako například hesla, soukromé klíče a jiná citlivá data.
+		</cz>
+	</trisk>
+	<trecommendation>
+		<en></en>
+		<cz>
+Důrazně doporučuje aktualizovat OpenSSL na verzi 1.0.1g nebo novější.
+		</cz>
+	</trecommendation>
+	<tsteps>
+		<en>
+
+		</en>
+		<cz>
+
+		</cz>
+	</tsteps>
+</issue>
+

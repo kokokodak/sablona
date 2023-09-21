@@ -1,0 +1,52 @@
+<issue id="vicenasobne-prihlaseni">
+	<name>
+		<en>Possible to log into one account from more locations at the same time</en>
+		<cz></cz>
+	</name>
+	<category></category>
+	<risk>medium</risk>
+	<likelihood>medium</likelihood>
+	<impact>medium</impact>
+	<whocanexploit></whocanexploit>
+	<references></references>
+	<tfinding>
+		<en>
+During penetration test we found that it's possible to log into the same user account from more than one location at a time. We believe there isn't any legitimate reason for that.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=420pt]{vicenasobne-prihlaseni}
+\caption{Same user account, same time, different web browsers}
+\end{figure}
+
+		</en>
+		<cz>
+
+		</cz>
+	</tfinding>
+	<trisk>
+		<en>
+When it's possible to log in from more locations at the same time, various unexpected issues can happen on the higher level, there might be some race conditions when ordering services and so on. This can also allow attacker to use users account without the user noticing.
+		</en>
+		<cz>
+
+		</cz>
+	</trisk>
+	<trecommendation>
+		<en>
+We recommend to not allow logging into the same account from more than one location at a time. This can be achieved by destroying session identification of previous sessions and logging in the user. In other cases, legitimate user could be denied from accessing his account if somebody else (e.g. attacker) was already logged in.
+		</en>
+		<cz>
+
+		</cz>
+	</trecommendation>
+	<tsteps>
+		<en>
+
+		</en>
+		<cz>
+
+		</cz>
+	</tsteps>
+</issue>
+

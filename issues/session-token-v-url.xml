@@ -1,0 +1,44 @@
+<issue id="session-token-v-url">
+	<name>
+		<en></en>
+		<cz>Session token v URL</cz>
+	</name>
+	<category></category>
+	<risk>medium</risk>
+	<likelihood>medium</likelihood>
+	<impact>medium</impact>
+	<whocanexploit></whocanexploit>
+	<references></references>
+	<tfinding>
+		<en>It has been found...</en>
+		<cz>
+Během penetračního testu bylo zjištěno, že některé odkazy v aplikaci obsahují přímo session token pro přihlášeného uživatele. Jedná se například o následující odkazy, které byly nalezeny v aplikaci.
+
+\begin{itemize}
+\item example
+\end{itemize}
+		</cz>
+	</tfinding>
+	<trisk>
+		<en></en>
+		<cz>
+Rizikem tohoto počínání je, že dané URL může být zaznamenáno nejen na klientském počítači, ale i případně v logu webového serveru, odkud jej může zneužít kdokoliv kdo má přístup k logům. Také hrozí riziko, že uživatel bude potřebovat zkopírovat odkaz do aplikace a poslat ho někomu jinému. V takovém případě může omylem zkopírovat odkaz i s hodnotou PHPSESSID.
+
+Riziko tohoto nálezu bylo zvýšeno nalezenou náchylností na únos uživatelského sezení v aplikaci.
+		</cz>
+	</trisk>
+	<trecommendation>
+		<en></en>
+		<cz>
+Doporučujeme zajistit, aby session token nebyl přenášen v URL a tedy aby nemohlo dojít k jeho zaznamenání na klientském počítači či v logu webového serveru.
+		</cz>
+	</trecommendation>
+	<tsteps>
+		<en>
+
+		</en>
+		<cz>
+
+		</cz>
+	</tsteps>
+</issue>

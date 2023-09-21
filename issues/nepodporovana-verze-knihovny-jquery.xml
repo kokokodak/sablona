@@ -1,0 +1,39 @@
+<issue id="nepodporovana-verze-knihovny-jquery">
+	<name>
+		<en></en>
+		<cz>Knihovna jQuery v nepodporované verzi</cz>
+	</name>
+	<category>N/A</category>
+	<risk>low</risk>
+	<likelihood>low</likelihood>
+	<impact>low</impact>
+	<whocanexploit></whocanexploit>
+	<references></references>
+	<tfinding>
+		<en>It has been found...</en>
+		<cz>
+Během penetračního testy bylo zjištěno, že ve webové aplikaci (/js/jquery-1.8.3.js) je použita knihovna jQuery ve verzi 1.8.3 z roku 2012. Jedná se o starou verzi knihovny jQuery z již nepodporované řady.
+		</cz>
+	</tfinding>
+	<trisk>
+		<en></en>
+		<cz>
+Pro nepodporovanou verzi knihovny jQuery již nejsou vydávány bezpečnostní aktualizace. Pokud tedy byla objevena chyba, která se dané knihovny týká, není tato chyba opravena ve formě bezpečnostní aktualizace. Toto nechává otevřené dveře pro útočníky.
+		</cz>
+	</trisk>
+	<trecommendation>
+		<en></en>
+		<cz>
+Doporučujeme použití nejnovější podporované verze javascriptové knihovny jQuery tak, aby byla snížena pravděpodobnost kompromitace aplikace přes známou chybu ve starších, nepodporovaných verzích knihovny.
+		</cz>
+	</trecommendation>
+	<tsteps>
+		<en>
+
+		</en>
+		<cz>
+
+		</cz>
+	</tsteps>
+</issue>
+

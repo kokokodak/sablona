@@ -1,0 +1,39 @@
+<issue id="dostupna-stranka-server-status">
+	<name>
+		<en></en>
+		<cz>Dostupná stránka server-status</cz>
+	</name>
+	<category></category>
+	<risk>low</risk>
+	<likelihood>medium</likelihood>
+	<impact>low</impact>
+	<whocanexploit></whocanexploit>
+	<references></references>
+	<tfinding>
+		<en>It has been found...</en>
+		<cz>
+Během penetračního testu bylo zjištěno, že na adrese http://www.example.com/server-status se nachází /server-status stránka. Z té je možné zjistit nejenom aktuální požadavky na server, včetně adres jejich původců, ale i například aktuální vytížení serveru či jeho verzi.
+		</cz>
+	</tfinding>
+	<trisk>
+		<en></en>
+		<cz>
+Rizika tohoto nálezu souvisí především s možností přesnějšího zaměření útoku ze strany útočníka. Díky server-status je útočník schopen s velkou přesností zjistit přesné verze použitého software. Dále je útočník schopen monitorovat vytížení serveru a tím například načasovat DoS útok na dobu, kdy bývá na serveru nejvíce uživatelů a tím způsobit co největší škody nedostupností serveru.
+		</cz>
+	</trisk>
+	<trecommendation>
+		<en></en>
+		<cz>
+Doporučujeme danou stránku úplně odstranit, není důvod, aby byla na produkčním serveru přístupná. Další možností je omezit přístup na tuto stránku na některé konkrétní IP adresy.
+		</cz>
+	</trecommendation>
+	<tsteps>
+		<en>
+
+		</en>
+		<cz>
+
+		</cz>
+	</tsteps>
+</issue>
+

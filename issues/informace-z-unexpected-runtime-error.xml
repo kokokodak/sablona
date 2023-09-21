@@ -1,0 +1,39 @@
+<issue id="informace-z-unexpected-runtime-error">
+	<name>
+		<en></en>
+		<cz>Informace z Unexpected runtime error</cz>
+	</name>
+	<category></category>
+	<risk>low</risk>
+	<likelihood>low</likelihood>
+	<impact>low</impact>
+	<whocanexploit></whocanexploit>
+	<references></references>
+	<tfinding>
+		<en>It has been found...</en>
+		<cz>
+Během penetračního testu bylo zjištěno, že aplikace zobrazuje při neočekávané výjimce kompletní Stack Trace.
+		</cz>
+	</tfinding>
+	<trisk>
+		<en></en>
+		<cz>
+Rizikem vypisování tohoto typu informací je, že útočník může získat informace o tom ve které části aplikace došlo k chybě a tyto informace poté použít k přesnějšímu zacílení útoku. Také uživatelé nevidí tyto hlášky příliš rádi a v jejich očích se aplikace stává "nestabilní a nepoužitelnou".
+		</cz>
+	</trisk>
+	<trecommendation>
+		<en></en>
+		<cz>
+Doporučujeme tento typ informací nevypisovat a nezjednodušovat tím útočníkovi práci. Zároveň tím nedojde ke snížení důvěryhodnosti aplikace v očích uživatelů.
+		</cz>
+	</trecommendation>
+	<tsteps>
+		<en>
+
+		</en>
+		<cz>
+
+		</cz>
+	</tsteps>
+</issue>
+

@@ -1,0 +1,39 @@
+<issue id="stara-verze-phpmyadmin">
+	<name>
+		<en></en>
+		<cz>Stará verze phpMyAdmin</cz>
+	</name>
+	<category></category>
+	<risk>medium</risk>
+	<likelihood>high</likelihood>
+	<impact>medium</impact>
+	<whocanexploit></whocanexploit>
+	<references></references>
+	<tfinding>
+		<en>It has been found...</en>
+		<cz>
+Během testu bylo zjištěno, že na daném serveru se nachází stará verze mysql administračního systému phpMyAdmin.
+		</cz>
+	</tfinding>
+	<trisk>
+		<en></en>
+		<cz>
+Stará verze obecně jakéhokoliv software může obsahovat bezpečnostní chyby, kterým není věnována pozornost a zůstávají po dlouhou dobu neopraveny.
+		</cz>
+	</trisk>
+	<trecommendation>
+		<en></en>
+		<cz>
+Doporučujeme aktualizovat phpMyAdmin na nejnovější dostupnou verzi.
+		</cz>
+	</trecommendation>
+	<tsteps>
+		<en>
+
+		</en>
+		<cz>
+
+		</cz>
+	</tsteps>
+</issue>
+

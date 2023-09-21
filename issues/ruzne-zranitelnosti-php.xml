@@ -1,0 +1,47 @@
+<issue id="ruzne-zranitelnosti-php">
+	<name>
+		<en></en>
+		<cz>Různé zranitelnosti PHP</cz>
+	</name>
+	<category></category>
+	<risk>medium</risk>
+	<likelihood>medium</likelihood>
+	<impact>medium</impact>
+	<whocanexploit></whocanexploit>
+	<references></references>
+	<tfinding>
+		<en>It has been found...</en>
+		<cz>
+Během penetračního testu bylo zjištěno, že na daném serveru je použita stará verze PHP, se kterou jsou spojené následující potenciální zranitelnosti:
+\begin{itemize}
+\item - PHP Hash Collision denial of service vulnerability
+\item - PHP hangs on parsing particular strings as floating point number
+\item - PHP multipart/form-data denial of service
+\end{itemize}
+
+Jedná se o DoS (Denial of Service) zranitelnosti, které nebyly ověřovány.
+		</cz>
+	</tfinding>
+	<trisk>
+		<en></en>
+		<cz>
+Riziko těchto zranitelností se odvíjí od konkrétní zranitelnosti. Pro více informací doporučujeme konzultovat daná CVE.
+%Rizikem této zranitelnosti je, že útočník provede DoS útok na webový server a tím jej znepřístupní. Toto může vést k omezení až zastavení práce, ztrátě reputace společnosti či finančním ztrátám.
+		</cz>
+	</trisk>
+	<trecommendation>
+		<en></en>
+		<cz>
+Doporučujeme aktualizovat PHP na nejnovější podporovanou verzi.
+		</cz>
+	</trecommendation>
+	<tsteps>
+		<en>
+
+		</en>
+		<cz>
+
+		</cz>
+	</tsteps>
+</issue>
+

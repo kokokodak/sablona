@@ -1,0 +1,48 @@
+<issue id="neosetreny-upload">
+	<name>
+		<en></en>
+		<cz>Neošetřený upload</cz>
+	</name>
+	<category>OTG-BUSLOGIC-008 - Test Upload of Unexpected File Types</category>
+	<risk>high</risk>
+	<likelihood>high</likelihood>
+	<impact>high</impact>
+	<whocanexploit></whocanexploit>
+	<references></references>
+	<tfinding>
+		<en>It has been found...</en>
+		<cz>
+Během penetračního testu bylo zjištěno, že z umístění http://www.example.com/nastaveni.php je možné nahrávat soubory do aplikace. Formulář pro nahrání portrétu však není dostatečně ošetřen a nepovoluje pouze nahrání souborů s příponou .php. Díky tomu je útočník schopen nahrát například soubor s příponou .php5, který filtrem bez problémů projde a je poté uložen a zpřístupněn pro spuštění libovolnému uživateli.
+
+%[img]
+%Figure 5. Nahraný a spuštěný .php5 soubor s phpinfo()
+		</cz>
+	</tfinding>
+	<trisk>
+		<en></en>
+		<cz>
+Útočník může tímto způsobem nahrát na server libovolný php kód, který se poté spustí v kontextu dané webové aplikace. Tímto způsobem může libovolně manipulovat nejen s aplikací, ale i se serverem na kterém běží (může manipulovat se soubory ke kterým má přístup uživatel pod kterým aplikace běží). 
+		</cz>
+	</trisk>
+	<trecommendation>
+		<en></en>
+		<cz>
+Doporučujeme důkladnější kontrolu nahrávaných souborů:
+\begin{itemize}
+\item - nahrávané soubory doporučujeme filtrovat oproti whitelistu, který bude obsahovat pouze specificky povolené typy souborů
+\item - nenechávat nahrávanému souboru původní příponu
+\end{itemize}
+
+Dále doporučujeme kontrolovat přímo typ daného souboru bez ohledu na použitou příponu.
+		</cz>
+	</trecommendation>
+	<tsteps>
+		<en>
+
+		</en>
+		<cz>
+
+		</cz>
+	</tsteps>
+</issue>
+

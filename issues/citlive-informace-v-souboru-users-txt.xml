@@ -1,0 +1,47 @@
+<issue id="citlive-informace-v-souboru-users-txt">
+	<name>
+		<en></en>
+		<cz>Citlivé informace v souboru users.txt</cz>
+	</name>
+	<category></category>
+	<risk>high</risk>
+	<likelihood>high</likelihood>
+	<impact>high</impact>
+	<whocanexploit></whocanexploit>
+	<references></references>
+	<tfinding>
+		<en>It has been found...</en>
+		<cz>
+Během penetračního testu bylo zjištěno, že v souboru users.txt na umístění /users.txt se nachází citlivé informace ohledně uživatelských účtů.
+
+\footnotesize
+\begin{lstlisting}
+12	Administrator	admin	88942769875634798563487657834a24		1		attacker@example.com
+\end{lstlisting}
+\normalsize
+
+Porovnáním s informacemi v databázi se pravděpodobně jedná o soubor obsahující definice defaultních uživatelských účtů pro reset aplikace. Hashe uživatelských hesel z daného souboru byly rozluštěny a byl získán přístup k heslům daných uživatelů. 
+		</cz>
+	</tfinding>
+	<trisk>
+		<en></en>
+		<cz>
+V případě, že útočník najde na webu daný soubor, může být schopen z něho získat přihlašovací údaje k daným účtům. Tímto může dojít ke kompromitaci daných uživatelských účtů a to včetně administrátorského účtu.
+		</cz>
+	</trisk>
+	<trecommendation>
+		<en></en>
+		<cz>
+Doporučujeme daný soubor z webu odstranit, jelikož obsahuje příliš citlivé informace než aby byl volně dostupný. Možností je také k němu omezit přístup, nicméně toto řešení lze obejít využitím jiných zranitelností dané aplikace (například Možností spuštění libovolného příkazu operačního systému).
+		</cz>
+	</trecommendation>
+	<tsteps>
+		<en>
+
+		</en>
+		<cz>
+
+		</cz>
+	</tsteps>
+</issue>
+

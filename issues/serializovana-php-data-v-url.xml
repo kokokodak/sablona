@@ -1,0 +1,48 @@
+<issue id="serializovana-php-data-v-url">
+	<name>
+		<en></en>
+		<cz>Serializovaná PHP data v URL</cz>
+	</name>
+	<category></category>
+	<risk>low</risk>
+	<likelihood>medium</likelihood>
+	<impact>medium</impact>
+	<whocanexploit></whocanexploit>
+	<references></references>
+	<tfinding>
+		<en>
+
+		</en>
+		<cz>
+Během penetračního testu bylo zjištěno, že aplikace posílá v parametru param hodnotu "YTowOnt9", která odpovídá base64 zakódované hodnotě "a:0:{}", což je serializovaná hodnota prázdného pole v PHP.
+Vzhledem k časovému omezení penetračního testu se nám nepodařilo nález exploitovat.
+		</cz>
+	</tfinding>
+	<trisk>
+		<en>
+
+		</en>
+		<cz>
+Stejně jako jakékoliv jiné ovlivnitelné útočníkem jsou i serializovaná data posílaná přes webový prohlížeč ovlivnitelná útočníkem. V případě, že na základě hodnoty serializovaného
+parametru aplikace provádí určité operace či rozhodnutí, může útočník tyto operace či rozhodnutí ovlivnit.
+		</cz>
+	</trisk>
+	<trecommendation>
+		<en>
+
+		</en>
+		<cz>
+Doporučujeme zanalyzovat k čemu a jak je daná hodnota použita a na základě toho zvážit další kroky.
+
+		</cz>
+	</trecommendation>
+	<tsteps>
+		<en>
+
+		</en>
+		<cz>
+
+		</cz>
+	</tsteps>
+</issue>
+

@@ -1,0 +1,51 @@
+<issue id="pouzity-ftp-server">
+	<name>
+		<en>FTP server is used</en>
+		<cz>Použitý FTP server</cz>
+	</name>
+	<category></category>
+	<risk>high</risk>
+	<likelihood>medium</likelihood>
+	<impact>medium</impact>
+	<whocanexploit></whocanexploit>
+	<references></references>
+	<tfinding>
+		<en>It has been found...</en>
+		<cz>
+Vzdálený ftp server umožňuje přihlášení pomocí jména a hesla přenášeného v nešifrované podobě sítí.
+
+\footnotesize
+\begin{lstlisting}
+220---------- Welcome to FTP [privsep] [TLS] ---------- 
+220-You are user number 1 of 25 allowed. 
+220-Local time is now 00:00. Server port: 21. 
+220-This is a private system - No anonymous login 
+220-IPv6 connections are also welcome on this server. 
+220 You will be disconnected after 15 minutes of inactivity.
+\end{lstlisting}
+\normalsize
+
+		</cz>
+	</tfinding>
+	<trisk>
+		<en></en>
+		<cz>
+Toto může vést k odchycení přihlašovacích údajů útočníkem a jejich zneužití.
+		</cz>
+	</trisk>
+	<trecommendation>
+		<en></en>
+		<cz>
+Doporučujeme ftp nepoužívat a místo něho nasadit SFTP (součástí SSH) nebo FTPS (FTP přes SSL), které používají šifrované spojení.
+		</cz>
+	</trecommendation>
+	<tsteps>
+		<en>
+
+		</en>
+		<cz>
+
+		</cz>
+	</tsteps>
+</issue>
+

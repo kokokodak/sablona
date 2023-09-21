@@ -1,0 +1,73 @@
+<issue id="neautentizovany-upload-a-download-souboru">
+	<name>
+		<en></en>
+		<cz>Neautentizovaný upload a download souborů</cz>
+	</name>
+	<category></category>
+	<risk>medium</risk>
+	<likelihood>medium</likelihood>
+	<impact>medium</impact>
+	<whocanexploit></whocanexploit>
+	<references></references>
+	<tfinding>
+		<en>
+
+		</en>
+		<cz>
+Během penetračního testu bylo zjištěno, že na adrese https://example.com/upload.php se nachází php skript,
+který je možno použít k uploadování libovolného souboru i v případě, že je uživatel neautentizovaný.
+
+Lze toho docílit pomocí následujícího HTTP požadavku:
+
+\footnotesize
+\begin{verbatim}
+POST /upload.php HTTP/1.1
+Host: example.com
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:67.0) Gecko/20100101 Firefox/67.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+DNT: 1
+Connection: close
+Upgrade-Insecure-Requests: 1
+Content-Length: 13
+
+filecontent
+\end{verbatim}
+\normalsize
+
+Po provedení požadavku je uživateli vráceno URL pomocí kterého je poté možné k souboru přistoupit, v tomto případě se jednalo o url \\
+https://example.com/download.php?id=kjh76kjs985jgshgdnmbfkw5lk\\
+Obě tyto operace je možné provádět bez jakékoliv autentizace.
+Nepodařilo se nám dohledat kde v aplikaci by se měly tyto soubory zobrazit, podle dokumentace byly očekávány v dokumentech spisové služby, nicméně ani tam se dokumenty nepodařilo najít.
+
+		</cz>
+	</tfinding>
+	<trisk>
+		<en>
+
+		</en>
+		<cz>
+V případě, že je libovolnému neautentizovanému uživateli dovoleno uploadování a downloadování souborů, může případný útočník použít daný server například k šíření nelegálního obsahu, ať již malware, warez či další.
+Jelikož uživatel, který obsah nahrává i uživatel, který obsah stahuje nejsou autentizovaní v aplikaci, může být velice složité až nemožné dohledat jejich skutečnou identitu a zjistit kdo danou aplikaci
+takto zneužívá.
+		</cz>
+	</trisk>
+	<trecommendation>
+		<en>
+
+		</en>
+		<cz>
+Doporučujeme zvážení, zda je vhodné, aby daná funkcionalita byla přístupná i pro neautentizované uživatele nebo zda by měla být omezena na autentizované uživatele.
+		</cz>
+	</trecommendation>
+	<tsteps>
+		<en>
+
+		</en>
+		<cz>
+
+		</cz>
+	</tsteps>
+</issue>
+

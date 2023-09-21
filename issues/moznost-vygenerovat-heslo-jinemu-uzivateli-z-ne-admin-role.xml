@@ -1,0 +1,57 @@
+<issue id="moznost-vygenerovat-heslo-jinemu-uzivateli-z-ne-admin-role">
+	<name>
+		<en>empty</en>
+		<cz>Možnost vygenerovat heslo jinému uživateli, z ne-admin role</cz>
+	</name>
+	<category>empty</category>
+
+	<risk>medium</risk>
+	<likelihood>medium</likelihood>
+	<impact>medium</impact>
+	<whocanexploit></whocanexploit>
+
+	<references>empty</references>
+	<tfinding>
+		<en>
+empty
+		</en>
+		<cz>
+Během penetračního testu bylo zjištěno, že funcionalita pro vygenerování nového hesla (8 číslic) dostupného v Nastavení Uživatele - Reset hesla není omezen pouze pro administrátorské role. V průběhu testování se podařilo z uživatelského účtu okubasek, po přepnutí na roli Referent, vyžádat reset hesla uživatele aaa. K tomu byla potřeba pouze znalost požadavku, který k resetu hesla slouží a ID uživatele. Obojí může být útočník schopen zjistit pomocí brute force techniky, pomocí phishingu, či je odhadnout.
+
+Vzhledem k dodání pouze jednoho uživatele pro testování (okubasek), který má nastaveny všechny role, je možné, že se v případě kontroly provedení operací nepoužije aktuálně nastavená role, ale spojení všech rolí. Toto však není v našich možnostech ověřit.
+		</cz>
+	</tfinding>
+	<trisk>
+		<en>
+empty
+		</en>
+		<cz>
+V případě, že útočník je schopen resetovat heslo uživatelů a tím je nastavit na velmi slabé heslo o délce osmi číslic, může být schopen tímto způsobem získat přístup k uživatelskému účtu. Nejdříve uživateli změní heslo na toto jednoduché a poté jej pomocí brute force útoku zjistí.
+		</cz>
+	</trisk>
+	<trecommendation>
+		<en>
+empty
+		</en>
+		<cz>
+Doporučujeme před provedením této, i jakékoliv jiné citlivé, funkcionality ověřovat, že uživateli dané role má být skutečně umožněno tuto funkcionalitu použít.
+		</cz>
+	</trecommendation>
+	<tsteps>
+		<en>
+empty
+		</en>
+		<cz>
+\begin{enumerate}[noitemsep]
+\item přihlašte se do webové aplikace s uživatelem okubasek, změňte roli na Referent
+\item poté ve webovém prohlížeči otevřete následující URL:
+\footnotesize
+\begin{verbatim}
+/URL
+\end{verbatim}
+\normalsize
+\item dojde k vyžádání resetu hesla pro uživatele 123 (aaa)
+\end{enumerate}
+		</cz>
+	</tsteps>
+</issue>

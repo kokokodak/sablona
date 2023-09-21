@@ -1,0 +1,46 @@
+<issue id="ssl-podporovany-slabe-sifry">
+	<name>
+		<en></en>
+		<cz>SSL podporovány slabé šifry</cz>
+	</name>
+	<category></category>
+	<risk>medium</risk>
+	<likelihood>medium</likelihood>
+	<impact>medium</impact>
+	<whocanexploit></whocanexploit>
+	<references></references>
+	<tfinding>
+		<en>It has been found...</en>
+		<cz>
+Bylo zjištěno, že v SSL jsou povoleny následující slabé šifry.
+\footnotesize
+\footnotesize
+\begin{lstlisting}
+XXX  
+\end{lstlisting}
+\normalsize
+\normalsize
+		</cz>
+	</tfinding>
+	<trisk>
+		<en></en>
+		<cz>
+Používání slabých šifrovacích algoritmů oslabuje použité šifrování a může vést až k jejich prolomení a získání citlivých dat útočníkem.
+		</cz>
+	</trisk>
+	<trecommendation>
+		<en></en>
+		<cz>
+Doporučujeme nastavit daný server tak, aby tyto slabé šifry nebyly používány.
+		</cz>
+	</trecommendation>
+	<tsteps>
+		<en>
+
+		</en>
+		<cz>
+
+		</cz>
+	</tsteps>
+</issue>
+

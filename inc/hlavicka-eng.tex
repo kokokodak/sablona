@@ -1,0 +1,34 @@
+
+\newcommand*{\titleOWN}
+{\begingroup % Create the command for including the title page in the document
+    \hbox{ % Horizontal box
+    %\hspace*{0.2\textwidth} % Whitespace to the left of the title page
+    \includegraphics[angle=90, width=160pt]{\logobig}
+
+    \rule{1pt}{\textheight} % Vertical line
+    \hspace*{0.05\textwidth} % Whitespace between the vertical line and title page text
+    \parbox[b]{0.75\textwidth}{ % Paragraph box which restricts text to less than the width of the page
+    
+    {\noindent\Huge\bfseries Penetration test report \\}\\[2\baselineskip] % Title
+    {\large \textit{\projectname}}\\[4\baselineskip] %  Tagline or further description
+    %{\large \textsc{\autor}} % Author name
+    \vspace{0.5\textheight} % Whitespace between the title block and the publisher
+    {\noindent  }\\[\baselineskip] % Publisher and logo
+
+\scriptsize {
+Document is intelectual property of company \defendio. Disposition right \\
+belongs to company \spolecnost. It's forbidden to reproduce, publish or use \\
+the document outside of the scope of penetration testing project. Neither \\
+as a whole nor in parts.
+}}}
+\endgroup}
+
+
+\renewcommand*\contentsname{Table of content}
+
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{\includegraphics[width=2.5cm]{\logo}}
+\chead{\projectname}
+\rhead{Stránka \thepage}
+

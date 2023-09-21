@@ -1,0 +1,39 @@
+<issue id="unik-internich-ip-adres">
+	<name>
+		<en></en>
+		<cz>Únik interních IP adres</cz>
+	</name>
+	<category></category>
+	<risk>medium</risk>
+	<likelihood>medium</likelihood>
+	<impact>medium</impact>
+	<whocanexploit></whocanexploit>
+	<references></references>
+	<tfinding>
+		<en>It has been found...</en>
+		<cz>
+Během penetračního testu bylo zjištěno, že na webu se nachází interní IP adresa serveru.
+		</cz>
+	</tfinding>
+	<trisk>
+		<en></en>
+		<cz>
+V případě, že se útočník dostane k takovéto informaci, může interní IP adresu zneužít k přesnějšímu zacílení útoků v dalších fázích.
+		</cz>
+	</trisk>
+	<trecommendation>
+		<en></en>
+		<cz>
+Doporučujeme úpravu webu tak, aby daná informace nebyla případnému útočníkovi dostupná.
+		</cz>
+	</trecommendation>
+	<tsteps>
+		<en>
+
+		</en>
+		<cz>
+
+		</cz>
+	</tsteps>
+</issue>
+

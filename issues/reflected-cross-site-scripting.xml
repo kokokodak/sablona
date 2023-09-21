@@ -1,0 +1,132 @@
+<issue id="reflected-cross-site-scripting">
+	<name>
+		<en></en>
+		<cz>Reflected Cross Site Scripting (XSS)</cz>
+	</name>
+	<category>OTG-INPVAL-001 - Testing for Reflected Cross Site Scripting</category>
+	<risk>high</risk>
+	<likelihood>high</likelihood>
+	<impact>medium</impact>
+	<whocanexploit></whocanexploit>
+	<references></references>
+	<tfinding>
+		<en>It has been found...</en>
+		<cz>
+
+
+
+Během penetračního testu bylo zjištěno, že na uvedených vstupech nedochází k filtrování uživatelem vkládaných dat. Zadaná data jsou poté vypsána zpět do kódu webové stránky. Jedná se o zranitelnost známou jako Cross Site Scripting (XSS).\\
+\
+Bylo zjištěno, že následující parametry na následujících umístěním jsou náchylné na vložení javascriptového kódu, který je následně proveden v kontextu webové aplikace.
+
+\begin{itemize}[noitemsep]
+\item url: /inistrace.aspx; parametr: jméno jakéhokoliv přidaného parametru
+\item url: /blastrace.aspx; parametr: jméno jakéhokoliv přidaného parametru
+\end{itemize}
+
+
+Pro ukázku exploitace je možné použít následující HTTP požadavek (request):
+
+\footnotesize
+\begin{verbatim}
+GET /index.aspx?tmllt';prompt('xss');a='1 HTTP/1.1
+Host: example.com
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:68.0) Gecko/20100101 Firefox/68.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: close
+Upgrade-Insecure-Requests: 1
+
+\end{verbatim}
+\normalsize
+
+A výsledek je možné vidět na následujícím snímku obrazovky.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=440pt]{xss-exploited}
+\caption{Demonstrace Cross Site Scripting}
+\end{figure}
+
+
+
+
+
+
+
+
+%%% BLACKHAT
+%Během testu byly nalezeny následující umístění náchylná na vložení javascriptového kódu, který je následně proveden v kontextu webové %aplikace. Jedná se o zranitelnost známou jako Cross Site Scripting (XSS).
+%\footnotesize
+%\begin{lstlisting}
+%+ The 'josso_back_to' parameter of the /josso/cepro_login.jsp CGI :
+%+ The 'josso_back_to' parameter of the /josso/signon/login.do CGI :
+%\end{lstlisting}
+%\normalsize
+%%% /BLACKHAT
+
+
+
+Bylo zjištěno, že následující parametry na následujících umístěním jsou náchylné na vložení javascriptového kódu, který je následně proveden v kontextu webové aplikace. Jedná se o zranitelnost známou jako Cross Site Scripting (XSS).
+\begin{itemize}[noitemsep]
+\item url: /; parametr: jakýkoliv přidaný parametr
+\item url: /index.php; parametr: page
+\end{itemize}
+
+
+%Během penetračního testu bylo zjištěno, že na uvedených vstupech nedochází k filtrování uživatelem vkládaných dat. Zadaná data jsou poté vypsána zpět do kódu webové stránky, což může vést k útoku zvanému Cross Site Scripting. Konkrétně se jedná o 
+
+Během penetračního testu bylo zjištěno, že při uploadu Certificate Signing Request (CSR) na adrese https://example/com/ssl/extended\_validation\_single.php nedochází při výpisu adresy v kroku 2 k filtrování dat získaných z nedůvěryhodného vstupu (obsahu CSR). Zadaná data jsou poté vypsána zpět do kódu webové stránky, což může vést k útoku zvanému Cross Site Scripting. Konkrétně se jedná o položku Common Name v CSR.
+
+%Útočník může útočný CSR připravit například následovně (pomocí dříve vygenerovaného klíče umístěného na \textasciitilde{}/a/domain.com.key):
+%\footnotesize
+%\begin{lstlisting}
+%$ openssl req -new -sha256 -key ~/a/domain.com.key -out ~/a/domain.com.csr
+%[.. snip ..]
+%Country Name (2 letter code) [AU]:CZ
+%State or Province Name (full name) [Some-State]:
+%Locality Name (eg, city) []:a
+%Organization Name (eg, company) [Internet Widgits Pty Ltd]:a
+%Organizational Unit Name (eg, section) []:s
+%Common Name (e.g. server FQDN or YOUR name) []:<script>alert(1);</script>
+%Email Address []:
+%[.. snip ..]
+%\end{lstlisting}
+%\normalsize
+
+%\begin{figure}[H]
+%\centering
+%\includegraphics[width=150mm]{"img/xss"}
+%\caption{Provedení XSS po nahrání CSR}
+%\end{figure}
+		</cz>
+	</tfinding>
+	<trisk>
+		<en></en>
+		<cz>
+Možnost ovlivnění informací na webu pomocí útoku XSS může vést například k poškození pověsti provozovatele webové aplikace. Může také dojít k jinému typu škody v závislosti na charakteru podvržené informace.
+Dalším rizikem je odcizení session ID, které udržuje uživatelskou relaci v dané webové aplikaci. Pomocí útoku XSS může dojít k jeho odcizení a s ním i k odcizení uživatelské relace. Útočník také může spouštět skripty v kontextu napadené aplikace či například zneužít klientský systém jako XSS Proxy.
+		</cz>
+	</trisk>
+	<trecommendation>
+		<en></en>
+		<cz>
+Doporučujeme zkontrolovat všechny funkce, které pracují s jakýmikoliv uživateli ovlivnitelnými vstupy a případně upravit jejich funkcionalitu tak, aby obsahovaly filtrování veškerých nedůvěryhodných vstupů, ať již od uživatele (formuláře, identifikace prohlížeče, cookies, ...) nebo jiného potenciálně nedůvěryhodného subsystému.
+Vstupy doporučujeme filtrovat principem whitelist, kdy jsou přijaty pouze řetězce obsahující pouze povolené znaky. Ty by měly být například a-zA-Z0-9. Dále doporučujeme vždy jasně specifikovat odchozí kódování dat.
+		</cz>
+	</trecommendation>
+	<tsteps>
+		<en>
+
+		</en>
+		<cz>
+\begin{enumerate}[noitemsep]
+\item otevřete webovou aplikaci ve webovém prohlížeči
+\item v HTTP proxy zachyťte požadavek a upravte jej na výše uvedený
+\item ve webovém prohlížeči můžete vidět, že došlo k provedení vloženého JavaScriptového kódu
+\end{enumerate}
+		</cz>
+	</tsteps>
+</issue>
+

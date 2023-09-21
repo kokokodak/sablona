@@ -1,0 +1,52 @@
+<issue id="chybejici-parametry-cookies">
+	<name>
+		<en>Insufficient cookie parameters</en>
+		<cz>Chybějící parametry cookies</cz>
+	</name>
+	<category></category>
+	<risk>low</risk>
+	<likelihood>medium</likelihood>
+	<impact>low</impact>
+	<whocanexploit></whocanexploit>
+	<references></references>
+	<tfinding>
+		<en>It has been found...</en>
+		<cz>
+Během testů bylo zjištěno, že některé cookies nemají nastaveny parametry, které jsou z hlediska bezpečnosti doporučovány.
+Jedná se o následující parametry:
+
+\begin{itemize}[noitemsep]
+\item{HttpOnly – tento parametr znemožní přístup ke cookie z JavaScriptu, čímž výrazně omezí možnosti útoku XSS}
+\item{Secure – zajistí, že cookie je posílána výhradně po zabezpečeném, https kanále, čímž zamezuje odposlechnutí například session id}
+\end{itemize}
+
+Použité cookies a parametry, které nemají nastaveny:
+
+\begin{itemize}[noitemsep]
+\item{PHPSESSID – chybí parametry HttpOnly a Secure}
+\end{itemize}
+
+
+        </cz>
+	</tfinding>
+	<trisk>
+		<en></en>
+		<cz>
+Rizika v tomto případě vychází z možnosti krádeže cookie a jejího obsahu. V případě nenastaveného parametru HttpOnly může dojít ke krádeži cookie pomocí útoku XSS. V případě nepoužití parametru Secure může být obsah cookie odposlechnut po cestě požadavku sítí.
+		</cz>
+	</trisk>
+	<trecommendation>
+		<en></en>
+		<cz>
+Doporučujeme všem cookies nastavovat parametry HttpOnly a Secure, a to především pro cookies, které udržují identifikátor session nebo jiné potenciálně citlivé informace
+		</cz>
+	</trecommendation>
+	<tsteps>
+		<en>
+
+		</en>
+		<cz>
+
+		</cz>
+	</tsteps>
+</issue>

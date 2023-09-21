@@ -1,0 +1,42 @@
+<issue id="nepouziti-https">
+	<name>
+		<en></en>
+		<cz>Nepoužití HTTPS</cz>
+	</name>
+	<category></category>
+	<risk>medium</risk>
+	<likelihood>medium</likelihood>
+	<impact>medium</impact>
+	<whocanexploit></whocanexploit>
+	<references></references>
+	<tfinding>
+		<en>It has been found...</en>
+		<cz>
+Bylo zjištěno, že server na kterém běží webová aplikace nepoužívá šifrovaný přenos dat prostřednictvím HTTPS. Informace, které jsou přenášeny mezi klientem a serverem můžou být zachyceny a přečteny útočníkem. Závažnost nálezu je zvýšena faktem, že e-mailový účet je v dnešní době středobodem internetové identity uživatele a jeho kompromitací by došlo k výrazným problémům uživatele z hlediska identity a soukromí.
+
+%[img]
+%Figure 14. Aplikace není dostupná přes HTTPS
+		</cz>
+	</tfinding>
+	<trisk>
+		<en></en>
+		<cz>
+V případě, že se útočníkovi podaří získat přístup mezi klienta a server, může být schopen odposlouchávat veškerou komunikaci mezi nimi. Útočník může být schopen odposlechnout například přihlašovací údaje, odesílané zprávy, zprávy, které uživatel zobrazuje a další informace. V takovém případě tedy může dojít ke kompromitaci uživatelského účtu či úniku potenciálně citlivých informací.
+		</cz>
+	</trisk>
+	<trecommendation>
+		<en></en>
+		<cz>
+Doporučujeme nasazení HTTPS a vynucování jeho použití. V dnešní době není problém nasadit například certifikát od Let's Encrypt, který je zadarmo a jeho nasazení společně se zapnutím HTTPS je otázkou několika minut.
+		</cz>
+	</trecommendation>
+	<tsteps>
+		<en>
+
+		</en>
+		<cz>
+
+		</cz>
+	</tsteps>
+</issue>
+

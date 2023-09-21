@@ -1,0 +1,46 @@
+<issue id="ssl-certifikat-se-slabym-sifrovacim-klicem">
+	<name>
+		<en></en>
+		<cz>SSL certifikát se slabým šifrovacím klíčem</cz>
+	</name>
+	<category></category>
+	<risk>low</risk>
+	<likelihood>medium</likelihood>
+	<impact>medium</impact>
+	<whocanexploit></whocanexploit>
+	<references></references>
+	<tfinding>
+		<en>It has been found...</en>
+		<cz>
+Bylo zjištěno, že SSL některý z certifikátů je podepsaný s RSA klíčem kratším než 2048 bitů.
+
+\footnotesize
+\begin{lstlisting}
+|-Subject : CN=123/O=456
+|-RSA Key Length : 1024 bits
+\end{lstlisting}
+\normalsize
+		</cz>
+	</tfinding>
+	<trisk>
+		<en></en>
+		<cz>
+Od 1. ledna 2014 musí mít všechny klíče délku alespoň 2048 bitů. Nekteré systémy mohou kratší délky odmítat.
+		</cz>
+	</trisk>
+	<trecommendation>
+		<en></en>
+		<cz>
+Doporučujeme nespoléhat na certifikáty, které jsou podepsané s pomocí krátkého RSA klíče a nechat si certifikát u certifikační autority přegenerovat.
+		</cz>
+	</trecommendation>
+	<tsteps>
+		<en>
+
+		</en>
+		<cz>
+
+		</cz>
+	</tsteps>
+</issue>
+

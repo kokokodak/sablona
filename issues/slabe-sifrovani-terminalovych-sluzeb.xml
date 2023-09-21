@@ -1,0 +1,45 @@
+<issue id="slabe-sifrovani-terminalovych-sluzeb">
+	<name>
+		<en></en>
+		<cz>Slabé šifrování terminálových služeb</cz>
+	</name>
+	<category></category>
+	<risk>medium</risk>
+	<likelihood>medium</likelihood>
+	<impact>medium</impact>
+	<whocanexploit></whocanexploit>
+	<references></references>
+	<tfinding>
+		<en>
+
+		</en>
+		<cz>
+Bylo zjištěno, že rdp protokol je nastavený tak, aby používal slabé šifrování.
+		</cz>
+	</tfinding>
+	<trisk>
+		<en>
+
+		</en>
+		<cz>
+Útočník může být schopen komunikaci zachytit a případně dešifrovat a tím naslouchat na dané komunikaci.
+		</cz>
+	</trisk>
+	<trecommendation>
+		<en>
+
+		</en>
+		<cz>
+Doporučujeme nastavení šifrovacího levelu na 3. High nebo 4. FIPS Compliant.
+		</cz>
+	</trecommendation>
+	<tsteps>
+		<en>
+
+		</en>
+		<cz>
+
+		</cz>
+	</tsteps>
+</issue>
+

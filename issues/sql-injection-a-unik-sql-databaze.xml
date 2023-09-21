@@ -1,0 +1,88 @@
+<issue id="sql-injection-a-unik-sql-databaze">
+	<name>
+		<en></en>
+		<cz>SQL Injection a únik SQL databáze</cz>
+	</name>
+	<category></category>
+	<risk>critical</risk>
+	<likelihood>high</likelihood>
+	<impact>high</impact>
+	<whocanexploit></whocanexploit>
+	<references></references>
+	<tfinding>
+		<en>It has been found...</en>
+		<cz>
+Během penetračního testu bylo zjištěno, že aplikace je náchylná na zranitelnost známou jako SQL injection. Jedná se o velice známou a rozšířenou zranitelnost, která je způsobena chybějícím nebo špatným filtrováním nedůvěryhodných vstupů v aplikaci (většinou se jedná o uživatelské vstupy jako jsou formuláře, identifikace prohlížeče, cookies a další). Dané nefiltrované vstupy jsou pomocí SQL požadavku předány přímo do databáze, což může mít nepředpokládané následky.
+
+Zranitelné jsou následující stránky a parametry:
+\begin{itemize}
+\item /Login - parametry: password, username
+\end{itemize}
+
+Požadavek odeslaný na server.
+
+\footnotesize
+\begin{lstlisting}
+POST /Login HTTP/1.1
+Host: example.com
+User-Agent: Mozilla/5.0 (X11; Fedora; Linux x86\_64; rv:44.0) Gecko/20100101 Firefox/44.0
+Accept: */*
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate, br
+Content-Type: application/x-www-form-urlencoded; charset=UTF-8
+X-Requested-With: XMLHttpRequest
+Referer: https://example.com
+Content-Length: 40
+Cookie: PHPSESSID=6tbd9hlc9782qkc5d6f704ha46
+Connection: close
+
+username=anon%40attacker.com\&amp;password='
+\end{lstlisting}
+\normalsize
+
+Odpověď ze serveru, která obsahuje informace o chybě přímo z SQL databáze.
+
+\footnotesize
+\begin{lstlisting}
+HTTP/1.1 200 OK
+Server: nginx
+Date: Mon, 24 Oct 2016 09:53:09 GMT
+Content-Type: text/html; charset=UTF-8
+Content-Length: 591
+Connection: close
+X-Powered-By: PHP/5.4.42
+Expires: Thu, 19 Nov 1981 08:52:00 GMT
+Cache-Control: no-store, no-cache, must-revalidate, post-check=0, pre-check=0
+Pragma: no-cache
+
+\end{lstlisting}
+\normalsize
+		</cz>
+	</tfinding>
+	<trisk>
+		<en></en>
+		<cz>
+Provedením útoku za pomoci SQL injection může dojít k úniku citlivých dat, může dojít k jejich poškození či neautorizované změně. Pokročilým využitím SQL injection je možné provést celkovou kompromitaci databáze i hostitelského systému. Uvedená zranitelnost je přímým ohrožením citlivých dat i hostitelského systému.
+		</cz>
+	</trisk>
+	<trecommendation>
+		<en></en>
+		<cz>
+Doporučujeme zkontrolovat všechny funkce, které pracují s databází a případně upravit jejich funkcionalitu tak, aby obsahovaly filtrování veškerých nedůvěryhodných vstupů, ať již od uživatele (formuláře, identifikace prohlížeče, cookies, ...) nebo jiného potenciálně nedůvěryhodného subsystému.
+Vstupy doporučujeme filtrovat principem whitelist, kdy jsou přijaty pouze řetězce obsahující pouze povolené znaky. Ty by měly být například a-zA-Z0-9. Dále doporučujeme vždy jasně specifikovat odchozí kódování dat.
+		</cz>
+	</trecommendation>
+	<tsteps>
+		<en>
+
+		</en>
+		<cz>
+# We webovém prohlížeči otevřete webovou aplikaci www.example.com/main/login
+# Do formuláře pro přihlášení vložte libovolné uživatelské jméno a místo hesla vložte znak \'
+# Po odeslání formuláře bude zobrazena chybová hláška MySQL indikující SQL injection
+# Získaná data jsou přiložena, pro jejich rychlé a jednoduché získání doporučujeme použití nástroje sqlmap
+
+		</cz>
+	</tsteps>
+</issue>
+

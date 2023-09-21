@@ -1,0 +1,45 @@
+<issue id="chybejici-timeout-na-odhlaseni">
+	<name>
+		<en>Missing session timeout</en>
+		<cz>Chybějící timeout na odhlášení</cz>
+	</name>
+	<category>N/A</category>
+	<risk>medium</risk>
+	<likelihood>low</likelihood>
+	<impact>medium</impact>
+	<whocanexploit></whocanexploit>
+	<references></references>
+	<tfinding>
+		<en>
+During penetration test we found, that despite user session is invalidated after period of inactivity, the website still stays opened on the page where it was left. If user for example has sensitive information shown on the screen, then leave for some time, sensitive information will be on the screen potentially indefinitely.
+		  </en>
+		<cz>
+Během penetračního testu bylo zjištěno, že ani po 20 minutách neaktivity není přihlášený uživatel automaticky odhlášen. Jedná se o bezpečnostní opatření používané v aplikacích, které pracují s citlivými daty. Jeho cílem je omezit útoky vyplývající z toho, že uživatel opustí webovou aplikaci bez odhlášení.
+		</cz>
+	</tfinding>
+	<trisk>
+		<en>
+In case attacker comes around the user's web browser with sensitive data shown in the web application, he can be able to see them. To mitigate this attack vector, proper session invalidation should be implemented. When timeout is hit in the user's web browser, user session needs to be destroyed (that is done) and user needs to be redirected to some neutral page without sensitive information shown, e.g. login dialog.
+		  </en>
+		<cz>
+Rizikem chybějícího automatického odhlášení po určité době je to, že uživatel může na chvíli opustit počítač i s aplikací ve které je přihlášen. V té chvíli může útočník, přistoupit k počítači a aplikaci s přihlášeným uživatelem po celou dobu, kdy je uživatel pryč. V případě zavedení timeoutu na odhlášení, toto okno ve kterém je možné k aplikaci přistoupit je výrazně zredukováno.
+		</cz>
+	</trisk>
+	<trecommendation>
+		<en>
+We recommend improving session timeout in a way that after hitting timeout, user is redirected to some neutral page without sensitive information shown, e.g. login dialog.
+		  </en>
+		<cz>
+Doporučujeme zavedení automatického odhlášení po určité době, třeba po 5 - 10 minutách tak, aby bylo zamezeno zneužití citlivých dat v situacích, kdy uživatel na chvíli opustí počítač, ale zůstane v aplikaci přihlášen.
+		</cz>
+	</trecommendation>
+	<tsteps>
+		<en>
+
+		</en>
+		<cz>
+
+		</cz>
+	</tsteps>
+</issue>
+

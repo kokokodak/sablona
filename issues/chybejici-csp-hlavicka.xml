@@ -1,0 +1,45 @@
+<issue id="chybejici-csp-hlavicka">
+	<name>
+		<en>Missing CSP header</en>
+		<cz>Chybějící CSP hlavička</cz>
+	</name>
+	<category></category>
+	<risk>low</risk>
+	<likelihood>medium</likelihood>
+	<impact>medium</impact>
+	<whocanexploit></whocanexploit>
+	<references></references>
+	<tfinding>
+		<en>
+
+		</en>
+		<cz>
+Během testů bylo zjištěno, že webový server neposílá CSP hlavičku nebo je hlavička nedostatečná. CSP hlavička slouží k mitigaci některých typů útoků vůči webových aplikacím . Konkrétně se jedná o útoky a zranitelnosti XSS, clickjacking a další code injection útoky vyplývající ze spouštění nedůvěryhodného kódu v kontextu důvěryhodné webové aplikace.
+		</cz>
+	</tfinding>
+	<trisk>
+		<en>
+
+		</en>
+		<cz>
+Riziko vyplývající z chybějící CSP hlavičky spočívá v chybějící další vrstvě zabezpečení webové aplikace proti výše popsaným zranitelnostem.
+		</cz>
+	</trisk>
+	<trecommendation>
+		<en>
+
+		</en>
+		<cz>
+Doporučujeme implementaci CSP hlavičky na webovém serveru. Správná implementace může být o něco složitější, doporučujeme konzultovat informace na webu https://content-security-policy.com/.
+		</cz>
+	</trecommendation>
+	<tsteps>
+		<en>
+
+		</en>
+		<cz>
+
+		</cz>
+	</tsteps>
+</issue>
+

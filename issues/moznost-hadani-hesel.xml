@@ -1,0 +1,44 @@
+<issue id="moznost-hadani-hesel">
+	<name>
+		<en></en>
+		<cz>Možnost hádání hesel</cz>
+	</name>
+	<category></category>
+	<risk>medium</risk>
+	<likelihood>high</likelihood>
+	<impact>medium</impact>
+	<whocanexploit></whocanexploit>
+	<references></references>
+	<tfinding>
+		<en>It has been found...</en>
+		<cz>
+Bylo zjištěno, že aplikace nepoužívá pro přihlašování mechanismus CAPTCHA, a to ani po několika neúspěšných pokusech o přihlášení. Stejně tak nebylo detekováno žádné zamčení účtu či omezení počtu přihlašování a to ani po několika neúspěšných pokusech.
+		</cz>
+	</tfinding>
+	<trisk>
+		<en></en>
+		<cz>
+Takovéto nastavení umožňuje útočníkovi fakticky neomezené hádání hesel do uživatelských účtů. Toto může vést až ke kompromitaci uživatelského účtu.
+Riziko nálezu je zvýšeno faktem, že v aplikaci chybí bezpečná politika hesel a tedy je pravděpodobné, že jednoduchých uhodnutelných hesel se v aplikaci nachází nemalé množství.
+		</cz>
+	</trisk>
+	<trecommendation>
+		<en></en>
+		<cz>
+Doporučujeme zvážit možnost implementace mechanismu CAPTCHA a blokování, a to například takovým způsobem, že po třech neúspěšných pokusech o přihlášení bude uživateli zobrazena CAPTCHA a po dalších například třech neúspěšných pokusech dojde k dočasnému zablokování dané IP adresy.
+		</cz>
+	</trecommendation>
+	<tsteps>
+		<en>
+
+		</en>
+		<cz>
+\begin{enumerate}[noitemsep]
+\item otevřete webovou aplikaci na přihlašovací stránce
+\item třikrát zadejte špatné heslo k existujícímu účtu
+\item pozorujte, že nedošlo k žádnému omezení počtu pokusů
+\end{enumerate}
+		</cz>
+	</tsteps>
+</issue>
+

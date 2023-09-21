@@ -1,0 +1,55 @@
+<issue id="ike-aggresive-mode-with-pre-shared-key">
+	<name>
+		<en>Internet Key Exchange (IKE) Aggressive Mode with Pre-Shared Key</en>
+		<cz>IKEv1 v Aggresive módu s pre-shared klíčem</cz>
+	</name>
+	<category></category>
+	<risk>medium</risk>
+	<likelihood>medium</likelihood>
+	<impact>medium</impact>
+	<whocanexploit></whocanexploit>
+	<references></references>
+	<tfinding>
+		<en>
+
+Description
+The remote Internet Key Exchange (IKE) version 1 service seems to support Aggressive Mode with Pre-Shared key (PSK) authentication. Such a configuration could allow an attacker to capture and crack the PSK of a VPN gateway and gain unauthorized access to private networks.
+Solution
+- Disable Aggressive Mode if supported.
+- Do not use Pre-Shared key for authentication if it's possible.
+- If using Pre-Shared key cannot be avoided, use very strong keys.
+- If possible, do not allow VPN connections from any IP addresses.
+		</en>
+		<cz>
+Bylo zjištěno, že vzdálená služba IKEv1 (Internet Key Exchange) podporuje Aggressive mód s pre-shared klíčem.
+		</cz>
+	</tfinding>
+	<trisk>
+		<en>
+
+		</en>
+		<cz>
+Takováto konfigurace může útočník zneužít, může být schopen odchytit a cracknout pre-shared klíč a získat tím neoprávněný přístup.
+		</cz>
+	</trisk>
+	<trecommendation>
+		<en>
+
+		</en>
+		<cz>
+Doporučujeme následující řešení:
+\begin{itemize}[noitemsep]
+\item vypnutí podpory Aggresive módu
+\item nepoužívání pre-shared klíče k autentizaci
+\end{itemize}
+		</cz>
+	</trecommendation>
+	<tsteps>
+		<en>
+
+		</en>
+		<cz>
+
+		</cz>
+	</tsteps>
+</issue>

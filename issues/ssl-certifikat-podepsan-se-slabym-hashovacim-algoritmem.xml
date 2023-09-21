@@ -1,0 +1,39 @@
+<issue id="ssl-certifikat-podepsan-se-slabym-hashovacim-algoritmem">
+	<name>
+		<en></en>
+		<cz>SSL certifikát podepsán se slabým hashovacím algoritmem</cz>
+	</name>
+	<category></category>
+	<risk>low</risk>
+	<likelihood>medium</likelihood>
+	<impact>medium</impact>
+	<whocanexploit></whocanexploit>
+	<references></references>
+	<tfinding>
+		<en>It has been found...</en>
+		<cz>
+Bylo zjištěno, že SSL certifikát je podepsán se slabým hashovacím algoritmem (například MD2, MD4, MD5, nebo SHA1). Tyto algoritmy jsou náchylné na kolize.
+		</cz>
+	</tfinding>
+	<trisk>
+		<en></en>
+		<cz>
+Útočník může být schopen vytvořit takový certifikát, který bude mít stejný digitální podpis. Díky tomu se může tvářit jako daná služba.
+		</cz>
+	</trisk>
+	<trecommendation>
+		<en></en>
+		<cz>
+Doporučujeme nespoléhat na certifikáty, které jsou podepsané s pomocí některého ze zranitelných algoritmů a nechat si certifikát u certifikační autority přegenerovat.
+		</cz>
+	</trecommendation>
+	<tsteps>
+		<en>
+
+		</en>
+		<cz>
+
+		</cz>
+	</tsteps>
+</issue>
+

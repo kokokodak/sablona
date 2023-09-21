@@ -1,0 +1,359 @@
+% Sablona penetracniho testu webove aplikace
+% (c) DEFENDIO s.r.o. 2018
+
+\documentclass[a4paper,12pt]{article}
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[margin=1in,bottom=1in,headheight=110pt]{geometry}
+
+% pokud je zajem o hyperlinky v souboru, odkomentovat nasledujici radek
+%\usepackage{hyperref}
+
+\usepackage{fancyhdr}
+\usepackage{enumitem}
+\usepackage[table,xcdraw]{xcolor}
+\usepackage{color, colortbl}
+\usepackage{float}
+\usepackage{graphicx}
+\usepackage{array,booktabs}
+\usepackage{listings}
+\usepackage{xcolor}
+
+\lstset{%
+  language=[LaTeX]TeX,
+  backgroundcolor=\color{white},
+  basicstyle=\ttfamily,
+  breaklines=true,
+  columns=fullflexible
+}
+
+
+\graphicspath{ {img/} }
+
+
+% konfigurace daneho reportu, dynamicky se vytvari pri vytvareni reportu
+\input{inc/config}
+
+\definecolor{row1}{HTML}{F0EAFF}
+\definecolor{row2}{HTML}{F7F7F7}
+\definecolor{headerblue}{HTML}{B0C4DE}
+
+\makeatletter
+\let\old@rule\@rule
+\def\@rule[#1]#2#3{\textcolor{rulecolor}{\old@rule[#1]{#2}{#3}}}
+\makeatother
+
+\definecolor{rulecolor}{named}{headerblue}
+
+
+\input{inc/hlavicka-eng}
+
+
+%%% zacatek dokumentu
+\begin{document}
+
+\newgeometry{left=0cm,bottom=2cm}
+%%% zobrazeni uvodni stranky bez headeru/footeru
+\titleOWN\thispagestyle{empty}
+\restoregeometry
+
+%%% zobrazeni a odradkovani obsahu
+\tableofcontents
+\newpage
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% SECTION
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\section{Introduction}
+
+\input{inc/disclaimer-eng}
+
+\input{inc/nastroje-eng}
+
+
+\subsection{Testing process}
+Tests were performed according to experience and knowledge of penetration testers. Testing was performed with accordance to OWASP Testing Guide and PTES.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% SECTION
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\section{Management summary}
+Goal of this project was to identify vulnerabilities in Web application that was available at address XXX and API available at address XXX. Specification of API calls was available as Postman JSON file. Those OWASP chapters that are mentioned in Tested areas were tested.
+
+\subsection{Identified vulnerabilities}
+
+During penetration testing we have identified 4 vulnerabilities during unauthenticated phase of web application penetration test, 11 vulnerabilities during authenticated phase of web application penetration test. Two vulnerabilities have been found during testing of API phase.
+
+Overall 5 vulnerabilities were rated with medium severity, 10 with low severity and 2 findings are of informational severity. This is among the average number of vulnerabilities that are usually found in web application of such size.
+
+
+\subsection{Conclusion}
+Some vulnerabilities of the medium and low severity we have found, can be used by highly motivated or skilled attacker to attack the web application. Among most likely vulnerabilities that could be exploited are cross site request forgery and defective access controls. Both vulnerabilities allow attack on users of web application and their sensitive data.\\
+\\
+We recommend paying more attention to some particular parts of general design of application, such as not allowing user e-mail enumeration, protecting against session hijacking issues and not sending plaintext passwords in e-mails. There are also some areas where protection that is being used elsewhere in the web application isn't used for some particular parts, such as cross site request forgery and defective access controls. It's also recommended to perform thorough source code analysis to identify inputs that might have been missed during the penetration test.\\
+\\
+After fixing all necessary vulnerabilities we recommend retesting the application to make sure that fixed vulnerabilities were indeed fixed. Regular penetration testing is also recommended as there might be more vulnerabilities introduced in new releases or patches.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% SECTION
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+
+\input{inc/klasifikace-eng}
+
+\subsection{According to OWASP}
+For testing of web applications, we use our methodology that is based on widely recognized project OWASP and its OWASP Testing Guide version 4.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% SECTION
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\section{Penetration test results}
+In this chapter there are technical information about performed penetration test. You can see OWASP chapters and information if that chapter was tested or not.
+
+\subsection{Tested areas by OWASP}
+Following chapter is showing tables containing sections of OWASP, which were tested during penetration test.
+
+\paragraph{Information Gathering} \
+
+\rowcolors{1}{row1}{row2}
+\begin{table}[H]
+\renewcommand{\arraystretch}{1.4}
+\begin{tabular}{m{0.8\textwidth}c}
+\rowcolor{headerblue}
+\textbf{Information Gathering} & \textbf{Tested} \\
+\small{\textbf{OTG-INFO-001} - Conduct Search Engine Discovery and Reconnaissance for Information Leakage} & \includegraphics[width=10pt]{yes} \\
+\small{\textbf{OTG-INFO-002} - Fingerprint Web Server} & \includegraphics[width=10pt]{yes} \\
+\small{\textbf{OTG-INFO-003} - Review Webserver Metafiles for Information Leakage} & \includegraphics[width=10pt]{yes} \\
+\small{\textbf{OTG-INFO-004} - Enumerate Applications on Webserver} & \includegraphics[width=10pt]{yes} \\
+\small{\textbf{OTG-INFO-005} - Review Webpage Comments and Metadata for Information Leakage} & \includegraphics[width=10pt]{yes} \\
+\small{\textbf{OTG-INFO-006} - Identify application entry points} & \includegraphics[width=10pt]{yes} \\
+\small{\textbf{OTG-INFO-007} - Map execution paths through application} & \includegraphics[width=10pt]{yes} \\
+\small{\textbf{OTG-INFO-008} - Fingerprint Web Application Framework} & \includegraphics[width=10pt]{yes} \\
+\small{\textbf{OTG-INFO-009} - Fingerprint Web Application} & \includegraphics[width=10pt]{yes} \\
+\small{\textbf{OTG-INFO-010} - Map Application Architecture} & \includegraphics[width=10pt]{yes} \\
+\end{tabular}
+\end{table}
+
+
+\paragraph{Configuration and Deploy Management Testing} \
+
+\rowcolors{1}{row1}{row2}
+\begin{table}[H]
+\renewcommand{\arraystretch}{1.4}
+\begin{tabular}{m{0.8\textwidth}c}
+\rowcolor{headerblue}
+\textbf{Configuration and Deploy Management Testing} & \textbf{Tested} \\
+\small{\textbf{OTG-CONFIG-001} - Test Network/Infrastructure Configuration} & \includegraphics[width=10pt]{yes} \\
+\small{\textbf{OTG-CONFIG-002} - Test Application Platform Configuration} & \includegraphics[width=10pt]{yes} \\
+\small{\textbf{OTG-CONFIG-003} - Test File Extensions Handling for Sensitive Information} & \includegraphics[width=10pt]{yes} \\
+\small{\textbf{OTG-CONFIG-004} - Review Old, Backup and Unreferenced Files for Sensitive Information} & \includegraphics[width=10pt]{yes} \\
+\small{\textbf{OTG-CONFIG-005} - Enumerate Infrastructure and Application Admin Interfaces} & \includegraphics[width=10pt]{yes} \\
+\small{\textbf{OTG-CONFIG-006} - Test HTTP Methods} & \includegraphics[width=10pt]{yes} \\
+\small{\textbf{OTG-CONFIG-007} - Test HTTP Strict Transport Security} & \includegraphics[width=10pt]{yes} \\
+\small{\textbf{OTG-CONFIG-008} - Test RIA cross domain policy} & \includegraphics[width=10pt]{yes} \\
+\end{tabular}
+\end{table}
+
+
+\paragraph{Identity Management Testing} \
+
+\rowcolors{1}{row1}{row2}
+\begin{table}[H]
+\renewcommand{\arraystretch}{1.4}
+\begin{tabular}{m{0.8\textwidth}c}
+\rowcolor{headerblue}
+\textbf{Identity Management Testing} & \textbf{Tested} \\
+\small{\textbf{OTG-IDENT-001} - Test Role Definitions} & \includegraphics[width=10pt]{yes} \\
+\small{\textbf{OTG-IDENT-002} - Test User Registration Process} & \includegraphics[width=10pt]{yes} \\
+\small{\textbf{OTG-IDENT-003} - Test Account Provisioning Process} & \includegraphics[width=10pt]{yes} \\
+\small{\textbf{OTG-IDENT-004} - Testing for Account Enumeration and Guessable User Account} & \includegraphics[width=10pt]{yes} \\
+\small{\textbf{OTG-IDENT-005} - Testing for Weak or unenforced username policy} & \includegraphics[width=10pt]{yes} \\
+\end{tabular}
+\end{table}
+
+
+\paragraph{Authentication Testing} \
+
+\rowcolors{1}{row1}{row2}
+\begin{table}[H]
+\renewcommand{\arraystretch}{1.4}
+\begin{tabular}{m{0.8\textwidth}c}
+\rowcolor{headerblue}
+\textbf{Authentication Testing} & \textbf{Tested} \\
+\small{\textbf{OTG-AUTHN-001} - Testing for Credentials Transported over an Encrypted Channel} & \includegraphics[width=10pt]{yes} \\
+\small{\textbf{OTG-AUTHN-002} - Testing for default credentials} & \includegraphics[width=10pt]{yes} \\
+\small{\textbf{OTG-AUTHN-003} - Testing for Weak lock out mechanism} & \includegraphics[width=10pt]{yes} \\
+\small{\textbf{OTG-AUTHN-004} - Testing for bypassing authentication schema} & \includegraphics[width=10pt]{yes} \\
+\small{\textbf{OTG-AUTHN-005} - Test remember password functionality} & \includegraphics[width=10pt]{yes} \\
+\small{\textbf{OTG-AUTHN-006} - Testing for Browser cache weakness} & \includegraphics[width=10pt]{yes} \\
+\small{\textbf{OTG-AUTHN-007} - Testing for Weak password policy} & \includegraphics[width=10pt]{yes} \\
+\small{\textbf{OTG-AUTHN-008} - Testing for Weak security question/answer} & \includegraphics[width=10pt]{yes} \\
+\small{\textbf{OTG-AUTHN-009} - Testing for weak password change or reset functionalities} & \includegraphics[width=10pt]{yes} \\
+\small{\textbf{OTG-AUTHN-010} - Testing for Weaker authentication in alternative channel} & \includegraphics[width=10pt]{yes} \\
+\end{tabular}
+\end{table}
+
+
+
+\paragraph{Authorization Testing} \
+
+\rowcolors{1}{row1}{row2}
+\begin{table}[H]
+\renewcommand{\arraystretch}{1.4}
+\begin{tabular}{m{0.8\textwidth}c}
+\rowcolor{headerblue}
+\textbf{Authorization Testing} & \textbf{Tested} \\
+\small{\textbf{OTG-AUTHZ-001} - Testing Directory traversal/file include} & \includegraphics[width=10pt]{yes} \\
+\small{\textbf{OTG-AUTHZ-002} - Testing for bypassing authorization schema} & \includegraphics[width=10pt]{yes} \\
+\small{\textbf{OTG-AUTHZ-003} - Testing for Privilege Escalation} & \includegraphics[width=10pt]{yes} \\
+% \small{\textbf{OTG-AUTHZ-004} - Testing for Insecure Direct Object References} & \includegraphics[width=10pt]{yes} \\
+\end{tabular}
+\end{table}
+
+
+\paragraph{Session Management Testing} \
+
+\rowcolors{1}{row1}{row2}
+\begin{table}[H]
+\renewcommand{\arraystretch}{1.4}
+\begin{tabular}{m{0.8\textwidth}c}
+\rowcolor{headerblue}
+\textbf{Session Management Testing} & \textbf{Tested} \\
+\small{\textbf{OTG-SESS-001} - Testing for Bypassing Session Management Schema} & \includegraphics[width=10pt]{yes} \\
+\small{\textbf{OTG-SESS-002} - Testing for Cookies attributes} & \includegraphics[width=10pt]{yes} \\
+\small{\textbf{OTG-SESS-003} - Testing for Session Fixation} & \includegraphics[width=10pt]{yes} \\
+\small{\textbf{OTG-SESS-004} - Testing for Exposed Session Variables} & \includegraphics[width=10pt]{yes} \\
+\small{\textbf{OTG-SESS-005} - Testing for Cross Site Request Forgery} & \includegraphics[width=10pt]{yes} \\
+\small{\textbf{OTG-SESS-006} - Testing for logout functionality} & \includegraphics[width=10pt]{yes} \\
+\small{\textbf{OTG-SESS-007} - Test Session Timeout} & \includegraphics[width=10pt]{yes} \\
+\small{\textbf{OTG-SESS-008} - Testing for Session puzzling} & \includegraphics[width=10pt]{yes} \\
+\end{tabular}
+\end{table}
+
+
+\paragraph{Data Validation Testing} \
+
+\rowcolors{1}{row1}{row2}
+\begin{table}[H]
+\renewcommand{\arraystretch}{1.4}
+\begin{tabular}{m{0.8\textwidth}c}
+\rowcolor{headerblue}
+\textbf{Data Validation Testing} & \textbf{Tested} \\
+\small{\textbf{OTG-INPVAL-001} - Testing for Reflected Cross Site Scripting} & \includegraphics[width=10pt]{yes} \\
+\small{\textbf{OTG-INPVAL-002} - Testing for Stored Cross Site Scripting} & \includegraphics[width=10pt]{yes} \\
+\small{\textbf{OTG-INPVAL-003} - Testing for HTTP Verb Tampering} & \includegraphics[width=10pt]{yes} \\
+\small{\textbf{OTG-INPVAL-004} - Testing for HTTP Parameter pollution} & \includegraphics[width=10pt]{yes} \\
+\small{\textbf{OTG-INPVAL-005} - Testing for SQL Injection} & \includegraphics[width=10pt]{yes} \\
+\small{\textbf{OTG-INPVAL-006} - Testing for LDAP Injection} & \includegraphics[width=10pt]{yes} \\
+\small{\textbf{OTG-INPVAL-007} - Testing for ORM Injection} & \includegraphics[width=10pt]{yes} \\
+\small{\textbf{OTG-INPVAL-008} - Testing for XML Injection} & \includegraphics[width=10pt]{yes} \\
+\small{\textbf{OTG-INPVAL-009} - Testing for SSI Injection} & \includegraphics[width=10pt]{yes} \\
+\small{\textbf{OTG-INPVAL-010} - Testing for XPath Injection} & \includegraphics[width=10pt]{yes} \\
+\small{\textbf{OTG-INPVAL-011} - IMAP/SMTP Injection} & \includegraphics[width=10pt]{yes} \\
+\small{\textbf{OTG-INPVAL-012} - Testing for Code Injection} & \includegraphics[width=10pt]{yes} \\
+\small{\textbf{OTG-INPVAL-013} - Testing for Command Injection} & \includegraphics[width=10pt]{yes} \\
+\small{\textbf{OTG-INPVAL-014} - Testing for Buffer overflow} & \includegraphics[width=10pt]{yes} \\
+\small{\textbf{OTG-INPVAL-015} - Testing for incubated vulnerabilities} & \includegraphics[width=10pt]{yes} \\
+\small{\textbf{OTG-INPVAL-016} - Testing for HTTP Splitting/Smuggling} & \includegraphics[width=10pt]{yes} \\
+\end{tabular}
+\end{table}
+
+
+\paragraph{Error Handling Testing} \
+
+\rowcolors{1}{row1}{row2}
+\begin{table}[H]
+\renewcommand{\arraystretch}{1.4}
+\begin{tabular}{m{0.8\textwidth}c}
+\rowcolor{headerblue}
+\textbf{Error Handling Testing} & \textbf{Tested} \\
+\small{\textbf{OTG-ERR-001} - Analysis of Error Codes} & \includegraphics[width=10pt]{yes} \\
+\small{\textbf{OTG-ERR-002} - Analysis of Stack Traces} & \includegraphics[width=10pt]{yes} \\
+\end{tabular}
+\end{table}
+
+
+
+\paragraph{Cryptography Testing} \
+
+\rowcolors{1}{row1}{row2}
+\begin{table}[H]
+\renewcommand{\arraystretch}{1.4}
+\begin{tabular}{m{0.8\textwidth}c}
+\rowcolor{headerblue}
+\textbf{Cryptography Testing} & \textbf{Tested} \\
+\small{\textbf{OTG-CRYPST-001} - Testing for Weak SSL/TLS Ciphers, Insufficient Transport Layer Protection} & \includegraphics[width=10pt]{yes} \\
+\small{\textbf{OTG-CRYPST-002} - Testing for Padding Oracle} & \includegraphics[width=10pt]{yes} \\
+\small{\textbf{OTG-CRYPST-003} - Testing for Sensitive information sent via unencrypted channels} & \includegraphics[width=10pt]{yes} \\
+\end{tabular}
+\end{table}
+
+
+\paragraph{Business Logic Testing} \
+
+\rowcolors{1}{row1}{row2}
+\begin{table}[H]
+\renewcommand{\arraystretch}{1.4}
+\begin{tabular}{m{0.8\textwidth}c}
+\rowcolor{headerblue}
+\textbf{Business Logic Testing} & \textbf{Tested} \\
+\small{\textbf{OTG-BUSLOGIC-001} - Test Business Logic Data Validation} & \includegraphics[width=10pt]{yes} \\
+\small{\textbf{OTG-BUSLOGIC-002} - Test Ability to Forge Requests} & \includegraphics[width=10pt]{yes} \\
+\small{\textbf{OTG-BUSLOGIC-003} - Test Integrity Checks} & \includegraphics[width=10pt]{yes} \\
+\small{\textbf{OTG-BUSLOGIC-004} - Test for Process Timing} & \includegraphics[width=10pt]{yes} \\
+\small{\textbf{OTG-BUSLOGIC-005} - Test Number of Times a Function Can be Used Limits} & \includegraphics[width=10pt]{yes} \\
+\small{\textbf{OTG-BUSLOGIC-006} - Testing for the Circumvention of Work Flows} & \includegraphics[width=10pt]{yes} \\
+\small{\textbf{OTG-BUSLOGIC-007} - Test Defenses Against Application Mis-use} & \includegraphics[width=10pt]{yes} \\
+\small{\textbf{OTG-BUSLOGIC-008} - Test Upload of Unexpected File Types} & \includegraphics[width=10pt]{yes} \\
+\small{\textbf{OTG-BUSLOGIC-009} - Test Upload of Malicious Files} & \includegraphics[width=10pt]{yes} \\
+\end{tabular}
+\end{table}
+
+\newpage
+
+\paragraph{Client Side Testing} \
+
+\rowcolors{1}{row1}{row2}
+\begin{table}[H]
+\renewcommand{\arraystretch}{1.4}
+\begin{tabular}{m{0.8\textwidth}c}
+\rowcolor{headerblue}
+\textbf{Client Side Testing} & \textbf{Tested} \\
+\small{\textbf{OTG-CLIENT-001} - Testing for DOM based Cross Site Scripting} & \includegraphics[width=10pt]{yes} \\
+\small{\textbf{OTG-CLIENT-002} - Testing for JavaScript Execution} & \includegraphics[width=10pt]{yes} \\
+\small{\textbf{OTG-CLIENT-003} - Testing for HTML Injection} & \includegraphics[width=10pt]{yes} \\
+\small{\textbf{OTG-CLIENT-004} - Testing for Client Side URL Redirect} & \includegraphics[width=10pt]{yes} \\
+\small{\textbf{OTG-CLIENT-005} - Testing for CSS Injection} & \includegraphics[width=10pt]{yes} \\
+\small{\textbf{OTG-CLIENT-006} - Testing for Client Side Resource Manipulation} & \includegraphics[width=10pt]{yes} \\
+\small{\textbf{OTG-CLIENT-007} - Test Cross Origin Resource Sharing} & \includegraphics[width=10pt]{yes} \\
+\small{\textbf{OTG-CLIENT-008} - Testing for Cross Site Flashing} & \includegraphics[width=10pt]{yes} \\
+\small{\textbf{OTG-CLIENT-009} - Testing for Clickjacking} & \includegraphics[width=10pt]{yes} \\
+\small{\textbf{OTG-CLIENT-010} - Testing WebSockets} & \includegraphics[width=10pt]{yes} \\
+\small{\textbf{OTG-CLIENT-011} - Test Web Messaging} & \includegraphics[width=10pt]{yes} \\
+\small{\textbf{OTG-CLIENT-012} - Test Local Storage} & \includegraphics[width=10pt]{yes} \\
+\end{tabular}
+\end{table}
+
+
+
+\input{inc/identifikovane-zranitelnosti-eng}
+
+
+\newpage
+\subsection{Findings}
+
+
+
+
+
+
+
+\end{document}

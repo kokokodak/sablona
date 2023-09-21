@@ -1,0 +1,58 @@
+<issue id="jednorazovy-unik-citlivych-informaci">
+	<name>
+		<en></en>
+		<cz>Jednorázový únik citlivých informací</cz>
+	</name>
+	<category></category>
+	<risk>medium</risk>
+	<likelihood>medium</likelihood>
+	<impact>medium</impact>
+	<whocanexploit></whocanexploit>
+	<references></references>
+	<tfinding>
+		<en>It has been found...</en>
+		<cz>
+Během testu došlo při následujícím požadavku k získání potenciálně citlivých dat.
+
+\footnotesize
+\begin{lstlisting}
+GET /example.com HTTP/1.1
+Host: example.com
+User-Agent: Mozilla/5.0 (X11; Ubuntu; Linux x86\_64; rv:44.0) Gecko/20100101 Firefox/44.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate, br
+Cookie: DomAuthSessId=F9CDD4653624130D2CB4A75E64409E9F; SessionID=89D5AEF588EE3B336E4EBD20DFBCCEBF00B94EAF
+Connection: keep-alive
+Cache-Control: max-age=0
+\end{lstlisting}
+\normalsize
+
+Pravděpodobně se jedná o data přímo z produkce ke kterým by z testovacích účtů pro běžné uživatele (v tomto případě zamportal2) neměl být přístup. Běžně dostupná data pro tohoto testovacího uživatele obsahují pouze jeho testovací dovolené.
+K úniku daných dat navíc došlo pouze jednou a přes veškerou snahu se nepodařilo únik reprodukovat. Je tedy na místě otázka na stabilitu a důvěryhodnost celého systému.
+
+%[img]
+		</cz>
+	</tfinding>
+	<trisk>
+		<en></en>
+		<cz>
+Rizikem je potenciální únik informací o dovolených pro běžné testovací uživatele. Dále je zde riziko, že ačkoliv daný únik se nepodařilo reprodukovat, může k němu kdykoliv dojít bez nějaké zjevné příčiny.
+		</cz>
+	</trisk>
+	<trecommendation>
+		<en></en>
+		<cz>
+Doporučujeme prověřit logy webové aplikace ke zjištění proč k tomuto úniku došlo a provést veškerá potřebná opatření, aby k dalšímu úniku nedošlo.
+		</cz>
+	</trecommendation>
+	<tsteps>
+		<en>
+
+		</en>
+		<cz>
+
+		</cz>
+	</tsteps>
+</issue>
+

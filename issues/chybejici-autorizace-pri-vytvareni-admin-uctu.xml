@@ -1,0 +1,39 @@
+<issue id="chybejici-autorizace-pri-vytvareni-admin-uctu">
+	<name>
+		<en>Missing authorization when creating admin accounts</en>
+		<cz>Chybějící autorizace při vytváření admin účtů</cz>
+	</name>
+	<category>N/A</category>
+	<risk>medium</risk>
+	<likelihood>low</likelihood>
+	<impact>medium</impact>
+	<whocanexploit></whocanexploit>
+	<references></references>
+	<tfinding>
+		<en>It has been found...</en>
+		<cz>
+Během penetračního testu bylo zjištěno, že jakýkoliv jeden účet s vyššími oprávněními (pro vytváření dalších administrátorských účtů - role1 a role2) může nový účet administrátora vytvořit bez jakékoliv další interakce s jiným uživatelem daného oprávnění. Toto se nazývá autorizace při vytváření uživatelů s vyšším oprávněním a funguje tak, že při vytvoření je nový uživatelský účet dán do fronty a není vytvořen dokud jeho vytvoření není autorizováno někým dalším, jiným než je uživatel, který nový účet vytvořil. Toto schéma se používá pro zabránění nechtěnému či zlomyslnému vytvoření nových uživatelských účtů s vysokými oprávněními. V tomto konkrétním případě by také toto schéma zabránilo nejhoršímu zneužití zranitelnosti CSRF a tím je v tomto případě vytvoření administrátorského účtu s útočníkem definovanými přihlašovacími údaji.
+		</cz>
+	</tfinding>
+	<trisk>
+		<en></en>
+		<cz>
+Rizikem chybějící autorizace při vytváření uživatelských účtů je v první řadě možnost zneužití této funkcionality zlomyslným administrátorem, který z nějakého důvodu bude například po vyhození ze zaměstnání chtít zachovat svůj přístup k systému a jeho datům. Takový zlomyslný administrátor si vytvoří jiný účet a ačkoliv ten jeho původní bude při obchodu ze zaměstnání zablokován, ten nový je výrazně jednodušší přehlédnout a neuvědomit si, že se jedná o administrátorský účet za kterým je vyhazovaný administrátor. Další možnost zneužití je například v případě napadení administrátorského účtu, kdy si útočník vytvoří další administrátorský účet a ačkoliv útok na napadený účet je později detekován a heslo u něj změněno, další účty vytvořené tímto napadeným účtem mohou být zapomenuty.
+		</cz>
+	</trisk>
+	<trecommendation>
+		<en></en>
+		<cz>
+Doporučujeme zavedení určitého postupu vytváření uživatelů s vyšším oprávněním, které by zamezilo možnosti externího či interního útočníka manipulovat s účty s vysokými oprávněními. Jednou z možností je každou změnu takových účtů nechat schválit jiným účtem tak, aby byla vždy potřeba asistence druhého člověka, který by případný podvod či neoprávněné vytvoření nového administrátora odhalil.
+		</cz>
+	</trecommendation>
+	<tsteps>
+		<en>
+
+		</en>
+		<cz>
+
+		</cz>
+	</tsteps>
+</issue>
+

@@ -1,0 +1,63 @@
+<issue id="chybejici-politika-hesel">
+	<name>
+		<en>empty</en>
+		<cz>Chybějící politika hesel</cz>
+	</name>
+	<category>empty</category>
+
+	<risk>medium</risk>
+	<likelihood>medium</likelihood>
+	<impact>medium</impact>
+	<whocanexploit></whocanexploit>
+
+	<references>empty</references>
+	<tfinding>
+		<en>
+empty
+		</en>
+		<cz>
+Během testu bylo zjištěno, že ve webové aplikaci není žádným způsobem vynucována politika hesel. Jedná se o konfiguraci, která
+vynucuje určitou sílu hesla ve chvíli, kdy si jej uživatel nastavuje. Toto umožňuje uživatelům nastavení jednoduchých až triviálních hesel typu "123", "a" či "heslo".
+		</cz>
+	</tfinding>
+	<trisk>
+		<en>
+empty
+		</en>
+		<cz>
+Z naší zkušenosti vyplývá, že ani uživatelé informačních systémů používají jednoduchá až triviální hesla, ať již z důvodu lenosti či z důvodu nedostatečných informací či znalostí. Takovéto počínání je nebezpečné vůči uživatelskému účtu, ať se již jedná o data či funkcionalitu, které jsou z účtu přístupné.
+		</cz>
+	</trisk>
+	<trecommendation>
+		<en>
+empty
+		</en>
+		<cz>
+Doporučujeme definovat defaultní politiku hesel (password policy), a tuto vynucovat při každé změně uživatelského hesla.
+
+Existuje velké množství doporučení ohledně síly hesla, jako rozumné minimum se jeví:
+\begin{itemize}[noitemsep]
+\item - alespoň 8 znaků
+\item - alespoň jeden znak z následujících skupin:
+	\begin{itemize}[noitemsep]
+	\item - malé písmeno
+	\item - velké písmeno
+	\item - číslice
+	\item - speciální znak ( , . - / \# @ * \% ( ) [ ] )
+	\end{itemize}
+\end{itemize}
+		</cz>
+	</trecommendation>
+	<tsteps>
+		<en>
+empty
+		</en>
+		<cz>
+\begin{enumerate}[noitemsep]
+\item ve webovém prohlížeči otevřete dialog pro změnu hesla
+\item v dialogu vyplňte existující heslo a jako nové zvolte nějaké jednoduché, třeba jednopísmenné
+\item pro ověření, že dané heslo bylo úspěšně použito se zkuste do aplikace s daným heslem přihlásit
+\end{enumerate}
+		</cz>
+	</tsteps>
+</issue>

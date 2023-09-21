@@ -1,0 +1,52 @@
+<issue id="ssl-prilis-dlouha-platnost-certifikatu">
+	<name>
+		<en>Certificate validity is too long</en>
+		<cz>Příliš dlouhá platnost certifikátu</cz>
+	</name>
+	<category></category>
+	<risk>medium</risk>
+	<likelihood>medium</likelihood>
+	<impact>medium</impact>
+	<whocanexploit></whocanexploit>
+	<references></references>
+	<tfinding>
+		<en>
+
+		</en>
+		<cz>
+Během testu bylo zjištěno, že následující certifikáty mají délku platnosti delší než 825 dní. Toto je v rozporu s doporučením The CA/Browser Forum.
+
+\footnotesize
+\begin{lstlisting}
+XXX
+\end{lstlisting}
+\normalsize
+
+		</cz>
+	</tfinding>
+	<trisk>
+		<en>
+
+		</en>
+		<cz>
+Příliš dlouhá délka platnosti certifikátu nevynucuje jeho přegenerování po dlouhý čas a je pravděpodobné, že v budoucnu bude takový certifikát z bezpečnostního hlediska nevyhovující.
+		</cz>
+	</trisk>
+	<trecommendation>
+		<en>
+
+		</en>
+		<cz>
+Doporučujeme používat takové certifikáty, které mají délku platnosti maximálně 825 dní.
+		</cz>
+	</trecommendation>
+	<tsteps>
+		<en>
+
+		</en>
+		<cz>
+
+		</cz>
+	</tsteps>
+</issue>
+

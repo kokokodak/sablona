@@ -1,0 +1,50 @@
+<issue id="dostupne-phpinfo">
+	<name>
+		<en></en>
+		<cz>Dostupné PHPInfo</cz>
+	</name>
+	<category></category>
+	<risk>medium</risk>
+	<likelihood>medium</likelihood>
+	<impact>medium</impact>
+	<whocanexploit></whocanexploit>
+	<references></references>
+	<tfinding>
+		<en>It has been found...</en>
+		<cz>
+Během penetračního testu bylo zjištěno, že na adrese http://www.example.com/info.php se nachází tzv. phpinfo stránka s informacemi o použitém php, webovém serveru a další informace.
+
+Z dané stránky byly zjištěny mimo jiné tyto potenciálně citlivé údaje:
+
+\footnotesize
+\begin{lstlisting}
+Verze použitého PHP - PHP Version 5.5.9
+Verze použitého webového serveru – Apache/2.4.7
+Kořenový adresář pro webovou aplikaci - /home/example/data/www/
+Verze Linux jádra – 3.13.0
+\end{lstlisting}
+\normalsize
+		</cz>
+	</tfinding>
+	<trisk>
+		<en></en>
+		<cz>
+Rizika tohoto nálezu souvisí především s možností přesnějšího zaměření útoku ze strany útočníka. Díky phpinfo je útočník schopen s velkou přesností zjistit přesné verze použitého software. Stejně tak je útočník schopen zjistit informace o nastavených direktivách PHP, například allow\_url\_fopen, a další.
+		</cz>
+	</trisk>
+	<trecommendation>
+		<en></en>
+		<cz>
+Doporučujeme danou stránku úplně odstranit, pokud není důvod aby byla na produkčním serveru přístupná. V případě, že taková potřeba existuje a je oprávněná, doporučujeme nasazení nějakého autentizačního mechanismu k přístupu k ní.
+		</cz>
+	</trecommendation>
+	<tsteps>
+		<en>
+
+		</en>
+		<cz>
+
+		</cz>
+	</tsteps>
+</issue>
+

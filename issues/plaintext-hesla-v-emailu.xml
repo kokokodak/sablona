@@ -1,0 +1,54 @@
+<issue id="plaintext-hesla-v-emailu">
+	<name>
+		<en>Plaintext password sent in e-mail</en>
+		<cz>Plaintext hesla v e-mailu</cz>
+	</name>
+	<category></category>
+	<risk>medium</risk>
+	<likelihood>medium</likelihood>
+	<impact>medium</impact>
+	<whocanexploit></whocanexploit>
+	<references></references>
+	<tfinding>
+		<en>
+During penetration test we found out that password for new created services is sent in the e-mail together with username. This is generally not considered secure approach as e-mails can be transported in plaintext form and are usually stored in plaintext form.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=420pt]{plaintext-passwords-in-emails}
+\caption{Plaintext passwords in e-mail}
+\end{figure}
+		  </en>
+		<cz>
+
+		
+		</cz>
+	</tfinding>
+	<trisk>
+		<en>
+If attacker gets access to any network or e-mail server through which the e-mail travels, or gains access to customer's e-mail account, either online or to some backups, he can be able to get access to sensitive credentials.
+		  </en>
+		<cz>
+
+		
+		</cz>
+	</trisk>
+	<trecommendation>
+		<en>
+We recommend not using this approach and either not send plaintext credentials in e-mails or requiring that all passwords are changed again after the first use of potentially compromised passwords sent via e-mail.
+		  </en>
+		<cz>
+
+		
+		</cz>
+	</trecommendation>
+	<tsteps>
+		<en>
+
+		</en>
+		<cz>
+
+		</cz>
+	</tsteps>
+</issue>
+

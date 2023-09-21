@@ -1,0 +1,39 @@
+<issue id="moznost-shoulder-surfingu">
+	<name>
+		<en></en>
+		<cz>Možnost shoulder surfingu při vytváření hesla</cz>
+	</name>
+	<category>N/A</category>
+	<risk>medium</risk>
+	<likelihood>low</likelihood>
+	<impact>medium</impact>
+	<whocanexploit></whocanexploit>
+	<references></references>
+	<tfinding>
+		<en>It has been found...</en>
+		<cz>
+Během penetračního testu bylo zjištěno, že políčko pro zadávání hesla při editaci uživatelů a laboratoří a vytváření uživatelů a zákazníků zobrazuje zadávané heslo v čitelné podobě. Toto je způsobeno tím, že políčko pro heslo je typu text místo typu password.
+		</cz>
+	</tfinding>
+	<trisk>
+		<en></en>
+		<cz>
+Riziko zadávání hesla do aplikace tak, že heslo je zároveň zobrazováno v poli v čitelné podobě a nikoliv jako jednotlivé hvězdičky jako je zvykem, spočívá v možnosti útočníka či náhodného pozorovatele heslo při zadávání odpozorovat a zapamatovat si či vyfotit. Tímto může dojít ke kompromitaci hesla a navázaného uživatelského účtu.
+		</cz>
+	</trisk>
+	<trecommendation>
+		<en></en>
+		<cz>
+Důrazně doporučujeme použití typu password pro pole formulářů pro všechny položky formuláře, které obsahují nebo mají obsahovat hesla. Jedná se o široce používaný přístup, který zamezuje problémům s odkoukáním hesla z obrazovky uživatele.
+		</cz>
+	</trecommendation>
+	<tsteps>
+		<en>
+
+		</en>
+		<cz>
+
+		</cz>
+	</tsteps>
+</issue>
+

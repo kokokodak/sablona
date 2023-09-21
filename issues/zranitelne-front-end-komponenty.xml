@@ -1,0 +1,42 @@
+<issue id="zranitelne-front-end-komponenty">
+	<name>
+		<en>Vulnerable front-end components</en>
+		<cz>Zranitelné front-end komponenty</cz>
+	</name>
+	<category></category>
+	<risk>low</risk>
+	<likelihood>low</likelihood>
+	<impact>low</impact>
+	<whocanexploit></whocanexploit>
+	<references></references>
+	<tfinding>
+		<en>It has been found...</en>
+		<cz>
+Během penetračního testu bylo zjištěno, že na formuláři ke změněn hesla je povoleno tzv. autocomplete:
+
+%[img]
+%Figure 28. Input pro heslo s povoleným autocomplete
+		</cz>
+	</tfinding>
+	<trisk>
+		<en></en>
+		<cz>
+Je-li v prohlížeči uživatele povoleno automatické ukládání hesel a zároveň není tato funkcionalita zakázána v kódu webové stránky, je zde riziko, že citlivá data budou uložena v počítači a můžou být zpřístupněna útočníkovi, který má k počítači přístup.
+		</cz>
+	</trisk>
+	<trecommendation>
+		<en></en>
+		<cz>
+Doporučujeme přidání autocomplete="off" k danému poli pro heslo pro zakázání výše popsané funkcionality.
+		</cz>
+	</trecommendation>
+	<tsteps>
+		<en>
+
+		</en>
+		<cz>
+
+		</cz>
+	</tsteps>
+</issue>
+

@@ -1,0 +1,46 @@
+<issue id="unik-informaci-o-lokalnim-umisteni">
+	<name>
+		<en></en>
+		<cz>Únik informací o lokálním umístění</cz>
+	</name>
+	<category></category>
+	<risk>medium</risk>
+	<likelihood>medium</likelihood>
+	<impact>medium</impact>
+	<whocanexploit></whocanexploit>
+	<references></references>
+	<tfinding>
+		<en>
+
+		</en>
+		<cz>
+Během testu bylo zjištěno, že na defaultní 404 chybové stránce webového serveru je k dispozici informace o lokální cestě požadovaného obsahu.
+Při pokusu o přistoupení na neexistující stránku, například http://xyz/nonexistent je útočníkovi zobrazena lokální cesta C:\\UMISTENI\\nonexistent
+		</cz>
+	</tfinding>
+	<trisk>
+		<en>
+
+		</en>
+		<cz>
+Útočník může ze znalosti struktury umístění na lokálním disku usuzovat například počet uživatelů či webových stránek hostovaných na serveru, může v pozdějších fázích využít zjištěných informací k přesnějšímu zacílení útoku.
+		</cz>
+	</trisk>
+	<trecommendation>
+		<en>
+
+		</en>
+		<cz>
+Doporučujeme defaultní chybové stránky nahradit všeobecnou stránkou s informací, že došlo k chybě, ale nezobrazující potenciálnímu útočníkovi žádné další informace. Stejným způsobem doporučujeme upravit veškerá chybová hlášení aplikace.
+		</cz>
+	</trecommendation>
+	<tsteps>
+		<en>
+
+		</en>
+		<cz>
+
+		</cz>
+	</tsteps>
+</issue>
+

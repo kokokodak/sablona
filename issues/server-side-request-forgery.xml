@@ -1,0 +1,43 @@
+<issue id="server-side-request-forgery">
+	<name>
+		<en></en>
+		<cz>Server Side Request Forgery</cz>
+	</name>
+	<category></category>
+	<risk>medium</risk>
+	<likelihood>medium</likelihood>
+	<impact>medium</impact>
+	<whocanexploit></whocanexploit>
+	<references></references>
+	<tfinding>
+		<en>It has been found...</en>
+		<cz>
+Během penetračního testu bylo zjištěno, že parametr box na adrese / je náchylný k Server Side Request Forgery, což je zranitelnost umožňující útočníkovi vykonávat ze serveru požadavky na jiné servery. V tomto případě je poté na cílovém serveru jako klient zaznamenán server na kterém běží zranitelná webová aplikace.
+
+Útočník může této zranitelnosti zneužít například následujícím URL:
+
+http://example.com/?box=http://attacker.com/send\_death\_threat\_to\_president
+		</cz>
+	</tfinding>
+	<trisk>
+		<en></en>
+		<cz>
+Rizikem této zranitelnosti je, že veškeré takto provedené požadavky jsou zaznamenány na cílových serverech jako přicházející ze serveru na kterém se nachází zranitelná aplikace. Kvůli tomuto může útočník zneužít daný server k případným dalším útokům či nelegálním aktivitám a tyto pak mohou být přičteny na vrub provozovatele serveru se všemi případnými právními důsledky. Díky SSRF může být také útočník schopen získat přístup k serverům a zařízením, které jsou v lokální síti a nejsou přístupné z Internetu.
+		</cz>
+	</trisk>
+	<trecommendation>
+		<en></en>
+		<cz>
+Doporučujeme upravit příslušný skript tak, aby nebylo možné tento typ útoku nadále úspěšně využívat. Základem je filtrování uživatelských vstupů tak, aby byly odstraněny případné znaky s neočekávaným významem. Také doporučujeme zvážit zda je v tomto případě potřeba, aby načítání dané funkcionality bylo nutné řešit dynamicky.
+		</cz>
+	</trecommendation>
+	<tsteps>
+		<en>
+
+		</en>
+		<cz>
+
+		</cz>
+	</tsteps>
+</issue>
+

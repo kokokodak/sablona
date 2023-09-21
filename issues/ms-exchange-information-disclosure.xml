@@ -1,0 +1,60 @@
+<issue id="ms-exchange-information-disclosure">
+	<name>
+		<en></en>
+		<cz>Únik informací o Microsoft Exchange serveru</cz>
+	</name>
+	<category></category>
+
+	<risk>low</risk>
+	<likelihood>medium</likelihood>
+	<impact>medium</impact>
+	<whocanexploit></whocanexploit>
+
+	<references></references>
+	<tfinding>
+		<en>
+
+		</en>
+		<cz>
+Během testu bylo zjištěno, že Microsoft Exchange server obsahuje zranitelnost pomocí které může útočník zjistit interní IP adresu serveru.
+
+\footnotesize
+\begin{lstlisting}
+GET /autodiscover/autodiscover.xml HTTP/1.0
+Accept-Charset: iso-8859-1,utf-8;q=0.9,*;q=0.1
+Accept-Language: en
+Connection: Close
+User-Agent: Mozilla/4.0 (compatible; MSIE 8.0; Windows NT 5.1; Trident/4.0)
+Pragma: no-cache
+Accept: image/gif, image/x-xbitmap, image/jpeg, image/pjpeg, image/png, */*
+
+10.100.2.103
+\end{lstlisting}
+\normalsize
+		</cz>
+	</tfinding>
+	<trisk>
+		<en>
+
+		</en>
+		<cz>
+Rizikem tohoto počícání je, že útočník získá informaci o interní síti, například který soukromý rozsah se používá či jakou interní IP adresu má server přidělenu. Toto mu může zjednodušit případný další postup útoku.
+		</cz>
+	</trisk>
+	<trecommendation>
+		<en>
+
+		</en>
+		<cz>
+Doporučujeme kontaktovat dodavatele řešení s dotazem na dostupnost záplaty, která by danou zranitelnost řešila.
+		</cz>
+	</trecommendation>
+	<tsteps>
+		<en>
+
+		</en>
+		<cz>
+
+		</cz>
+	</tsteps>
+</issue>

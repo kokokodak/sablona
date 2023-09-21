@@ -1,0 +1,48 @@
+<issue id="moznost-enumerace-uzivatelu-v-registracnim-formulari">
+	<name>
+		<en></en>
+		<cz>Možnost enumerace uživatelů v registračním formuláři</cz>
+	</name>
+	<category></category>
+	<risk>low</risk>
+	<likelihood>low</likelihood>
+	<impact>low</impact>
+	<whocanexploit></whocanexploit>
+	<references></references>
+	<tfinding>
+		<en>It has been found...</en>
+		<cz>
+Během testů bylo zjištěno, že v registračním formuláři se nachází bezpečnostní nedostatek, který umožňuje enumerovat uživatelské účty na daném serveru. Webová aplikace totiž reaguje různým způsobem v případě, že se uživatel snaží registrovat již existující login a v případě, že se snaží registrovat ještě neexistující login.
+Pokus o registraci s již použitým loginem:
+
+%[img]
+%Figure 26. Již použitý login
+
+Pokus o registraci ještě nepoužitého loginu:\\
+
+%[img]
+%Figure 27. Pokus o registraci ještě neregistrovaného loginu
+		</cz>
+	</tfinding>
+	<trisk>
+		<en></en>
+		<cz>
+Tato zranitelnost umožňuje útočníkovi ověřit, která přihlašovací jména se ve webové aplikaci používají. Takto získaná přihlašovací jména poté může použít pro provádění dalších útoků, například k brute-force testování použitých hesel na daných účtech.
+		</cz>
+	</trisk>
+	<trecommendation>
+		<en></en>
+		<cz>
+Doporučujeme chybové hlášky, a celkově odpovědi webového serveru, používané v registračním formuláři sjednotit tak, aby nebylo možné rozlišit zda je přihlašovací jméno použité či ne. Tohoto lze dosáhnout například tak, že k jakémukoliv zvolenému přihlašovacímu jménu aplikace vygeneruje unikátní číselné ID, které k loginu připojí (či jím přihlašovací jméno úplně nahradí). Další možností je možnost registrace přes e-mailovou adresu na kterou po zadání dojdou další instrukce k registraci (nebo nedojdou, v případě, že již uživatel existuje, což už se ale útočník nedozví).
+		</cz>
+	</trecommendation>
+	<tsteps>
+		<en>
+
+		</en>
+		<cz>
+
+		</cz>
+	</tsteps>
+</issue>
+

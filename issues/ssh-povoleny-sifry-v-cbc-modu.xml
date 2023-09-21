@@ -1,0 +1,39 @@
+<issue id="ssh-povoleny-sifry-v-cbc-modu">
+	<name>
+		<en></en>
+		<cz>SSH povoleny šifry v CBC módu</cz>
+	</name>
+	<category></category>
+	<risk>low</risk>
+	<likelihood>medium</likelihood>
+	<impact>medium</impact>
+	<whocanexploit></whocanexploit>
+	<references></references>
+	<tfinding>
+		<en>It has been found...</en>
+		<cz>
+SSH server je nakonfigurován tak, že podporuje CBC mód u šifer.
+		</cz>
+	</tfinding>
+	<trisk>
+		<en></en>
+		<cz>
+Jelikož CBC mód není vhodný, může dojít k prozrazení některých informací o zašifrovaných datech.
+		</cz>
+	</trisk>
+	<trecommendation>
+		<en></en>
+		<cz>
+Doporučujeme vypnutí CBC módu a místo něho použití CTR nebo GCM módu.
+		</cz>
+	</trecommendation>
+	<tsteps>
+		<en>
+
+		</en>
+		<cz>
+
+		</cz>
+	</tsteps>
+</issue>
+

@@ -1,0 +1,44 @@
+>>> Dokumentace k aplikaci SABLONA
+
+
+>> Dokumentace k XML formátu issues
+	<cz>/<en>
+	# většina z textačních prvků issue je ve více jazycích, primárně česky a anglicky
+
+	<issue id="">
+	# id je jednoznačný identifikátor issue, je shodný se jménem souboru
+
+	<name>
+	# nadpis issue
+
+	<category>
+	# do budoucna se plánuje, že by tato položka obsahovala OWASP (či jinou) kategorii nálezu
+
+	<risk>
+	# riziko nálezu, momentálně jediné používané z těchto
+
+	<likelihood>
+	# pravděpodobnost, že zranitelnost bude zneužita; NEPOUŽITO
+
+	<impact>
+	# případný dopad zneužití zranitelnosti; NEPOUŽITO
+
+	<whocanexploit>
+	# kdo může zranitelnost zneužít, je to semi-formální, takže vedle klasických věcí jako
+	# "external-attacker", "authenticated-attacker" atd. je možné i další věci jako konkrétní
+	# role uživatele v systému nebo tak
+
+	<references>
+	# plán je, že by toto obsahovalo další reference ohledně nálezů
+
+	<tfinding>
+	# textace pro popis nálezu
+
+	<trisk>
+	# textace pro popis rizika nálezu
+
+	<trecommendation>
+	# textace pro doporučení jak s nálezem
+
+	<tsteps>
+	# textace pro kroky k exploitaci / ověření zranitelnosti

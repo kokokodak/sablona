@@ -1,0 +1,39 @@
+<issue id="ssl-podporovany-null-sifry">
+	<name>
+		<en></en>
+		<cz>SSL podporovány null šifry</cz>
+	</name>
+	<category></category>
+	<risk>low</risk>
+	<likelihood>medium</likelihood>
+	<impact>medium</impact>
+	<whocanexploit></whocanexploit>
+	<references></references>
+	<tfinding>
+		<en>It has been found...</en>
+		<cz>
+Bylo zjištěno, že server podporuje null šifry v SSL/TLS, tedy takové šifry, které neposkytují žádné šifrování.
+		</cz>
+	</tfinding>
+	<trisk>
+		<en></en>
+		<cz>
+V případě, že je použita některá z null šifer, nedochází k šifrování přenášených dat a útočník může daná data při přenosu po síti odchytit a číst.
+		</cz>
+	</trisk>
+	<trecommendation>
+		<en></en>
+		<cz>
+Doporučujeme překonfigurovat službu tak, aby tzv. null šifry nebyly podporovány.
+		</cz>
+	</trecommendation>
+	<tsteps>
+		<en>
+
+		</en>
+		<cz>
+
+		</cz>
+	</tsteps>
+</issue>
+

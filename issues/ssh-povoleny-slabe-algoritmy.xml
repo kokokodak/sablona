@@ -1,0 +1,45 @@
+<issue id="ssh-povoleny-slabe-algoritmy">
+	<name>
+		<en></en>
+		<cz>SSH povoleny slabé algoritmy</cz>
+	</name>
+	<category></category>
+	<risk>low</risk>
+	<likelihood>medium</likelihood>
+	<impact>medium</impact>
+	<whocanexploit></whocanexploit>
+	<references></references>
+	<tfinding>
+		<en>It has been found...</en>
+		<cz>
+V průběhu testu bylo zjištěno, že v SSH jsou povoleny tyto slabé algoritmy:
+
+\footnotesize
+\begin{lstlisting}
+XXX
+\end{lstlisting}
+\normalsize
+		</cz>
+	</tfinding>
+	<trisk>
+		<en></en>
+		<cz>
+Dané algoritmy jsou slabé a nedostatečné. Neposkytují tedy dostatečnou ochranu přenášených dat.
+		</cz>
+	</trisk>
+	<trecommendation>
+		<en></en>
+		<cz>
+Doporučujeme používat takové nastavení, které zajistí používání pouze bezpečných algoritmů.
+		</cz>
+	</trecommendation>
+	<tsteps>
+		<en>
+
+		</en>
+		<cz>
+
+		</cz>
+	</tsteps>
+</issue>
+

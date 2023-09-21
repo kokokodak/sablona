@@ -1,0 +1,125 @@
+<issue id="unik-citlivych-informaci">
+	<name>
+		<en>Information exposure</en>
+		<cz>Únik citlivých informací</cz>
+	</name>
+	<category>OTG-CONFIG-004 - Review Old, Backup and Unreferenced Files for Sensitive Information</category>
+	<risk>low</risk>
+	<likelihood>medium</likelihood>
+	<impact>medium</impact>
+	<whocanexploit></whocanexploit>
+	<references></references>
+	<tfinding>
+		<en>
+The web application fails to properly handle exceptions and displays stack trace, revealing classes and methods. Also used server side software and its version are revealed (Apache Tomcat, version 9.0.8) This can be seen after accessing website \\
+https://website;\
+(note ';' at the end)
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=420pt]{tomcat}
+\caption{Stack trace of Apache Tomcat}
+\end{figure}
+		  </en>
+		<cz>
+
+
+
+Během penetračního testu bylo zjištěno, že aplikace v HTTP hlavičkách vrací informaci o použité verzi webového serveru a interpretu. Konkrétně se jedná o následující hlavičky ze kterých je patrné, že je použit Microsoft IIS server ve verzi 10.0 a .NET Framework ve verzi 4.0.30319.
+
+\begin{verbatim}
+Server: Microsoft-IIS/10.0
+X-AspNet-Version: 4.0.30319
+X-Powered-By: ASP.NET
+\end{verbatim}
+
+Dalším místem úniku těchto informací jsou chybové hlášky serveru, které je možné získat například tak, že po kliknutí na "Hlavní nabídka" dojde k Server Error, který je vidět na přiloženém snímku obrazovky.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=440pt]{unik-informaci}
+\caption{Server Error}
+\end{figure}
+
+
+
+
+
+
+Během penetračního testu bylo zjištěno, že na následujících URL se nacházejí exportní skripty, díky kterým je možné ze serveru získat informace potenciálně citlivé povahy.
+\\
+\\
+Jedná se o následující URL a odpovídající soubory tak jak jsou k nalezení jako příloha:
+
+\begin{itemize}
+\item /trial\_licenses/export\_to\_csv.php
+\begin{itemize}[noitemsep]
+\item trial\_licenses.csv
+\end{itemize}
+
+\item /invoices/export\_xls\_invoices.php
+\begin{itemize}[noitemsep]
+\item invoices.xlsx
+\end{itemize}
+
+\item /purchase/export\_csv\_sales\_and\_profit\_vendor.php
+\begin{itemize}[noitemsep]
+\item vendor\_sales\_and\_profit.csv
+\end{itemize}
+
+\end{itemize}
+
+
+Zároveň následující URL vracejí chybový kód 500
+
+\begin{itemize}[noitemsep]
+\item /payments/export\_csv\_payments.php
+\item /stratos/export\_activity\_log.php
+\item /stratos/export\_assigned\_licenses.php
+\end{itemize}
+
+A následující URL vracejí kód 200, ale žádná data.
+
+\begin{itemize}[noitemsep]
+\item /license/manage\_license\_export.php
+\item /purchase/export\_mailing\_list.php
+\end{itemize}
+
+V obou případech je očekávané chování přesměrování na přihlašovací dialog.
+
+Informace získané z těchto URL jsou přiloženy.
+		</cz>
+	</tfinding>
+	<trisk>
+		<en>
+Any kind of information about software and its version running on system need to be seen as sensitive information. Based on these information attacker can be able to target his following attacks much more precisely.
+		  </en>
+		<cz>
+Útočník může být díky získaným informacím schopen lépe zacílit svoje další útoky. Informace může také použít k zvýšení své důvěryhodnosti například v případě útoku sociálním inženýrstvím.
+
+Riziko je sníženo faktem, že daná URL byla nalezena díky dodanému seznamu php skriptů a v případě reálného útoku je vzhledem k jejich délce nepříliš pravděpodobné, že by byly odhaleny. Možnosti zneužití jsou závislé na business povaze uniklých informací, kterou musí posoudit sám zákazník. Z některých informací je patrné, že se jedná například o uživatele trial licencí. Taková informace může být zneužita například konkurencí k nabídnutí lepších podmínek pro daného zákazníka.
+		</cz>
+	</trisk>
+	<trecommendation>
+		<en>
+We recommend contacting your solution vendor to ask about options to disable showing sensitive information such these.
+		  </en>
+		<cz>
+Doporučujeme nastavení webového serveru, aby případné problémy zaznamenával a upozorňoval na ně administrátory, ale zároveň aby nedával případným útočníkům k dispozici údaje, které mohou být považovány za citlivé.
+Z hlediska informací v hlavičkách HTTP odpovědí doporučujeme konzultovat manuál webového serveru a odesílání těchto hlaviček zakázat.
+
+
+
+Doporučujeme pro dané exportní skripty používat přihlašování stejně jako pro ostatní skripty. Tím dojde k zamezení byť teoretické možnosti nalezení a zneužití exportovaných informací.
+		</cz>
+	</trecommendation>
+	<tsteps>
+		<en>
+
+		</en>
+		<cz>
+
+		</cz>
+	</tsteps>
+</issue>
+

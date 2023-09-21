@@ -1,0 +1,49 @@
+<issue id="cachovani-https-odpovedi">
+	<name>
+		<en>Caching of HTTPS responses</en>
+		<cz>Cachování HTTPS odpovědí</cz>
+	</name>
+	<category>N/A</category>
+	<risk>low</risk>
+	<likelihood>low</likelihood>
+	<impact>medium</impact>
+	<whocanexploit></whocanexploit>
+	<references></references>
+	<tfinding>
+		<en>It has been found...</en>
+		<cz>
+Během penetračního testu bylo zjištěno, že webovému prohlížeči není zakázáno cachování odpovědí. Některé prohlížeče cachují i stránky přijaté přes HTTPS. V takovém případě veškeré informace dostupné na stránkách webové aplikace mohou být lokálně uloženy v počítači (či na proxy serveru, je-li použit).
+		</cz>
+	</tfinding>
+	<trisk>
+		<en></en>
+		<cz>
+V případě, že útočník získá přístup k obsahu cache prohlížeče, může si přečíst odpovědi webového serveru tak jak byly přijaty uživatelem včetně všech potenciálně citlivých informací. V tomto konkrétním případě je tento nález hodnocen s vyšší závažností z důvodu dostupnosti hesel v čitelné podobě ve webové aplikaci.
+		</cz>
+	</trisk>
+	<trecommendation>
+		<en></en>
+		<cz>
+Doporučujeme, aby aplikace instruovala webový prohlížeč, aby neukládal odpovědi přijaté přes HTTPS a to použitím následujících HTTP hlaviček v každé odpovědi webového serveru:\\
+\\
+\footnotesize
+\begin{lstlisting}
+Cache-control: no-store
+Pragma: no-cache
+\end{lstlisting}
+\normalsize
+		</cz>
+	</trecommendation>
+	<tsteps>
+		<en>
+
+		</en>
+		<cz>
+\begin{enumerate}[noitemsep]
+\item otevřete webovou aplikaci
+\item v HTTP proxy v odpověďi se podívejte, že hlavičky Cache-control a Pragma chybí
+\end{enumerate}
+		</cz>
+	</tsteps>
+</issue>
+

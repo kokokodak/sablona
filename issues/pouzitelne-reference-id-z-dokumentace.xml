@@ -1,0 +1,39 @@
+<issue id="pouzitelne-reference-id-z-dokumentace">
+	<name>
+		<en></en>
+		<cz>Použitelné reference ID z dokumentace</cz>
+	</name>
+	<category>OTG-BUSLOGIC-001 - Test business logic data validation</category>
+	<risk>info</risk>
+	<likelihood>low</likelihood>
+	<impact>low</impact>
+	<whocanexploit></whocanexploit>
+	<references></references>
+	<tfinding>
+		<en>It has been found...</en>
+		<cz>
+Během penetračního testu bylo zjištěno, že reference ID, které se nachází na ilustračních screenshotech v databázi je možno použít.
+		</cz>
+	</tfinding>
+	<trisk>
+		<en></en>
+		<cz>
+Tento nález je čistě informační povahy a pravděpodobně nepředstavuje žádné riziko.
+		</cz>
+	</trisk>
+	<trecommendation>
+		<en></en>
+		<cz>
+Doporučujeme v dokumentaci nepoužívat data, která je možné použít v reálném systému.
+		</cz>
+	</trecommendation>
+	<tsteps>
+		<en>
+
+		</en>
+		<cz>
+
+		</cz>
+	</tsteps>
+</issue>
+

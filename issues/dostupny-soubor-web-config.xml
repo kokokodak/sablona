@@ -1,0 +1,46 @@
+<issue id="dostupny-soubor-web-config">
+	<name>
+		<en>empty</en>
+		<cz>Dostupný soubor web.config</cz>
+	</name>
+	<category>empty</category>
+
+	<risk>medium</risk>
+	<likelihood>medium</likelihood>
+	<impact>medium</impact>
+	<whocanexploit></whocanexploit>
+
+	<references>empty</references>
+	<tfinding>
+		<en>
+empty
+		</en>
+		<cz>
+Během testu bylo zjištěno, že na serveru je dostupný soubor web.config (na umístění /web.config). Jedná se o konfigurační soubor IIS.
+		</cz>
+	</tfinding>
+	<trisk>
+		<en>
+empty
+		</en>
+		<cz>
+V případě, že soubor obsahuje citlivé informace, může je útočník použít k následnému zacílení útoku.
+		</cz>
+	</trisk>
+	<trecommendation>
+		<en>
+empty
+		</en>
+		<cz>
+Doporučujeme zamezit neautentizovaný přístup k souboru nebo tento soubor uplně smazat, není-li potřeba.
+		</cz>
+	</trecommendation>
+	<tsteps>
+		<en>
+empty
+		</en>
+		<cz>
+empty
+		</cz>
+	</tsteps>
+</issue>

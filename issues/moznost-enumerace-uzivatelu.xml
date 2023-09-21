@@ -1,0 +1,77 @@
+<issue id="moznost-enumerace-uzivatelu">
+	<name>
+		<en>Username enumeration</en>
+		<cz>Možnost enumerace uživatelů</cz>
+	</name>
+	<category></category>
+	<risk>medium</risk>
+	<likelihood>medium</likelihood>
+	<impact>medium</impact>
+	<whocanexploit></whocanexploit>
+	<references></references>
+	<tfinding>
+		<en>
+During penetration test we found that it's possible to enumerate user accounts of existing customers of web application. This can be achieved by using "Request for new password" dialog at https://url
+
+When attacker happens to use e-mail of existing user of web application, response contains data "true". In case of e-mail that isn't registered within the application, response contains data "false". This is the necessary information that is needed to distinguish between user accounts that are registered withing the web application and those that aren't.
+		  </en>
+		<cz>
+Během penetračního testu bylo zjištěno, že z chybových hlášení přihlašovacího formuláře je možno určit, zda uživatel se zadaným, přihlašovacím jménem existuje nebo neexistuje. V rámci penetračního testu byl použit seznam s českými jmény a příjmeními obsahující zhruba 14 000 jmen a příjmení. Bylo zjištěno, že v systému existují uživatelské účty s následujícími přihlašovacími jmény: jmeno1, jmeno2, jmeno3, jmeno4, ....
+
+\begin{figure}[H]
+\centering
+\includegraphics{neexistujici-uzivatel}
+\caption{Hlášení v případě neexistujícího uživatele}
+\end{figure}
+
+
+\begin{figure}[H]
+\centering
+\includegraphics{neplatne-heslo-existujici-uzivatel}
+\caption{Hlášení v případě existujícího uživatele a špatného hesla}
+\end{figure}
+
+
+\\
+\\
+curl -s -o /dev/null -w "\%{http\_code}\\n" http://www.example.com/registrace --data "user-name=USER"
+\\
+\\
+V případě, že daný mail byl použit pro registraci, je vypsána hodnota 302, v opačném případě hodnota 200.
+		</cz>
+	</tfinding>
+	<trisk>
+		<en>
+In case the attacker learns many e-mail addresses of existing users, he uses them for example to send conduct spear-phishing with the intention of dragging users away from the customer with offer of some better conditions. Enumerated e-mail addresses can also be used by the attacker for targeting e-mail user accounts with intention of compromising accounts on tested web application.
+		  </en>
+		<cz>
+
+V případě, že útočník má k dispozici dostatečné množství mailových adres, tak je schopen určit kteří z uživatelů měli, případně stále mají, zájem o služby zákazníka. Může tak jejich maily zneužít a to jak ke svým business cílům, tak například k poškození Vaší dobré pověsti. Také je možné na základě vyenumerovaných mailových adres provést bruteforce útok na jejich uživatelské účty.
+
+Získání seznamu uživatelských účtů může být pro útočníka prvním bodem k zahájení tzv. brute-force útoku při kterém jsou hádána hesla k jednotlivým uživatelským účtům.
+
+%Útočník může využít této zranitelnosti zjištění přihlašovacích jmen, které v aplikaci existují. Těchto uživatelských účtů může poté použít například k phishingu či brute force útokům.
+
+%Získání seznamu uživatelských účtů může být pro útočníka prvním bodem k zahájení tzv. brute-force útoku při kterém jsou hádána hesla k jednotlivým uživatelským účtům.
+
+		</cz>
+	</trisk>
+	<trecommendation>
+		<en>
+We recommend both responses to be exactly the same so attacker can't distinguish whether e-mail address of existing user has been inserted or other e-mail address has been inserted.
+		  </en>
+		<cz>
+Doporučujeme dát si pozor na únik takovýchto informací, které samy o sobě nejsou citlivé, ale můžou znamenat určitou indicii pro útočníka. Aplikace by měla vracet stejná data (včetně například HTTP hlaviček) pro existujícího i neexistujícího uživatele.
+Enumeraci uživatelů v tomto případě úplně zabránit nelze, nicméně je možné alespoň omezit rychlost s jakou k enumeraci dochází. Například je možné počet požadavků omezit například na dva za hodinu. V takovém případě nedojde k omezení uživatele, ale omezení způsobí útočníkovi problém.
+		</cz>
+	</trecommendation>
+	<tsteps>
+		<en>
+
+		</en>
+		<cz>
+
+		</cz>
+	</tsteps>
+</issue>
+

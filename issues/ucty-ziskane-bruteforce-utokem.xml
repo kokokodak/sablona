@@ -1,0 +1,51 @@
+<issue id="ucty-ziskane-bruteforce-utokem">
+	<name>
+		<en></en>
+		<cz>Účty získané bruteforce útokem</cz>
+	</name>
+	<category>OTG-AUTHN-007 - Testing for Weak password policy</category>
+	<risk>critical</risk>
+	<likelihood>high</likelihood>
+	<impact>high</impact>
+	<whocanexploit></whocanexploit>
+	<references></references>
+	<tfinding>
+		<en>It has been found...</en>
+		<cz>
+Během penetračního testu bylo zjištěno, že některé z dříve enumerovaných uživatelských účtů (nález zabývající se enumerací uživatelů následuje) používají velice slabá hesla a jsou tedy náchylné na bruteforce hádání hesla.\\
+\\
+Jedná se konkrétně o následující uživatelské účty ke kterým byla zjištěna následující hesla:\\
+\begin{itemize}[noitemsep]
+\item ucet1 / heslo1
+\item ucet2 / heslo2
+\end{itemize}
+
+V případě uživatelského účtu siskova se jedná o vysoce privilegovaný účet, který má přístup ke všem informacím dostupným v aplikaci, včetně přihlašovacích jmen a hesel ostatních uživatelů.\\
+\\
+Ke zjišťování hesel byl použit slovník 1000 nejpoužívanějších hesel rozšířený o přihlašovací jména zjištěna během enumerace. Celý slovník je přiložen jako slovnik\_hesla\_1000\_nejbeznejsich.txt. V žádném případě se nejedná o kompletní seznam všech uživatelů se slabými hesly.
+
+		</cz>
+	</tfinding>
+	<trisk>
+		<en></en>
+		<cz>
+V případě, že útočník získá přístup k jakýmkoliv uživatelským účtům ke kterým přístup mít nemá, jedná se o závažný problém pro bezpečnost systému. Problém je tím větší, čím větší jsou oprávnění daného uživatelského účtu v rámci aplikace. V tomto případě se jedná o kritický problém, jelikož uživatelský účet má jedny z nejvyšších práv. Vzhledem ke slabé politice hesel předpokládáme, že účtů se slabým heslem se v systému nachází více.
+		</cz>
+	</trisk>
+	<trecommendation>
+		<en></en>
+		<cz>
+Po zavedení vhodné politiky hesel důrazně doporučujeme všem účtům se slabým (tedy politice hesel nevyhovujícím) heslem toto heslo nechat expirovat a přimět uživatele si heslo změnit na silné.
+		
+		</cz>
+	</trecommendation>
+	<tsteps>
+		<en>
+
+		</en>
+		<cz>
+
+		</cz>
+	</tsteps>
+</issue>
+

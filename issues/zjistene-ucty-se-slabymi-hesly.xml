@@ -1,0 +1,48 @@
+<issue id="zjistene-ucty-se-slabymi-hesly">
+	<name>
+		<en></en>
+		<cz>Zjištěné účty se slabými hesly</cz>
+	</name>
+	<category>OTG-AUTHN-007 - Testing for Weak password policy</category>
+	<risk>critical</risk>
+	<likelihood>medium</likelihood>
+	<impact>high</impact>
+	<whocanexploit></whocanexploit>
+	<references></references>
+	<tfinding>
+		<en>It has been found...</en>
+		<cz>
+Během autentizované fáze penetračního testování bylo zjištěno, že více účtů používá slabá hesla. Jedná se například, ale nikoliv pouze o následující uživatelské účty a hesla:\\
+\\
+\begin{itemize}[noitemsep]
+\item user1/heslo1
+\item user2/heslo2
+\item user3/heslo3
+\item user4/heslo4
+\end{itemize}
+\\
+		
+		</cz>
+	</tfinding>
+	<trisk>
+		<en></en>
+		<cz>
+V případě, že útočník získá přístup k jakýmkoliv uživatelským účtům ke kterým přístup mít nemá, jedná se o závažný problém pro bezpečnost systému. Problém je tím větší, čím větší jsou oprávnění daného uživatelského účtu v rámci aplikace. V tomto případě se jedná o kritický problém, jelikož uživatelský účet má jedny z nejvyšších práv.
+		</cz>
+	</trisk>
+	<trecommendation>
+		<en></en>
+		<cz>
+Po zavedení vhodné politiky hesel důrazně doporučujeme všem účtům se slabým (tedy politice hesel nevyhovujícím) heslem toto heslo nechat expirovat a přimět uživatele si heslo změnit na silné.	
+		</cz>
+	</trecommendation>
+	<tsteps>
+		<en>
+
+		</en>
+		<cz>
+
+		</cz>
+	</tsteps>
+</issue>
+

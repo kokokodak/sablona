@@ -1,0 +1,39 @@
+<issue id="chybejici-historie-hesel">
+	<name>
+		<en>Missing password history</en>
+		<cz>Chybějící historie hesel</cz>
+	</name>
+	<category></category>
+	<risk>low</risk>
+	<likelihood>low</likelihood>
+	<impact>low</impact>
+	<whocanexploit></whocanexploit>
+	<references></references>
+	<tfinding>
+		<en>It has been found...</en>
+		<cz>
+Bylo zjištěno, že aplikace si nepamatuje dříve použitá hesla, respektive jejich hash, k uživatelskému účtu. Jedná se o mechanismus, který v případě změny uživatelského hesla zabraňuje jeho opětovnému použití po nějakou dobu a to s cílem zabránění opětovného nastavení některého z dřívějších hesel v případě například vynucené změny hesla z důvodu jeho kompromitace.
+		</cz>
+	</tfinding>
+	<trisk>
+		<en></en>
+		<cz>
+V případě, že uživatel by si znovu nastavil některé z dřívějších hesel, které bylo odhaleno, může dojít k ovládnutí účtu útočníkem.
+		</cz>
+	</trisk>
+	<trecommendation>
+		<en></en>
+		<cz>
+Doporučujeme ukládání dřívějších hesel, alespoň tří, a nedovolit uživateli opětovné nastavení takového hesla. Zároveň doporučujeme nastavení minimálního stáří hesla na alespoň jeden den. V opačném případě by si uživatel mohl heslo okamžitě třikrát změnit a poté si opět nastavit heslo původní.
+		</cz>
+	</trecommendation>
+	<tsteps>
+		<en>
+
+		</en>
+		<cz>
+
+		</cz>
+	</tsteps>
+</issue>
+

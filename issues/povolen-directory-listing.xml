@@ -1,0 +1,44 @@
+<issue id="povolen-directory-listing">
+	<name>
+		<en></en>
+		<cz>Povolen directory listing</cz>
+	</name>
+	<category></category>
+	<risk>medium</risk>
+	<likelihood>medium</likelihood>
+	<impact>medium</impact>
+	<whocanexploit></whocanexploit>
+	<references></references>
+	<tfinding>
+		<en>It has been found...</en>
+		<cz>
+Během penetračního testu bylo zjištěno, že na daných serverech je zapnutý directory listing. Toto umožňuje procházení adresářů, které nemají index souboru. Jedná se o následující servery a adresáře:
+\footnotesize
+\begin{lstlisting}
+
+\end{lstlisting}
+\normalsize
+		</cz>
+	</tfinding>
+	<trisk>
+		<en></en>
+		<cz>
+Rizikem tohoto počínání je, že útočník se může dostat ke spoustě informací, které pro něho můžou být potenciálně přínosné pro další fáze útoku. Může se tak také dostat k souborům o jejichž existenci by bez využití directory listing nevěděl.
+		</cz>
+	</trisk>
+	<trecommendation>
+		<en></en>
+		<cz>
+Doporučujeme directory listing zakázat na úrovni webového serveru. V případě serveru Apache se jedná o direktivu "Options -Indexes".
+		</cz>
+	</trecommendation>
+	<tsteps>
+		<en>
+
+		</en>
+		<cz>
+
+		</cz>
+	</tsteps>
+</issue>
+

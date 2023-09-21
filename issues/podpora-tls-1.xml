@@ -1,0 +1,39 @@
+<issue id="podpora-tls-1">
+	<name>
+		<en></en>
+		<cz>Podpora SSL verze 2 a 3</cz>
+	</name>
+	<category></category>
+	<risk>info</risk>
+	<likelihood>medium</likelihood>
+	<impact>medium</impact>
+	<whocanexploit></whocanexploit>
+	<references></references>
+	<tfinding>
+		<en>It has been found...</en>
+		<cz>
+Během penetračního testu bylo zjištěno, že na dané službě je podporováno TLS verze 1.0. Jedná se o verzi TLS, která obsahuje množství kryptografických designových nedostatků. Ačkoliv novější implementace TLS 1.0 tyto nedostatky neobsahují, existují novější verze TLS, 1.1 a 1.2, které tyto nedostatky řeší už na úrovni kryptografického designu.
+		</cz>
+	</tfinding>
+	<trisk>
+		<en></en>
+		<cz>
+Tento nález je informativního rázu a nepředstavuje bezpečnostní zranitelnost.
+		</cz>
+	</trisk>
+	<trecommendation>
+		<en></en>
+		<cz>
+PCI DSS v3.2 vyžaduje, aby na všech službách bylo TLS 1.0 kompletně vypnuto a to s platností od 30. června 2018. Doporučujeme tedy všechny služby nakonfigurovat tak, aby podporovaly pouze TLS 1.1 či novější, není-li z důvodů kompatibility zachovat jiné nastavení.
+		</cz>
+	</trecommendation>
+	<tsteps>
+		<en>
+
+		</en>
+		<cz>
+
+		</cz>
+	</tsteps>
+</issue>
+

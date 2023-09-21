@@ -1,0 +1,46 @@
+<issue id="phpmyadmin-bbcode-xss">
+	<name>
+		<en>phpMyAdmin - BBcode XSS</en>
+		<cz>phpMyAdmin - BBcode XSS</cz>
+	</name>
+	<category></category>
+	<risk>medium</risk>
+	<likelihood>medium</likelihood>
+	<impact>medium</impact>
+	<whocanexploit></whocanexploit>
+	<references></references>
+	<tfinding>
+		<en>It has been found...</en>
+		<cz>
+Z důvodu existence zranitelnosti CVE-2010-4480 v použité verzi phpMyAdmin je možné provedení Cross Site Scripting (XSS).
+
+\footnotesize
+\begin{lstlisting}
+address
+\end{lstlisting}
+\normalsize
+		</cz>
+	</tfinding>
+	<trisk>
+		<en></en>
+		<cz>
+Možnost ovlivnění informací na webu pomocí útoku XSS může vést například k poškození pověsti provozovatele webové aplikace. Může také dojít k jinému typu škody v závislosti na charakteru podvržené informace.
+Dalším rizikem je odcizení session ID, které udržuje uživatelskou relaci v dané webové aplikaci. Pomocí útoku XSS může dojít k jeho odcizení a s ním i k odcizení uživatelské relace. Útočník také může spouštět skripty v kontextu napadené aplikace či například zneužít klientský systém jako XSS Proxy.
+		</cz>
+	</trisk>
+	<trecommendation>
+		<en></en>
+		<cz>
+Doporučujeme aktualizovat na nejnovější podporovanou verzi phpMyAdmin.
+		</cz>
+	</trecommendation>
+	<tsteps>
+		<en>
+
+		</en>
+		<cz>
+
+		</cz>
+	</tsteps>
+</issue>
+

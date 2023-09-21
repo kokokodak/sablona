@@ -1,0 +1,84 @@
+<issue id="apache-server-muze-byt-zranitelny">
+	<name>
+		<en></en>
+		<cz>Apache server může být zranitelný</cz>
+	</name>
+	<category></category>
+	<risk>medium</risk>
+	<likelihood>medium</likelihood>
+	<impact>medium</impact>
+	<whocanexploit></whocanexploit>
+	<references></references>
+	<tfinding>
+		<en>It has been found...</en>
+		<cz>
+Vulnerability scan detekoval, že použitá verze Apache serveru (2.4.6) může být náchylná na následující bezpečnostní zranitelnosti:
+
+\begin{itemize}[noitemsep]
+\item CVE-2014-0117
+\item CVE-2014-0118
+\item CVE-2014-0226
+\item CVE-2014-0226
+\item CVE-2014-3523
+\item CVE-2016-0736
+\item CVE-2016-2161
+\item CVE-2016-5387
+\item CVE-2016-8740
+\item CVE-2016-8743
+\item CVE-2017-3167
+\item CVE-2017-3169
+\item CVE-2017-7659
+\item CVE-2017-7668
+\item CVE-2017-7679
+\item CVE-2017-9788
+\item CVE-2017-9789
+\item CVE-2017-9798
+\item CVE-2013-6438
+\item CVE-2014-0098
+\item CVE-2013-5704
+\item CVE-2014-3581
+\item CVE-2014-3583
+\item CVE-2014-8109
+\item CVE-2015-0228
+\item CVE-2015-0253
+\item CVE-2015-3183
+\item CVE-2015-3185
+\item VulnDB 128186
+\item CVE-2017-15710
+\item CVE-2017-15715
+\item CVE-2018-1283
+\item CVE-2018-1301
+\item CVE-2018-1302
+\item CVE-2018-1303
+\item CVE-2018-1312
+\item CVE-2018-1333
+\item CVE-2018-8011
+\item CVE-2018-11763
+\end{itemize}
+
+Většinou se však jedná o zranitelnosti, které jsou specifické pro určitý modul (určitou část webové serveru), která ani nemusí být v použití. Nemalé množství dalších zranitelností se vyskytuje jen v určitých specifických neběžných situacích.
+
+		</cz>
+	</tfinding>
+	<trisk>
+		<en></en>
+		<cz>
+V případě, že se jedná o známou zranitelnost nebo zranitelnost na kterou existují dostupné exploity, může útočník daný systém napadnout.
+		</cz>
+	</trisk>
+	<trecommendation>
+		<en></en>
+		<cz>
+Doporučujeme aktualizovat Apache na nejnovější podporovanou verzi.
+		</cz>
+	</trecommendation>
+	<tsteps>
+		<en>
+
+		</en>
+		<cz>
+
+		</cz>
+	</tsteps>
+</issue>
+

@@ -1,0 +1,50 @@
+<issue id="povolena-metoda-options">
+	<name>
+		<en>empty</en>
+		<cz>Povolená metoda OPTIONS</cz>
+	</name>
+	<category>empty</category>
+
+	<risk>low</risk>
+	<likelihood>medium</likelihood>
+	<impact>low</impact>
+	<whocanexploit></whocanexploit>
+
+	<references>empty</references>
+	<tfinding>
+		<en>
+empty
+		</en>
+		<cz>
+V průběhu penetračního testu bylo zjištěno, že na webovém serveru je povolena metoda OPTIONS. Jedná se o HTTP metodu, která slouží ke zjišťování povolených HTTP metod.
+		</cz>
+	</tfinding>
+	<trisk>
+		<en>
+empty
+		</en>
+		<cz>
+Tento nález vychází z dobrých praktik zabezpečení webových serverů. Pomocí metody OPTIONS může útočník zjistit seznam HTTP metod které jsou podporované webovým serverem, což mu může zjednodušit zjišťování, zda není podporovaná některá z nebezpečných metod.
+		</cz>
+	</trisk>
+	<trecommendation>
+		<en>
+empty
+		</en>
+		<cz>
+Doporučujeme konzultovat dodavatele webového serveru či jeho dokumentaci a metodu OPTIONS zakázat.
+		</cz>
+	</trecommendation>
+	<tsteps>
+		<en>
+empty
+		</en>
+		<cz>
+\begin{enumerate}[noitemsep]
+\item otevřete umístení '/' webové aplikace ve webovém prohlížeči
+\item v HTTP proxy zachyťte požadavek a změňte jej z "GET /" na "OPTIONS /"
+\item v HTTP proxy v panelu odpověď / response uvidíte seznam povolených HTTP metod vrácený metodou OPTIONS
+\end{enumerate}
+		</cz>
+	</tsteps>
+</issue>

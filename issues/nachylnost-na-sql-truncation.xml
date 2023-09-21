@@ -1,0 +1,46 @@
+<issue id="nachylnost-na-sql-truncation">
+	<name>
+		<en></en>
+		<cz>Náchylnost na SQL truncation</cz>
+	</name>
+	<category></category>
+	<risk>medium</risk>
+	<likelihood>medium</likelihood>
+	<impact>medium</impact>
+	<whocanexploit></whocanexploit>
+	<references></references>
+	<tfinding>
+		<en>It has been found...</en>
+		<cz>
+Během penetračního testu bylo jištěno, že webová aplikace trpí náchylností na SQL truncation. Jedná se o situaci, kdy je informace ukládaná do SQL databáze ořezána na konkrétní maximální délku. Díky tomuto bylo možné vytvořit uživatelský účet „admin++++++++[ .. snip ..]++++++2“ (kde + reprezentují mezeru), který byl do databáze uložen jako „admin+++++++++++++“ (s počtem mezer takovým, že řetězec dosahuje nejdelší možné délky po ořezání). Nicméně tento řetězec je při porovnání v MySQL databázi shodný s řetězcem „admin“ a bylo tedy možné se přihlásit k účtu admin s útočníkem nastaveným heslem.
+
+úspěšné přihlášení do aplikace pod administrátorským účtem:
+
+%[img]
+%Figure 10. Přihlášení na administrátorský účet s heslem "heslo"
+		</cz>
+	</tfinding>
+	<trisk>
+		<en></en>
+		<cz>
+V případě, že útočník zneužije tuto zranitelnost, může být schopen vytvořit falešný účet nejen pro administrátora, ale i pro libovolného uživatele. Tímto může dojít ke kompromitaci uživatelských účtů a potenciálně citlivých dat, které se na nich mohou nacházet i ke kompromitaci administrátorského účtu se všemi důsledky z toho vyplývajícími.
+		</cz>
+	</trisk>
+	<trecommendation>
+		<en></en>
+		<cz>
+Doporučujeme použít některé z následujících řešení:
+- Nastavení striktního módu v SQL serveru: SET sql\_mode = 'STRICT\_ALL\_TABLES';
+- Použití binárního porovnání v SQL dotazech: SELECT * FROM uzivatele WHERE BINARY login = 'admin'
+		</cz>
+	</trecommendation>
+	<tsteps>
+		<en>
+
+		</en>
+		<cz>
+
+		</cz>
+	</tsteps>
+</issue>
+

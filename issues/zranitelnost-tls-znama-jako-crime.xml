@@ -1,0 +1,39 @@
+<issue id="zranitlenost-tls-znama-jako-crime">
+	<name>
+		<en></en>
+		<cz>Zranitelnost TLS známá jako CRIME</cz>
+	</name>
+	<category></category>
+	<risk>medium</risk>
+	<likelihood>medium</likelihood>
+	<impact>medium</impact>
+	<whocanexploit></whocanexploit>
+	<references></references>
+	<tfinding>
+		<en>It has been found...</en>
+		<cz>
+Bylo zjištěno, že je zapnutá SSL / TLS komprese nebo že TLS umožňuje použití protokolu SPDY verze nižší než 4.
+		</cz>
+	</tfinding>
+	<trisk>
+		<en></en>
+		<cz>
+Útočník může provést Man in the middle útok a být schopen dešifrovat některé části šifrované komunikace.
+		</cz>
+	</trisk>
+	<trecommendation>
+		<en></en>
+		<cz>
+Doporučujeme vypnout SPDY a/nebo podporu komprese.
+		</cz>
+	</trecommendation>
+	<tsteps>
+		<en>
+
+		</en>
+		<cz>
+
+		</cz>
+	</tsteps>
+</issue>
+

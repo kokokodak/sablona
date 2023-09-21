@@ -1,0 +1,40 @@
+<issue id="nedostatky-v-ssl">
+	<name>
+		<en></en>
+		<cz>Nedostatky v SSL</cz>
+	</name>
+	<category>OTG-CRYPST-001 - Testing for Weak SSL/TLS Ciphers, Insufficient Transport Layer Protection</category>
+	<risk>medium</risk>
+	<likelihood>medium</likelihood>
+	<impact>medium</impact>
+	<whocanexploit></whocanexploit>
+	<references></references>
+	<tfinding>
+		<en>It has been found...</en>
+		<cz>
+Během penetračního testu bylo zjištěno, že na webovém serveru se vyskytují nedostatky při použití SSL (HTTPS). Jedná se o nepodporu nejnovějšího protokolu TLS1.2. Dále se pak jedná o podporu protokolu SSL3, který obsahuje zranitelnost známou jako POODLE (Padding Oracle On Downgraded Legacy Encryption). Jedná se o man-in-the-middle information disclosure útok umožňující útočníkovi dešifrování vybraného bytu ciphertextu.
+		</cz>
+	</tfinding>
+	<trisk>
+		<en></en>
+		<cz>
+V případě úspěšného útoku POODLE může být útočník schopen dešifrovat šifrovanou komunikaci. Toto může vést k úniku citlivých informací jako například přihlašovací údaje, session cookies či jakékoliv jiné citlivé informace, které se mohou mezi aplikací a uživatelem přenášet.
+		</cz>
+	</trisk>
+	<trecommendation>
+		<en></en>
+		<cz>
+Jedná se o zranitelnost, která je principielní pro SSLv3, nikoliv pro konkrétní implementaci. Doporučujeme tedy zakázání SSLv3 na úrovni konfigurace daného serveru a používání pouze TLSv1.1 nebo vyšší verze.
+%V serveru nginx toho lze dosáhnout například použitím direktivy ssl_protocols TLSv1.2 TLSv1.1;, která povolí pouze bezpečné TLS verze 1.1 a 1.2.
+		</cz>
+	</trecommendation>
+	<tsteps>
+		<en>
+
+		</en>
+		<cz>
+
+		</cz>
+	</tsteps>
+</issue>
+

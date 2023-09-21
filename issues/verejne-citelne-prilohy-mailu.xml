@@ -1,0 +1,42 @@
+<issue id="verejne-citelne-prilohy-mailu">
+	<name>
+		<en></en>
+		<cz>Veřejně čitelné přílohy mailů</cz>
+	</name>
+	<category></category>
+	<risk>high</risk>
+	<likelihood>high</likelihood>
+	<impact>high</impact>
+	<whocanexploit></whocanexploit>
+	<references></references>
+	<tfinding>
+		<en>It has been found...</en>
+		<cz>
+Bylo zjištěno, libovolný i nepřihlášený uživatel má přístup k libovolným přílohám e-mailových zpráv. Tohoto je možné docílit pomocí přístupu na následující URL: http://example.com/attachments/ a výběrem libovolné přílohy.
+
+%[img]
+%Figure 8. Seznam příloh e-mailových zpráv
+		</cz>
+	</tfinding>
+	<trisk>
+		<en></en>
+		<cz>
+Rizikem tohoto nálezu je, že libovolný útočník má přístup ke všem přílohám všech ostatních uživatelů. Tím může dojít k úniku citlivých informací z uživatelských schránek a jejich následnému zneužití. V případě takovéhoto úniku je samozřejmostí ztráta reputace společnosti i případné právní důsledky.
+		</cz>
+	</trisk>
+	<trecommendation>
+		<en></en>
+		<cz>
+Důrazně doporučujeme přehodnocení návrhu oddělení uživatelských práv a implementaci daného návrhu tak, aby k přílohám e-mailových zpráv měli přístup pouze legitimní uživatelé.
+		</cz>
+	</trecommendation>
+	<tsteps>
+		<en>
+
+		</en>
+		<cz>
+
+		</cz>
+	</tsteps>
+</issue>
+

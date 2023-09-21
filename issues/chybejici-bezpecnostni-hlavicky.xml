@@ -1,0 +1,46 @@
+<issue id="chybejici-bezpecnostni-hlavicky">
+	<name>
+		<en></en>
+		<cz>Chybějící bezpečnostní hlavičky</cz>
+	</name>
+	<category></category>
+	<risk>medium</risk>
+	<likelihood>medium</likelihood>
+	<impact>medium</impact>
+	<whocanexploit></whocanexploit>
+	<references></references>
+	<tfinding>
+		<en>It has been found...</en>
+		<cz>
+Bylo detekováno, že v odpovědích z webového serveru chybí nebo jsou špatně nakonfigurovány následující bezpečnostní hlavičky:
+\begin{itemize}[noitemsep]
+\item x-frame-options
+\item x-content-type-options
+\item strict-transport-security
+\item content-security-policy
+\item x-permitted-cross-domain-policies
+\end{itemize}
+		</cz>
+	</tfinding>
+	<trisk>
+		<en></en>
+		<cz>
+Tyto hlavičky se používají k eliminaci či zamezení negativních dopadů některých dalších bezpečnostních zranitelností, například clickjackingu či xss.
+		</cz>
+	</trisk>
+	<trecommendation>
+		<en></en>
+		<cz>
+Doporučujeme dané hlavičky v odpovědích webového serveru implementovat.
+		</cz>
+	</trecommendation>
+	<tsteps>
+		<en>
+
+		</en>
+		<cz>
+
+		</cz>
+	</tsteps>
+</issue>
+

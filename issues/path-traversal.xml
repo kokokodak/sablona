@@ -1,0 +1,59 @@
+<issue id="path-traversal">
+	<name>
+		<en></en>
+		<cz>Path Traversal</cz>
+	</name>
+	<category>OTG-AUTHZ-001 - Testing Directory traversal/file include</category>
+	<risk>high</risk>
+	<likelihood>high</likelihood>
+	<impact>medium</impact>
+	<whocanexploit></whocanexploit>
+	<references></references>
+	<tfinding>
+		<en>It has been found...</en>
+		<cz>
+Během penetračního testu bylo zjištěno, že parametr name na adrese \\ http://example.com/get.php je náchylný k Path Traversal. Díky tomu může být útočník schopen načíst a zobrazit libovolný lokální soubor ke kterému má přístup uživatel pod kterým webová aplikace běží:
+
+Například návštěvou následujícího URL si může útočník stáhnout soubor win.ini - http://example.com/get.php?name=..\textbackslash{}..\textbackslash{}..\textbackslash{}..\textbackslash{}windows\textbackslash{}win.ini\%00x
+\\
+\\
+Jeho obsah:
+
+\footnotesize
+\begin{lstlisting}
+; for 16-bit app support
+[fonts]
+[extensions]
+[mci extensions]
+[files]
+[Mail]
+MAPI=1
+[XVRNT_B]
+cnfgprm=prdct=XVRNT_B
+\end{lstlisting}
+\normalsize
+
+Seznam získaných souborů je přiložen.
+		</cz>
+	</tfinding>
+	<trisk>
+		<en></en>
+		<cz>
+Rizikem této zranitelnosti je, že útočník může být schopen načíst a zobrazit soubory, které obsahují potenciálně citlivé informace. V případě unixového systému to se například může jednat o soubory /etc/passwd obsahující základní informace o uživatelích, soubor /proc/version obsahující informace o verzi běžícího linuxového jádra. V případě systému Windows se může jednat o soubory obsahující informace o uživateli či systému. Dále je pak možné získat zdrojové kódy běžící aplikace, konfigurační soubory a další citlivé údaje, které se na serveru nachází.
+		</cz>
+	</trisk>
+	<trecommendation>
+		<en></en>
+		<cz>
+Doporučujeme upravit příslušný skript tak, aby nebylo možné tento typ útoku nadále úspěšně využívat. Základem je filtrování uživatelských vstupů tak, aby byly odstraněny případné znaky s neočekávaným významem. Také doporučujeme zvážit zda je v tomto případě potřeba, aby načítání dané funkcionality bylo nutné řešit dynamicky.
+		</cz>
+	</trecommendation>
+	<tsteps>
+		<en>
+
+		</en>
+		<cz>
+
+		</cz>
+	</tsteps>
+</issue>

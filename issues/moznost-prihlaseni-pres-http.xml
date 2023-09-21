@@ -1,0 +1,45 @@
+<issue id="moznost-prihlaseni-pres-http">
+	<name>
+		<en></en>
+		<cz>Možnost přihlášení přes HTTP</cz>
+	</name>
+	<category>OTG-AUTHN-001 - Testing for Credentials Transported over an Encrypted Channel</category>
+	<risk>high</risk>
+	<likelihood>medium</likelihood>
+	<impact>medium</impact>
+	<whocanexploit></whocanexploit>
+	<references></references>
+	<tfinding>
+		<en>It has been found...</en>
+		<cz>
+Bylo zjištěno, že na přihlašování na url http://www.example.com/login.php je možno přistoupit přes nešifrované spojení.
+
+%\begin{figure}[H]
+%\centering
+%\includegraphics[width=100mm]{"img-instance1/prihlaseni-http"}
+%\caption{Přihlašovací stránka načtená přes HTTP}
+%\end{figure}
+		</cz>
+	</tfinding>
+	<trisk>
+		<en></en>
+		<cz>
+Rizikem je, že v případě, že by uživatel přistoupil na přihlašovací stránku přes nešifrované spojení, budou jeho přihlašovací údaje odeslány v nešifrované podobě po síti. V takovém případě může být útočník schopen přihlašovací údaje odchytit a uživatelský účet zneužít.
+		</cz>
+	</trisk>
+	<trecommendation>
+		<en></en>
+		<cz>
+Doporučujeme používat HTTPS, které využívá šifrování pro přenos dat. HTTPS je pro danou aplikaci provozováno, doporučujeme tedy všechny požadavky směřující přes nešifrované spojení přesměrovávat na šifrované.
+		</cz>
+	</trecommendation>
+	<tsteps>
+		<en>
+
+		</en>
+		<cz>
+
+		</cz>
+	</tsteps>
+</issue>
+

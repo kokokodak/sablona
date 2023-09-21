@@ -1,0 +1,56 @@
+<issue id="ruzne-zranitelnosti-openssl">
+	<name>
+		<en></en>
+		<cz>Různé zranitelnosti OpenSSL</cz>
+	</name>
+	<category></category>
+	<risk>medium</risk>
+	<likelihood>medium</likelihood>
+	<impact>medium</impact>
+	<whocanexploit></whocanexploit>
+	<references></references>
+	<tfinding>
+		<en>
+
+		</en>
+		<cz>
+Během testu bylo zjištěno, že na daném serveru je použita stará verze OpenSSL, se kterou jsou spojené následující potenciální zranitelnosti:
+\begin{itemize}[noitemsep]
+\item CVE-2016-2108, CVE-2016-2177, CVE-2016-2178, CVE-2016-2179
+\item CVE-2016-2180, CVE-2016-2181, CVE-2016-2182, CVE-2016-2183
+\item CVE-2016-6302, CVE-2016-6303, CVE-2016-6304, CVE-2016-6306
+\item VulnDB 144759, CVE-2010-5298, CVE-2014-0195, CVE-2014-0195
+\item CVE-2014-0221, CVE-2014-0224, CVE-2014-3470, CVE-2015-0292
+\item CVE-2014-3505, CVE-2014-3506, CVE-2014-3507, CVE-2014-3508
+\item CVE-2014-3509, CVE-2014-3510, CVE-2014-3511, CVE-2014-3512
+\item CVE-2014-5139, CVE-2016-0702, CVE-2016-0705, CVE-2016-0797
+\item CVE-2016-0798, CVE-2016-0799, CVE-2016-0800
+\end{itemize}
+		</cz>
+	</tfinding>
+	<trisk>
+		<en>
+
+		</en>
+		<cz>
+Riziko těchto zranitelností se odvíjí od konkrétní zranitelnosti. Pro více informací doporučujeme konzultovat daná CVE.
+		</cz>
+	</trisk>
+	<trecommendation>
+		<en>
+
+		</en>
+		<cz>
+Doporučujeme aktualizovat OpenSSL na nejnovější podporovanou verzi.
+		</cz>
+	</trecommendation>
+	<tsteps>
+		<en>
+
+		</en>
+		<cz>
+
+		</cz>
+	</tsteps>
+</issue>
+

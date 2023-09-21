@@ -1,0 +1,45 @@
+<issue id="nekonzistentni-informace-k-politice-hesel">
+	<name>
+		<en></en>
+		<cz>Nekonzistentní informace k politice hesel</cz>
+	</name>
+	<category></category>
+	<risk>info</risk>
+	<likelihood>medium</likelihood>
+	<impact>medium</impact>
+	<whocanexploit></whocanexploit>
+	<references></references>
+	<tfinding>
+		<en>It has been found...</en>
+		<cz>
+Během penetračního testu bylo zjištěno, že v rámci aplikace ve formuláři pro změnu hesla jsou uživateli prezentována dvě nesouhlasná tvrzení ohledně délky hesla a to minimální délka 5 znaků a 6 znaků.
+
+\begin{figure}[H]
+\centering
+\includegraphics{password-policy-inconsistency}
+\caption{Nekonzistence v politice hesel}
+\end{figure}
+		</cz>
+	</tfinding>
+	<trisk>
+		<en></en>
+		<cz>
+Tento nález je informační povahy a nepředstavuje riziko pro aplikaci.
+		</cz>
+	</trisk>
+	<trecommendation>
+		<en></en>
+		<cz>
+Tento nález je informační povahy a nepředstavuje riziko pro aplikaci.
+		</cz>
+	</trecommendation>
+	<tsteps>
+		<en>
+
+		</en>
+		<cz>
+
+		</cz>
+	</tsteps>
+</issue>
+

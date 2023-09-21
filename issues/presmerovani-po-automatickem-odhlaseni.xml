@@ -1,0 +1,51 @@
+<issue id="presmerovani-po-automatickem-odhlaseni">
+	<name>
+		<en></en>
+		<cz>Po automatickém odhlášení nedojde k přesměrování</cz>
+	</name>
+	<category></category>
+	<risk>low</risk>
+	<likelihood>medium</likelihood>
+	<impact>medium</impact>
+	<whocanexploit></whocanexploit>
+	<references></references>
+	<tfinding>
+		<en>
+
+		</en>
+		<cz>
+Během penetračního testu bylo zjištěno, že ačkoliv aplikace umožňuje nastavení automatického odhlášení uživatele
+po určité době neaktivity, nedochází k přesměrování uživatele na nějakou obecnou stránku (třeba přihlašovací stránku),
+která neobsahuje potenciálně citlivé informace.
+		</cz>
+	</tfinding>
+	<trisk>
+		<en>
+
+		</en>
+		<cz>
+Rizikem nepřesměrování uživatele po automatickém odhlášení je, že útočník, který se dostane k počítači po automatickém odhlášení
+sice nemůže provádět žádné operace ve webové aplikace, nicméně může stále vidět aktuální stránku, kterou měl uživatel otevřenou.
+Měl-li uživatel otevřeny nějaké potenciálně citlivé informace, může se k nim dostat i útočník. Nemusí jít o žádné očividné či
+devastující informace, nicméně i třeba název souboru "žaloba\_proti\_naší\_firmě.docx" či "upomínka\_splatnosti.pdf" může o firmě
+a jejím momentálním stavu mnohé napovědět.
+		</cz>
+	</trisk>
+	<trecommendation>
+		<en>
+
+		</en>
+		<cz>
+Doporučujeme uživatele, který je automaticky odhlášen po vypršení časového limitu, přesměrovat na nějakou stránku, která neobsahuje citlivé informace, třeba na přihlašovací stránku.
+		</cz>
+	</trecommendation>
+	<tsteps>
+		<en>
+
+		</en>
+		<cz>
+
+		</cz>
+	</tsteps>
+</issue>
+
