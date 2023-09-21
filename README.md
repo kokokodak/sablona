@@ -1,6 +1,7 @@
 # sablona
 Simple tool to quickly create report templates for web and infra penetration testing reports.
-![Uploading sablona-example.png…]()
+
+![screenshot](https://github.com/kokokodak/sablona/blob/main/sablona-example.png?raw=true)
 
 
 ## Test
